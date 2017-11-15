@@ -1,4 +1,10 @@
 <?php
+
+require_once("../config.php");
+
+$product = new Product("1122", "Mesa");
+$product->insert();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   $dirUploads = "uploads";
@@ -12,3 +18,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $i++;
     }
   }
+

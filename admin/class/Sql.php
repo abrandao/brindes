@@ -2,16 +2,16 @@
   class Sql extends PDO {
     private $conn;
     public function __construct(){
-         $this->conn = new PDO("mysql:host=localhost;dbname=brindes","brandao","sistema");
+         $this->conn = new PDO("mysql:host=localhost;dbname=brindes", "brandao","sistema");
     }
 
     private function setParams($statement, $parameters = array()) {
       foreach ($parameters as $key => $value) {
-        $this->setParams($statement, $key, $value);
+        $this->setParam($statement, $key, $value);
       }
     }
 
-    private function setParams($statement, $key, $value) {
+    private function setParam($statement, $key, $value) {
       $statement->bindParam($key, $value);
     }
 
