@@ -4,7 +4,7 @@ class Product {
   private $title;
   private $tag_main;
   private $tag_category;
-  private $filename;
+  private $upfile;
   private $quantity_A;
   private $quantity_B;
   private $quantity_C;
@@ -44,12 +44,12 @@ class Product {
     $this->tag_category = $value;
   }
 
-  public function getFilename() {
-    return $this->filename;
+  public function getUpfile() {
+    return $this->upfile;
   }
 
-  public function setFilename($value) {
-    $this->filename = $value;
+  public function setUpfile($value) {
+    $this->upfile = $value;
   }
 
   public function getQuantity_A() {
@@ -104,26 +104,26 @@ class Product {
   public function setData($data) {
     $this->setCode($data['code']);
     $this->setTitle($data['title']);
-    $this->setCode($data['tag_main']);
-    $this->setCode($data['tag_category']);
-    $this->setCode($data['filename']);
-    $this->setCode($data['quantity_A']);
-    $this->setCode($data['quantity_B']);
-    $this->setCode($data['quantity_C']);
-    $this->setCode($data['description']);
-    $this->setCode($data['size']);
-    $this->setCode($data['printing']);
+    $this->setTag_main($data['tag_main']);
+    $this->setTag_category($data['tag_category']);
+    $this->setUpfile($data['upfile']);
+    $this->setQuantity_A($data['quantity_A']);
+    $this->setQuantity_B($data['quantity_B']);
+    $this->setQuantity_C($data['quantity_C']);
+    $this->setDescription($data['description']);
+    $this->setSize($data['size']);
+    $this->setPrinting($data['printing']);
   }
 
   public function insert() {
     $sql = new Sql();
     $results = $sql->select("CALL sp_products_insert(:CODE, :TITLE, :TAG_MAIN, :TAG_CATEGORY,
-     :FILENAME, :QUANTITY_A, :QUANTITY_B, :QUANTITY_C, :DESCRIPTION, :SIZE, :PRINTING)", array(
+     :UPFILE, :QUANTITY_A, :QUANTITY_B, :QUANTITY_C, :DESCRIPTION, :SIZE, :PRINTING)", array(
       ':CODE'=>$this->getCode(),
       ':TITLE'=>$this->getTitle(),
       ':TAG_MAIN'=>$this->getTag_main(),
       ':TAG_CATEGORY'=>$this->getTag_category(),
-      ':FILENAME'=>$this->getFilename(),
+      ':UPFILE'=>$this->getUpfile(),
       ':QUANTITY_A'=>$this->getQuantity_A(),
       ':QUANTITY_B'=>$this->getQuantity_B(),
       ':QUANTITY_C'=>$this->getQuantity_C(),
@@ -137,13 +137,13 @@ class Product {
   }
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
-  $filename = "", $quantity_A = "", $quantity_B = "", $quantity_C = "", $description = "",
+  $upfile = "", $quantity_A = "", $quantity_B = "", $quantity_C = "", $description = "",
   $size = "", $printing = ""){
 		$this->setCode($code);
     $this->setTitle($title);
     $this->setTag_main($tag_main);
     $this->setTag_category($tag_category);
-    $this->setFilename($filename);
+    $this->setUpfile($upfile);
     $this->setQuantity_A($quantity_A);
     $this->setQuantity_B($quantity_B);
     $this->setQuantity_C($quantity_C);
@@ -158,7 +158,7 @@ class Product {
       "title"=>$this->getTitle(),
       "tag_main"=>$this->getTag_main(),
       "tag_category"=>$this->getTag_category(),
-      "filename"=>$this->getFilename(),
+      "upfile"=>$this->getUpfile(),
       "quantity_A"=>$this->getQuantity_A(),
       "quantity_B"=>$this->getQuantity_B(),
       "quantity_C"=>$this->getQuantity_C(),

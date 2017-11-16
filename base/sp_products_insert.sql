@@ -5,7 +5,7 @@ CREATE PROCEDURE sp_products_insert (
     ptitle VARCHAR(100),
     ptag_main VARCHAR(20),
     ptag_category VARCHAR(20),
-    pfilename VARCHAR(240),
+    pupfile VARCHAR(240),
     pquantity_A INT(5),
     pquantity_B INT(5),
     pquantity_C INT(5),
@@ -13,8 +13,8 @@ CREATE PROCEDURE sp_products_insert (
     psize VARCHAR(80),
     pprinting VARCHAR(80)
 )
-    INSERT INTO products (code, title, tag_main, tag_category, filename,
+    INSERT INTO products (code, title, tag_main, tag_category, upfile,
     quantity_A, quantity_B, quantity_C, description, size, printing) 
-    VALUES (pcode, ptitle, ptag_main, ptag_category, pfilename,
+    VALUES (pcode, ptitle, ptag_main, ptag_category, pupfile,
     pquantity_A, pquantity_B, pquantity_C, pdescription, psize, pprinting);
     SELECT * FROM products WHERE id = LAST_INSERT_ID();
