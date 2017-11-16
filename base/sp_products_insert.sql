@@ -1,6 +1,20 @@
-DROP PROCEDURE IF EXISTS sp_products_insert; CREATE PROCEDURE sp_products_insert (
-    IN pcode INT(5),
-    IN ptitle VARCHAR(100)
+DROP PROCEDURE IF EXISTS sp_products_insert;
+
+CREATE PROCEDURE sp_products_insert (
+    pcode INT(5),
+    ptitle VARCHAR(100),
+    ptag_main VARCHAR(20),
+    ptag_category VARCHAR(20),
+    pfilename VARCHAR(240),
+    pquantity_A INT(5),
+    pquantity_B INT(5),
+    pquantity_C INT(5),
+    pdescription VARCHAR(255),
+    psize VARCHAR(80),
+    pprinting VARCHAR(80)
 )
-    INSERT INTO products (code, title) VALUES (pcode, ptitle);
+    INSERT INTO products (code, title, tag_main, tag_category, filename,
+    quantity_A, quantity_B, quantity_C, description, size, printing) 
+    VALUES (pcode, ptitle, ptag_main, ptag_category, pfilename,
+    pquantity_A, pquantity_B, pquantity_C, pdescription, psize, pprinting);
     SELECT * FROM products WHERE id = LAST_INSERT_ID();
