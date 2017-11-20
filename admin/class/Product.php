@@ -1,5 +1,6 @@
 <?php
 class Product {
+  private $id;
   private $code;
   private $title;
   private $tag_main;
@@ -11,6 +12,14 @@ class Product {
   private $description;
   private $size;
   private $printing;
+
+  public function getId() {
+    return $this->id;
+  }
+
+  public function setId($value) {
+    $this->id = $value;
+  }
 
   public function getCode() {
     return $this->code;
@@ -101,6 +110,7 @@ class Product {
   }
 
   public function setData($data) {
+    $this->setId($data['id']);
     $this->setCode($data['code']);
     $this->setTitle($data['title']);
     $this->setTag_main($data['tag_main']);
@@ -112,6 +122,16 @@ class Product {
     $this->setDescription($data['description']);
     $this->setSize($data['size']);
     $this->setPrinting($data['printing']);
+  }
+
+  public function loadById($id) {
+    $sql = new Sql();
+    $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
+      ":ID"=>$id
+    ));
+    if (count($results) > 0) {
+      $this->setData($results[0]);
+    }
   }
 
   public function insert() {
@@ -133,6 +153,25 @@ class Product {
     if (count($results) > 0) {
       $this->setData($results[0]);
     }
+  }
+
+  public function delete() {
+    $sql = new Sql();
+    $sql->query("DELETE FROM products WHERE id = :ID", array(
+      ":ID"=>$this->getId()
+    ));
+    $this->setId(0);
+    $this->getCode("");
+    $this->getTitle("");
+    $this->getTag_main("");
+    $this->getTag_category("");
+    $this->getUpfile("");
+    $this->getQuantity_A("");
+    $this->getQuantity_B("");
+    $this->getQuantity_C("");
+    $this->getDescription("");
+    $this->getSize("");
+    $this->getPrinting("");
   }
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
