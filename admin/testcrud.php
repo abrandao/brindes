@@ -4,14 +4,16 @@ require_once("config.php");
 
 // Delete
 $product = new Product();
-$product->loadById(32);
-//$product->deleteImages();
-$product->delete();
+$product->loadById(59);
+$product->deleteImages();
+//$product->delete();
 echo "<br>";
 echo "<br>";
+echo $upfile;
 echo "<br>";
 echo "<br>";
-echo $product;
+//echo $product;
+
 /*
 //$scan = "products/Fany"; //. $upfile;
 foreach (scandir("products") as $item) {

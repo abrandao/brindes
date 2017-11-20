@@ -169,14 +169,25 @@ class Product {
     $sql = new Sql();
     $sql->query("DELETE FROM products WHERE id = :ID", array(
       ":ID"=>$this->getId()
-    ));
-    //$scan = "Fany"; //. $upfile;
+    ));    
+  }
+
+  public function deleteImages() {
+    $sql = new Sql();
+    return $sql->query("SELECT upfile FROM products WHERE id = :ID", array(
+      ":ID"=>$this->getId()
+    ));   
+
+    //return echo "teste";
+    /*
     foreach (scandir("products/Fany") as $item) {
       if(!in_array($item, array(".", ".."))) {
         unlink("products/Fany/" . $item);
       } 
     }
     rmdir("products/Fany");
+    echo $id;
+    echo $upfile;*/
   }
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
