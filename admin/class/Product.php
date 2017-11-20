@@ -128,7 +128,7 @@ class Product {
     $sql = new Sql();
     $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
       ":ID"=>$id
-    ));
+    ));    
     if (count($results) > 0) {
       $this->setData($results[0]);
     }
@@ -154,24 +154,29 @@ class Product {
       $this->setData($results[0]);
     }
   }
+/*
+  public function deleteImages() {
+    $scan = "products/" . $upfile;
+    foreach (scandir($scan) as $item) {
+      if(!in_array($item, array(".", ".."))) {
+        unlink($scan  . $item);
+      } 
+    }
+    rmdir($scan);
+   }*/
 
   public function delete() {
     $sql = new Sql();
     $sql->query("DELETE FROM products WHERE id = :ID", array(
       ":ID"=>$this->getId()
     ));
-    $this->setId(0);
-    $this->getCode("");
-    $this->getTitle("");
-    $this->getTag_main("");
-    $this->getTag_category("");
-    $this->getUpfile("");
-    $this->getQuantity_A("");
-    $this->getQuantity_B("");
-    $this->getQuantity_C("");
-    $this->getDescription("");
-    $this->getSize("");
-    $this->getPrinting("");
+    //$scan = "Fany"; //. $upfile;
+    foreach (scandir("products/Fany") as $item) {
+      if(!in_array($item, array(".", ".."))) {
+        unlink("products/Fany/" . $item);
+      } 
+    }
+    rmdir("products/Fany");
   }
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
