@@ -100,7 +100,6 @@ class Product {
     $this->printing = $value;
   }
 
-  //Inserting only two values for testing purposes
   public function setData($data) {
     $this->setCode($data['code']);
     $this->setTitle($data['title']);

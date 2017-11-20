@@ -15,22 +15,27 @@ $description = $_POST['description'];
 $size = $_POST['size'];
 $printing = $_POST['printing'];
 
-$product = new Product( $code, $title, $tag_main, $tag_category, $upfile[], $quantity_A, $quantity_B,
+$product = new Product( $code, $title, $tag_main, $tag_category, $upfile, $quantity_A, $quantity_B,
 $quantity_C, $description, $size, $printing);
 $product->insert();
 
+//Folder creation and renaming files
+$dirUploads = $_POST['folder'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
-  $dirUploads = "uploads";
   if (!is_dir($dirUploads)) {
     mkdir($dirUploads);
   }
 
   $i = 0;
   while ($i<count($_FILES['upfile']['name'])) {
-    move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$i]);
+    $filename = $dirUploads . "_" . $_FILES['upfile']['name'][$i];
+    move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $filename);
     $i++;
     }
   }
 
   var_dump($upfile);
+  echo "<br>";
+  var_dump($title);
