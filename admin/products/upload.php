@@ -15,7 +15,7 @@
   <label for="folder">Pasta</label>
   <input type="text" name="folder" /></br>
 
-  <label for="upfile">Imagem</label>
+  <label for="upfile">Imagem(s)</label>
   <input type="file" name="upfile[]" multiple /></br>
 
   <label for="quantity_A">quantidade A</label>
@@ -35,6 +35,6 @@
 
   <label for="printing">Gravação</label>
   <input type="text" name="printing" /></br>
-  
+
   <button type="submit" value="send values">Enviar</button>
 </form>
