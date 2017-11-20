@@ -29,13 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $i = 0;
-  while ($i<count($_FILES['upfile']['name'])) {
-    $filename = $dirUploads . "_" . $_FILES['upfile']['name'][$i];
-    move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $filename);
+  while ($i<count($_FILES['upfile']['name'])) {      
+    move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "_" . (string)$i . ".jpg");
     $i++;
     }
   }
-
-  var_dump($upfile);
-  echo "<br>";
-  var_dump($title);
