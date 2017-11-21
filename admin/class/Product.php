@@ -154,16 +154,6 @@ class Product {
       $this->setData($results[0]);
     }
   }
-/*
-  public function deleteImages() {
-    $scan = "products/" . $upfile;
-    foreach (scandir($scan) as $item) {
-      if(!in_array($item, array(".", ".."))) {
-        unlink($scan  . $item);
-      } 
-    }
-    rmdir($scan);
-   }*/
 
   public function delete() {
     $sql = new Sql();
@@ -174,21 +164,35 @@ class Product {
 
   public function deleteImages() {
     $sql = new Sql();
-    return $sql->query("SELECT upfile FROM products WHERE id = :ID", array(
-      ":ID"=>$this->getId()
-    ));   
+    $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
+      ":ID"=>$id      
+    ));
 
-    //return echo "teste";
+    echo $id;
+
+    if (count($results) > 0) {
+      $row = $results[0];
+      $folder = $this->setUpfile($row['upfile']);
+      return $row;
+      return $folder;
+    }
+      
+    $folder = "Fany";
+    foreach (scandir("products/" . $folder . "/") as $item) {
+      if(!in_array($item, array(".", ".."))) {
+        unlink("products/" . $folder . "/" . $item);
+      } 
+    }
+    rmdir("products/" . $folder . "/"); 
+
     /*
     foreach (scandir("products/Fany") as $item) {
       if(!in_array($item, array(".", ".."))) {
         unlink("products/Fany/" . $item);
       } 
     }
-    rmdir("products/Fany");
-    echo $id;
-    echo $upfile;*/
-  }
+    rmdir("products/Fany");  */
+  }  
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
   $upfile = "", $quantity_A = "", $quantity_B = "", $quantity_C = "", $description = "",

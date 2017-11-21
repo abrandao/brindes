@@ -4,9 +4,9 @@ require_once("config.php");
 
 // Delete
 $product = new Product();
-$product->loadById(59);
+$product->loadById(8);
 $product->deleteImages();
-//$product->delete();
+$product->delete();
 echo "<br>";
 echo "<br>";
 echo $upfile;
