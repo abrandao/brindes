@@ -131,7 +131,8 @@ class Product {
     ));    
     if (count($results) > 0) {
       $this->setData($results[0]);
-    }
+    }    
+    
   }
 
   public function insert() {
@@ -159,39 +160,29 @@ class Product {
     $sql = new Sql();
     $sql->query("DELETE FROM products WHERE id = :ID", array(
       ":ID"=>$this->getId()
-    ));    
-  }
-
-  public function deleteImages() {
+    ));
+  }    
+   
+  public function deleteImages($id) {
+    
     $sql = new Sql();
     $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
       ":ID"=>$id      
     ));
 
-    echo $id;
-
     if (count($results) > 0) {
-      $row = $results[0];
-      $folder = $this->setUpfile($row['upfile']);
-      return $row;
-      return $folder;
-    }
-      
-    $folder = "Fany";
+      $this->setData($results[0]);
+    }      
+
+    $folder = $results[0]['upfile'];
+    echo $folder;
+       
     foreach (scandir("products/" . $folder . "/") as $item) {
       if(!in_array($item, array(".", ".."))) {
         unlink("products/" . $folder . "/" . $item);
       } 
     }
-    rmdir("products/" . $folder . "/"); 
-
-    /*
-    foreach (scandir("products/Fany") as $item) {
-      if(!in_array($item, array(".", ".."))) {
-        unlink("products/Fany/" . $item);
-      } 
-    }
-    rmdir("products/Fany");  */
+    rmdir("products/" . $folder . "/");
   }  
 
   public function __construct($code = "", $title = "", $tag_main = "", $tag_category = "",
