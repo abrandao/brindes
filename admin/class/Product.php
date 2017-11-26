@@ -131,7 +131,7 @@ class Product {
     ));    
     if (count($results) > 0) {
       $this->setData($results[0]);
-    }    
+    }        
   }
 
   public function insert() {
@@ -154,6 +154,11 @@ class Product {
       $this->setData($results[0]);
     }
   }
+
+  public static function getList(){
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM products ORDER BY id;");
+	}
 
   public function delete() {
     $sql = new Sql();
