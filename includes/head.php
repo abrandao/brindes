@@ -22,6 +22,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">   
 
     <!-- Javascript JS -->
-    <script src="bootstrap.min.js" type="javascript"></script>
+    <script src="bootstrap.js" type="javascript"></script>
 
   </head>

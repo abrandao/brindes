@@ -132,7 +132,6 @@ class Product {
     if (count($results) > 0) {
       $this->setData($results[0]);
     }    
-    
   }
 
   public function insert() {
@@ -174,8 +173,7 @@ class Product {
       $this->setData($results[0]);
     }      
 
-    $folder = $results[0]['upfile'];
-    echo $folder;
+    $folder = $results[0]['upfile'];    
        
     foreach (scandir("products/" . $folder . "/") as $item) {
       if(!in_array($item, array(".", ".."))) {
