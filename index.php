@@ -1,14 +1,14 @@
 <?php
 
+require_once("admin/session.php");
 require_once("includes/head.php");
 require_once("includes/navbar.php");
 require_once("includes/header.php");
-require_once("admin/session.php");
 
 ?>
 <body>
 <div id="shopping-cart">
-<div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="index.php?action=empty">Esvaziar o carrinho</a></div>
+<div class="txt-heading">Carrinho de Compras<a id="btnEmpty" href="index.php?action=empty">Esvaziar o carrinho</a></div>
 <?php
 if(isset($_SESSION["cart_item"])){
     $item_total = 0;
