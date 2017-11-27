@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-require_once("class/dbcontroller.php");
+require_once("class/Sql.php");
 
-$db_handle = new DBController();
+$db_handle = new Sql();
 if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 	case "add":
