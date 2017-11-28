@@ -4,7 +4,8 @@ require_once("admin/session.php");
 require_once("includes/head.php");
 require_once("includes/navbar.php");
 //require_once("includes/header.php");
-
+echo "<br>";
+echo "<br>";
 ?>
 <body>
 <div id="shopping-cart">
@@ -50,15 +51,15 @@ if(isset($_SESSION["cart_item"])){
 <div id="product-grid">
 	<div class="txt-heading">Produtos</div>
 	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
+	$product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
 	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){
+		foreach($product_array as $key=>$value){			
 	?>
 		<div class="product-item">
 			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
-			<div><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
-			<div class="product-price"><?php echo "R$".$product_array[$key]["price"]; ?></div>
+			<div class="product-image"><img src="<?php echo "product-images/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
+			<div><strong><?php echo $product_array[$key]["title"]; ?></strong></div>
+			<div class="product-price"><?php echo "R$".$product_array[$key]["quantity_A"]; ?></div>
 			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
 			</form>
 		</div>

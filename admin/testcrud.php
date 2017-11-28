@@ -2,8 +2,11 @@
 require_once("config.php");
 
 $product = new Product();
-//$product->loadById(4);
-//$product->deleteImages(4);
-//$product->delete();
-$product = Product::getList();
-echo json_encode($product);
+$product->loadById(5);
+$product->deleteImages(5);
+$product->delete();
+
+
+//Listando
+//$product = Product::getList();
+//echo json_encode($product);
