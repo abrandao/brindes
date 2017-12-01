@@ -1,4 +1,3 @@
 *.vscode
 *.swp
-/products/*
-product-images/
+admin/products/*

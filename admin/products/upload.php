@@ -30,6 +30,9 @@
   <label for="description">Descrição</label>
   <input type="text" name="description" /></br>
 
+  <textarea for = "description" rows="4" cols="50" name="description"> 
+  Descreva o produto...</textarea>
+
   <label for="size">Tamanho</label>
   <input type="text" name="size" /></br>
 
