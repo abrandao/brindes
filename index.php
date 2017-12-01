@@ -59,7 +59,7 @@ if(isset($_SESSION["cart_item"])){
 			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			<div class="product-image"><img src="<?php echo "admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
 			<div><strong><?php echo $product_array[$key]["title"]; ?></strong></div>
-			<div class="product-price"><?php echo "R$".$product_array[$key]["quantity_A"]; ?></div>
+			<div class="product-price"><?php echo "R$" . $product_array[$key]["quantity_A"]; ?></div>
 			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
 			</form>
 		</div>
