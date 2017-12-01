@@ -7,8 +7,8 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
-DROP TABLE IF EXISTS `arquivos`;
-CREATE TABLE `arquivos` (
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` int(5) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `arquivos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `arquivos` (`id`, `code`, `title`, `tag_main`, 
+INSERT INTO `products` (`id`, `code`, `title`, `tag_main`, 
 `tag_category`, `filename`, `quantity_A`, `quantity_B`, 
 `quantity_C`, `description`, `size`, `printing`) VALUES
 (2,	321,	'sw',	'sw',	'sw',	'683.png',	21,	
