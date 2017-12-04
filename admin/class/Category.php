@@ -39,6 +39,20 @@ class Category {
     }
   }
 
+  public function insert() {
+    $sql = new Sql();
+    $results = $sql->select("CALL sp_categories_insert(:CATEGORY)", array(
+      ':CATEGORY'=>$this->getCategory()
+    ));    
+    if (count($results) > 0) {
+      $this->setData($results[0]);
+    }
+  }
+
+  public function __construct($category = ""){
+		$this->setCategory($category);    
+  }
+
   public function __toString(){
 		return json_encode(array(
 			"id"=>$this->getId(),
