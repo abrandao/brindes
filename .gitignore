@@ -1,3 +1,4 @@
 *.vscode
 *.swp
 admin/products/*
+*/base

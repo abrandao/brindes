@@ -20,7 +20,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/|style.css">   
+    <link rel="stylesheet" href="css/style.css">   
 
     <!-- Javascript JS -->
     <script src="bootstrap.js" type="javascript"></script>
