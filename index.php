@@ -50,7 +50,7 @@ if(isset($_SESSION["cart_item"])){
 
 <div id="product-grid">
 	<div class="txt-heading">Produtos</div>
-	<?php
+	<?php	
 	$product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){			
