@@ -16,7 +16,7 @@ require_once("config.php");
 
 $category = Category::getList();
 echo json_encode($category);
-echo "<br>";
+
 /*
 $category = new Category();
 $category->loadById(2);
