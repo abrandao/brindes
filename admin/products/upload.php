@@ -1,13 +1,32 @@
+<?php
+  require_once("../class/Category.php");
+  require_once("../class/Sql.php");
+?>
+
+
 <form method="POST" action="file-upload.php" enctype="multipart/form-data">
   
   <label for="code">Código</label>
   <input type="number" name="code" /></br>
 
   <label for="title">Título</label>
-  <input type="text" name="title" /></br>
-  
+  <input type="text" name="title" /></br>  
+
   <label for="tag_main">Tag Principal</label>
-  <input type="text" name="tag_main" /></br>
+  <select name="tag_main">
+<?php
+  $db_handle = new Sql();
+	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
+	if (!empty($category_array)) { 
+		foreach($category_array as $key=>$value){			
+	?>      
+			<option><?php echo $category_array[$key]["category"]; ?></option>
+<?php	
+			}
+	}
+  ?>
+  </select>  
+  <br>
 
   <label for="tag_category">Tag Categoria</label>
   <input type="text" name="tag_category" /></br>
@@ -31,7 +50,7 @@
   <input type="text" name="description" /></br>
 
   <textarea for = "description" rows="4" cols="50" name="description"> 
-  Descreva o produto...</textarea>
+  Descreva o produto...</textarea></br>
 
   <label for="size">Tamanho</label>
   <input type="text" name="size" /></br>
