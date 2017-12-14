@@ -13,7 +13,7 @@
   <input type="text" name="title" /></br>  
 
   <label for="tag_main">Tag Principal</label>
-  <select name="tag_main">
+  <select type="text" name="tag_main">
 <?php
   $db_handle = new Sql();
 	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");

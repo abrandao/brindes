@@ -4,7 +4,7 @@
     private $conn;
     
     public function __construct(){
-         $this->conn = new PDO("mysql:host=localhost;dbname=brindes", "brandao","sistema");
+         $this->conn = new PDO("mysql:host=localhost;dbname=brindes","brandao","sistema");
     }
 
     private function setParams($statement, $parameters = array()) {
@@ -30,7 +30,7 @@
     } 
 
     public function runQuery($query) {
-      $myConnection= mysqli_connect("localhost","brandao","sistema") or die ("could not connect to mysql"); 
+      $myConnection = mysqli_connect("localhost","brandao","sistema") or die ("could not connect to mysql"); 
       mysqli_select_db($myConnection, "brindes") or die ("no database");
       
       $result = mysqli_query($myConnection,$query);

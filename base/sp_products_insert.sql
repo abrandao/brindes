@@ -3,8 +3,8 @@ DROP PROCEDURE IF EXISTS sp_products_insert;
 CREATE PROCEDURE sp_products_insert (
     pcode INT(5),
     ptitle VARCHAR(100),
-    ptag_main VARCHAR(20),
-    ptag_category VARCHAR(20),
+    ptag_main VARCHAR(50),
+    ptag_category VARCHAR(50),
     pupfile VARCHAR(240),
     pquantity_A INT(5),
     pquantity_B INT(5),

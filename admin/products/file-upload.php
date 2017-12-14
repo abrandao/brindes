@@ -19,6 +19,8 @@ $product = new Product( $code, $title, $tag_main, $tag_category, $upfile, $quant
 $quantity_C, $description, $size, $printing);
 $product->insert();
 
+
+var_dump($product);
 //Folder creation and renaming files
 $dirUploads = $_POST['folder'];
 
