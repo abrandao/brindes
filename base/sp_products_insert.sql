@@ -4,7 +4,7 @@ CREATE PROCEDURE sp_products_insert (
     ptitle VARCHAR(100),
     pcode INT(5),    
     ptag VARCHAR(50),
-    category VARCHAR(50),
+    pcategory VARCHAR(50),
     pdescription VARCHAR(255),
     pupfile VARCHAR(240),
     pqtd_min INT(5),
@@ -16,8 +16,8 @@ CREATE PROCEDURE sp_products_insert (
     pprint_type VARCHAR(80),
     pcomments VARCHAR(255)
 )
-    INSERT INTO products (id, title, code, tag, category, description, upfile, qtd_min, qtd1, qtd2,
+    INSERT INTO products (title, code, tag, category, description, upfile, qtd_min, qtd1, qtd2,
  qtd3, size, printing, print_type, comments) 
-    VALUES (pid, ptitle, pcode, ptag, pcategory, pdescription, pupfile, pqtd_min, pqtd1, pqtd2,
+    VALUES (ptitle, pcode, ptag, pcategory, pdescription, pupfile, pqtd_min, pqtd1, pqtd2,
  pqtd3, psize, pprinting, pprint_type, pcomments);
     SELECT * FROM products WHERE id = LAST_INSERT_ID();

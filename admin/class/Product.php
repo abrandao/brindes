@@ -246,7 +246,7 @@ class Product {
       "code"=>$this->getCode(),      
       "tag"=>$this->getTag(),
       "category"=>$this->getCategory(),
-      "desription"=>$this->getDescription(),
+      "description"=>$this->getDescription(),
       "upfile"=>$this->getUpfile(),
       "qtd_min"=>$this->getQtd_min(),
       "qtd1"=>$this->getQtd1(),
