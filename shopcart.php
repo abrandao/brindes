@@ -25,18 +25,18 @@ if(isset($_SESSION["cart_item"])){
 </tr>	
 <?php		
     foreach ($_SESSION["cart_item"] as $item){
+			//var_dump($item);
 		?>
 				<tr>
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["title"]; ?></strong></td>
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["qtd_min"]; ?></td>
-				<!--<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remover Item</a></td>-->
+				<!--<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="shopcart.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remover Item</a></td>-->
 				</tr>
-				<?php
-        $item_total += $item["quantity"];
+		<?php        
 		}
-		?>
+	?>
 
 <tr>
 </tr>
