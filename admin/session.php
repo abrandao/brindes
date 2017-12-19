@@ -41,6 +41,7 @@ switch($_GET["action"]) {
 	break;
 	case "empty":
 		unset($_SESSION["cart_item"]);
+		header("Location:shopcart.php");
 	break;	
 }
 }

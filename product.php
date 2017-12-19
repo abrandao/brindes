@@ -11,7 +11,7 @@ require_once("admin/class/Product.php");
 	<div class="txt-heading">Produtos</div>
 	<?php
 	$db_handle = new Sql();
-	$cdd = $_GET['code']; //$product_array[$key]['code'];
+	$cdd = $_GET['code'];
 $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd'");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
