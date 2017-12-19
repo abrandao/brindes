@@ -9,7 +9,7 @@ echo "<br>";
 ?>
 <body>
 <div id="shopping-cart">
-<div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="index.php?action=empty">Esvaziar o carrinho</a></div>
+<div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="shopcart.php?action=empty">Esvaziar o carrinho</a></div>
 <?php
 if(isset($_SESSION["cart_item"])){
     $item_total = 0;
@@ -31,7 +31,7 @@ if(isset($_SESSION["cart_item"])){
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["qtd_min"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remover Item</a></td>
+				<!--<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remover Item</a></td>-->
 				</tr>
 				<?php
         $item_total += $item["quantity"];

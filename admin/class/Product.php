@@ -251,7 +251,7 @@ class Product {
       "qtd_min"=>$this->getQtd_min(),
       "qtd1"=>$this->getQtd1(),
       "qtd2"=>$this->getQtd2(),
-      "qtd3"=>$this->getQd3(),      
+      "qtd3"=>$this->getQtd3(),      
       "size"=>$this->getSize(),
       "printing"=>$this->getPrinting(),
       "print_type"=>$this->getPrint_type(),

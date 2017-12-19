@@ -13,10 +13,10 @@ require_once("admin/class/Sql.php");
 	$product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
-	?>
+	?>		
 		<div class="product-item">
 			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="product-image"><a href="product.php?action=code="><img src="<?php echo "admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a></div>
+			<div class="product-image"><a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img src="<?php echo "admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a></div>
 			<br>
 			<div><a href="product.php"><?php echo $product_array[$key]["title"]; ?></a></div>
 			<div class="product-price"><?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?></div>
