@@ -1,11 +1,25 @@
 <?php
 require_once("admin/session.php");
 
-$arr = $_SESSION['cart_item'];
+
 
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
 $assunto  = "teste";
 $emaildestinatario = 'andersonbrandaolustosa@gmail.com.br'; 
+
+$arr = $_SESSION['cart_item'];
+foreach ($arr as $row)
+{
+    foreach($row as $i => $a)
+    {
+        $mensagemHTML = $i . ":" . $a;
+        echo " ";
+               
+        echo $mensagemHTML;
+        echo "<br>";        
+    }
+}
+
 // Digite seu e-mail aqui, lembrando que o e-mail deve estar em seu servidor web
 
 /*
@@ -25,16 +39,6 @@ $placa      	   = $_POST['placa'];
 */
  
 /* Montando a mensagem a ser enviada no corpo do e-mail. */
-$mensagemHTML = "teste";
-
-
-foreach ($arr as $row)
-{
-    foreach($row as $i => $a)
-    {
-        echo '<div>'. $i." ".$a .'</div>';
-    }
-}
 
 // O remetente deve ser um e-mail do seu domínio conforme determina a RFC 822.
 // O return-path deve ser ser o mesmo e-mail do remetente.
@@ -43,6 +47,6 @@ $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $emailremetente\r\n"; // remetente
 $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
 $envio = mail($emaildestinatario, $assunto, $mensagemHTML, $headers); 
- 
+var_dump($envio);
  if($envio)
 echo "<script>location.href='index.php'</script>"; // Página que será redirecionada
