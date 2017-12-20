@@ -1,43 +1,32 @@
 <?php
 require_once("admin/session.php");
 
-
-
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
 $assunto  = "teste";
-$emaildestinatario = 'andersonbrandaolustosa@gmail.com.br'; 
+$emaildestinatario = 'andersonbrandaolustosa@gmail.com.br';
+
+$count = 0;
 
 $arr = $_SESSION['cart_item'];
-foreach ($arr as $row)
-{
-    foreach($row as $i => $a)
-    {
-        $mensagemHTML = $i . ":" . $a;
-        echo " ";
-               
-        echo $mensagemHTML;
-        echo "<br>";        
-    }
+
+foreach ($arr as $row) {
+   
+  $body .= "<br>";
+  $body .= $_SESSION['cart_item'][$count]["title"];  
+  $body .= "<br>";
+  $body .= $_SESSION['cart_item'][$count]["code"];
+  $body .= "<br>";
+  $body .= $_SESSION['cart_item'][$count]["quantity"];
+  $body .= "<br>";
+  $body .= $_SESSION['cart_item'][$count]["qtd_min"];
+  $body .= "<br>"; 
+
+  $count += 1;
 }
 
-// Digite seu e-mail aqui, lembrando que o e-mail deve estar em seu servidor web
+//echo apenas como forma de demonstrar o conteúdo do email armazenado na varíável.
+echo $body;
 
-/*
-$plano1   	   = $_POST['radio1'];
-$nome   	   = $_POST['nome'];
-$email          = $_POST['email'];
-$genero   	   = $_POST['genero'];
-$nascimento          = $_POST['nascimento'];
-$cpf          = $_POST['cpf'];
-$cep      	   = $_POST['cep'];
-$endereco          = $_POST['endereco'];
-$numero          = $_POST['numero'];
-$municipio      	   = $_POST['municipio'];
-$estado        = $_POST['estado'];
-$telefone          = $_POST['telefone'];
-$placa      	   = $_POST['placa'];
-*/
- 
 /* Montando a mensagem a ser enviada no corpo do e-mail. */
 
 // O remetente deve ser um e-mail do seu domínio conforme determina a RFC 822.
@@ -46,7 +35,7 @@ $headers = "MIME-Version: 1.1\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $emailremetente\r\n"; // remetente
 $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
-$envio = mail($emaildestinatario, $assunto, $mensagemHTML, $headers); 
-var_dump($envio);
- if($envio)
+$envio = mail($emaildestinatario, $assunto, $body, $headers); 
+
+if($envio)
 echo "<script>location.href='index.php'</script>"; // Página que será redirecionada
