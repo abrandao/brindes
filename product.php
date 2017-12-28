@@ -17,7 +17,7 @@ $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd
 		foreach($product_array as $key=>$value){
 	?>
 		<div class="product-item">
-			<form method="post" action="product.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+			<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			<div class="product-image"><img src="<?php echo "admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
 			<br>
 			<div><a href="product.php"><?php echo $product_array[$key]["title"]; ?></a></div>
