@@ -8,6 +8,7 @@ $code = $_POST['code'];
 $tag = $_POST['tag'];
 $category = $_POST['category'];
 $description = $_POST['description'];
+$dirUploads = $_POST['folder'];
 $upfile = $_POST['folder'];
 $qtd_min = $_POST['qtd_min'];
 $qtd1 = $_POST['qtd1'];
@@ -24,7 +25,6 @@ $product->insert();
 
 var_dump($product);
 //Folder creation and renaming files
-$dirUploads = $_POST['folder'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
@@ -37,4 +37,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "_" . (string)$i . ".jpg");
     $i++;
     }
-  } 
+  }
