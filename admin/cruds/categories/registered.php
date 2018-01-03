@@ -3,21 +3,17 @@
 session_start();
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-  header("location: ../login/login.php");
+  header("location: ../../login/login.php");
   exit;
 }
 ?>
-
 <h1>Categoria de produto registrada com sucesso!</h1>
-
 <br>
-
 <h3>Lista de categorias registradas:</h3>
-
 <?php
 
-require_once("../class/Category.php");
-require_once("../class/Sql.php");
+require_once("../../class/Category.php");
+require_once("../../class/Sql.php");
 
 $category = $_POST['category'];
 

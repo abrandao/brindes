@@ -7,11 +7,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }
 ?>
-
 <form method="POST" action="registered.php" enctype="multipart/form-data">
-
-<label for="category">Categoria</label>
-<input type="text" name="category" /></br>
-
-<button type="submit" value="send values">Enviar</button>
+  <label for="category">Categoria</label>
+  <input type="text" name="category" /></br>
+  <button type="submit" value="send values">Enviar</button>
 </form>
