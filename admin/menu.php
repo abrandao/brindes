@@ -15,5 +15,5 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
     <li class="nav-item"><a class="nav-link" href="products/upload.php">Registrar Produtos</a></li>
     <li class="nav-item"><a class="nav-link" href="cruds/categories/register.php">Registrar categoria</a></li>
-    <li class="nav-item"><a class="nav-link" href="cruds/categories/registered.php">Categorias registradas</a></li>
+    <li class="nav-item"><a class="nav-link" href="cruds/categories/list.php">Categorias registradas</a></li>
   </ul>
