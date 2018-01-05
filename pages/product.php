@@ -1,10 +1,20 @@
 <?php
 require_once("../admin/session.php");
-require_once("../includes/head.php");
 require_once("../includes/navbar.php");
 require_once("../admin/class/Sql.php");
 require_once("../admin/class/Product.php");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>EPontual</title>
+</head>
+<body>
 <br>
 <br>
 <div id="product-grid">
