@@ -19,6 +19,15 @@ $printing = $_POST['printing'];
 $print_type = $_POST['print_type'];
 $comments = $_POST['comments'];
 
+//Highlighted image
+$highlight = $_POST['highlight'];
+
+echo "<br>";
+echo "<br>";
+var_dump($highlight);
+
+
+
 $product = new Product( $title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
 $product->insert();
@@ -34,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $i = 0;
   while ($i<count($_FILES['upfile']['name'])) {      
+    move_uploaded_file($_FILES['highlight']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "_" . (string)$i . ".jpg");
     move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$i]);
     $i++;
     }

@@ -45,6 +45,9 @@
   <label for="folder">Pasta</label>
   <input type="text" name="folder" /></br>
 
+  <label for="upfile">Imagem Destacada</label>
+  <input type="file" name="highlight[]" multiple /></br>
+
   <label for="upfile">Imagem(s)</label>
   <input type="file" name="upfile[]" multiple /></br>
 
