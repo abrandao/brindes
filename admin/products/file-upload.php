@@ -19,15 +19,7 @@ $printing = $_POST['printing'];
 $print_type = $_POST['print_type'];
 $comments = $_POST['comments'];
 
-//Highlighted image
-$highlight = $_POST['highlight'];
-
-echo "<br>";
-echo "<br>";
-var_dump($highlight);
-
-
-
+//Inserting product
 $product = new Product( $title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
 $product->insert();
