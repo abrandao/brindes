@@ -37,6 +37,7 @@ $pagina_atual = $pagina_atual * $artigos_por_pagina;
 	}
 	?>
 </div>
+</div>
 <?php
 
 	//Pegamos o valor total de artigos em uma consulta sem limite
@@ -46,8 +47,9 @@ $pagina_atual = $pagina_atual * $artigos_por_pagina;
 	$total_artigos = $total_artigos->fetch();
 	$total_artigos = $total_artigos['total'];
 
-	// Exibimos a paginação	
+	// Exibimos a paginação		
 	echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
 	?>
+
 </body>
 </html>
