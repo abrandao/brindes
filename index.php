@@ -7,7 +7,7 @@ require_once("admin/class/Sql.php");
 
 //Sistema de paginação
 // Número de artigos por página
-$artigos_por_pagina = 9;
+$artigos_por_pagina = 12;
 
 // Página atual onde vamos começar a mostrar os valores
 $pagina_atual = ! empty( $_GET['pagina'] ) ? (int) $_GET['pagina'] : 0;
