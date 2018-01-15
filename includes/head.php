@@ -25,8 +25,4 @@
     <!-- Javascript JS -->
     <script src="bootstrap.js" type="javascript"></script>
 
-  </head>
-  <body>
-    <div class="container">
-  
-  
+  </head>  
