@@ -1,11 +1,12 @@
 <?php
 require_once("admin/session.php");
 require_once("includes/head.php");
-require_once("includes/navbar.php");
+
 require_once("includes/pagination.php");
 require_once("admin/class/Sql.php");
 ?>
 <body>
+		<?php require_once("includes/navbar.php"); ?>
     <div class="container">
 		<div class="txt-heading">Produtos</div>	
 			<div class="row">
