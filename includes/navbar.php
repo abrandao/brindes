@@ -1,6 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">  
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-  <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbarCollapse">
+  <ul class="navbar-nav">
     <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
     <li class="nav-item"><a class="nav-link" href="pages/know.php">Conheça a Epontual</a></li>
     <li class="nav-item"><a class="nav-link" href="pages/clients.php">Clientes</a></li>

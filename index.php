@@ -5,6 +5,19 @@ require_once("includes/navbar.php");
 require_once("includes/pagination.php");
 require_once("admin/class/Sql.php");
 
+//Retrieving category list
+  $db_handle = new Sql();
+	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
+	if (!empty($category_array)) { 
+		foreach($category_array as $key=>$value){			
+	?>
+      <div>
+				<strong><?php echo $category_array[$key]["category"]; ?></strong>
+			</div>
+<?php	
+			}
+	}
+
 //Sistema de paginação
 // Número de artigos por página
 $artigos_por_pagina = 12;
