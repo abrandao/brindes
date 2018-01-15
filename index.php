@@ -62,7 +62,7 @@ $pagina_atual = $pagina_atual * $artigos_por_pagina;
 
 	// Exibimos a paginação		
 	echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
+	
+	require_once("includes/footer.php");
 	?>
 
-</body>
-</html>

@@ -1,6 +1,5 @@
-body{
-  width:780px;
-  font-family:calibri;}
+body{ margin-left: 20%; margin-right: 20%; }
+.navbar { margin-left: 20%; margin-right: 20%; }
 #shopping-cart table{width:100%;background-color:#F0F0F0;}
 #shopping-cart table td{background-color:#FFFFFF;}
 
@@ -36,7 +35,7 @@ a.btnRemoveAction:visited{color:#D60202;border:0;padding:2px 10px;font-size:0.9e
 #shopping-cart {margin-bottom:30px;}
 .cart-item {border-bottom: #79b946 1px dotted;padding: 10px;}
 #product-grid {margin-bottom:30px;}
-.product-item {	float:left;	background: #ffffff;margin:15px 10px;	padding:5px;border:#CCC 1px solid;border-radius:4px;}
+.product-item {	float:left;	background: #ffffff;margin:15px 10px; padding:5px;border:#CCC 1px solid;border-radius:4px;}
 .product-item div{text-align:center;	margin:10px;}
 .product-price {    
 	color: #005dbb;
@@ -46,3 +45,6 @@ a.btnRemoveAction:visited{color:#D60202;border:0;padding:2px 10px;font-size:0.9e
 .product-image {height:100px;background-color:#FFF;}
 .clear-float{clear:both;}
 .demo-input-box{border-radius:2px;border:#CCC 1px solid;padding:2px 1px;}
+
+/* Bootstrap comments */
+.container { margin-left: 20% }
