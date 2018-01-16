@@ -30,7 +30,7 @@ function paginacao(
     $paginas = null;
     
     // Primeira página
-    $paginas .= " <a href='?pagina=0'>Home</a> ";
+    $paginas .= " <a href='?pagina=0'>Início</a> ";
     
     // Faz o loop da paginação
     // $pagina_atual - 1 da a possibilidade do usuário voltar

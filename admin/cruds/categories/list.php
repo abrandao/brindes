@@ -12,6 +12,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 require_once("../../class/Sql.php");
 
+
 //Retrieving content
   $db_handle = new Sql();
 	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
@@ -22,4 +23,4 @@ require_once("../../class/Sql.php");
 			<strong><?php echo $category_array[$key]["category"]; ?></strong></div>
 <?php	
 			}
-	}
+	}	
