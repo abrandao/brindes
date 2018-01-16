@@ -9,11 +9,19 @@ require_once("admin/class/Sql.php");
 		<?php require_once("includes/navbar.php"); ?>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 green">
-      One of three columns
+    <div class="row col-lg-12">
+      <div class="col-md-3">
+        <img src="includes/img/logo.png" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="col-md-6">
+        dsfçlksadfçl
+      </div>
+      <div class="col-md-3">
+        dsfçlksadfçl
+      </div>
     </div>
-    <div class="col-lg-2 black">      
-  <?php	
+    <div class="col-lg-2">      
+    <?php	
     	//Retrieving category list
 	    $db_handle = new Sql();
 		  $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
@@ -25,9 +33,9 @@ require_once("admin/class/Sql.php");
 				}
     }
     ?>
-    </div>
+  </div>
 
-    <div class="col-lg-10 yellow">
+    <div class="col-lg-10">
       <?php
         //Sistema de paginação
         // Número de artigos por página
@@ -40,9 +48,8 @@ require_once("admin/class/Sql.php");
         $db_handle = new Sql();
 	      $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC       LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
-		    foreach($product_array as $key=>$value){
-          
-          ?>
+		    foreach($product_array as $key=>$value){          
+      ?>
 		
 		<div class="product-item">
 			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
@@ -53,13 +60,13 @@ require_once("admin/class/Sql.php");
 			<div><input type="submit" value="Solicitar orçamento" class="btnAddAction" /></div>
 			</form>
 		</div>		
-	<?php
-			}
-	}
-	?>
-	</div>
+	    <?php
+	    		}
+	    }
+	    ?>
+	  </div>
 	
-    <div class="col-lg-12 green text-center">
+    <div class="col-lg-12 text-center">
     <?php
 
       //Pegamos o valor total de artigos em uma consulta sem limite
