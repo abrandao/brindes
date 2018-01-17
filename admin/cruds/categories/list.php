@@ -23,4 +23,4 @@ require_once("../../class/Sql.php");
 			<strong><?php echo $category_array[$key]["category"]; ?></strong></div>
 <?php	
 			}
-	}	
+	}
