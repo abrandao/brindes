@@ -70,6 +70,7 @@ if(isset($_SESSION["cart_item"])){
   <?php
 }
 ?>
-<div><button type="submit" class="btnAddAction" />Enviar solicitação</button></div>
-<div><a href="../index.php"><button type="submit" class="btnAddAction" />Adicionar mais Produtos</button></a></div>
+<div>
+	<a href="../index.php"><button type="submit" class="btnAddAction" />Adicionar mais Produtos</button></a>
+	<button type="submit" class="btnAddAction" />Enviar solicitação</button>
 </div>

@@ -39,8 +39,7 @@
   <br>
 
   <label for="description">Descrição</label><br>  
-  <textarea for= "description" rows="4" cols="50" name="description"> 
-  Descreva o produto...</textarea></br>
+  <textarea for= "description" rows="4" cols="50" name="description"></textarea></br>
 
   <label for="folder">Pasta</label>
   <input type="text" name="folder" /></br>
@@ -73,8 +72,7 @@
   <input type="text" name="print_type" /></br>
 
   <label for="comments">Comentários</label>  
-  <textarea for= "comments" rows="4" cols="50" name="comments"> 
-  Deixe um comentário</textarea></br>
+  <textarea for= "comments" rows="4" cols="50" name="comments"></textarea></br>
 
   <button type="submit" value="send values">Enviar</button>
 </form>

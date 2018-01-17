@@ -35,7 +35,7 @@ require_once("admin/class/Sql.php");
     ?>
   </div>
 
-    <div class="col-lg-10">
+    <div class="row col-lg-10">
       <?php
         //Sistema de paginação
         // Número de artigos por página
@@ -49,17 +49,17 @@ require_once("admin/class/Sql.php");
 	      $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC       LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
-      ?>
+      ?>		
 		
-		<div class="product-item">
-			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="product-image"><a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img src="<?php echo "admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a></div>
-			<br>
-			<div><a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a></div>
-			<div class="product-price"><?php echo $product_array[$key]["code"]; ?></div>
-			<div><input type="submit" value="Solicitar orçamento" class="btnAddAction" /></div>
-			</form>
-		</div>		
+      <div class="col-md-2">
+			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <br>
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a>
+			    <?php echo $product_array[$key]["code"]; ?>
+          <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btnAddAction" />Solicitar Orçamento</a>
+        </form>    
+		  </div>		
 	    <?php
 	    		}
 	    }

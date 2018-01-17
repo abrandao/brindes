@@ -35,7 +35,7 @@ require_once("../admin/class/Product.php");
 <body>
 <br>
 <br>
-<div id="product-grid">
+<div>
 	<div class="txt-heading">Produtos</div>
 	<?php
 	$db_handle = new Sql();
@@ -44,9 +44,9 @@ $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
-		<div class="product-item">
+		<div class="product-item col-md-3">
 			<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="product-image"><img src="<?php echo "../admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
+			<div class="product-image"><img class="product-img" src="<?php echo "../admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
 			<br>
 			<div><?php echo $product_array[$key]["title"]; ?></div>
 			<div class="product-price"><?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?></div>
@@ -61,7 +61,7 @@ $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd
 			<div><p>Tipo de impressão: <?php echo $product_array[$key]["print_type"]; ?></p></div>
 			<div>Descrição: <?php echo $product_array[$key]["description"]; ?></p></div>
 			<div><p>Comentário: <?php echo $product_array[$key]["comments"]; ?></p></div>
-			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Adicionar" class="btnAddAction" /></div>			
+			<div><input type="text" name="quantity" placeholder="Quantidade" size="10" /><input type="submit" value="Adicionar ao Carrinho" class="btnAddAction" /></div>			
 			</form>
 		</div>
 	<?php
