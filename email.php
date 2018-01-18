@@ -5,23 +5,18 @@ require_once("admin/session.php");
 $assunto  = "teste";
 $emaildestinatario = 'andersonbrandaolustosa@gmail.com.br';
 
-$count = 0;
-
 $arr = $_SESSION['cart_item'];
 
-foreach ($arr as $row) {
-   
+foreach ($arr as $key => $value) {
   $body .= "<br>";
-  $body .= $_SESSION['cart_item'][$count]["title"];  
+  $body .=  $arr[$key]["title"];
   $body .= "<br>";
-  $body .= $_SESSION['cart_item'][$count]["code"];
+  $body .= $arr[$key]["code"];
   $body .= "<br>";
-  $body .= $_SESSION['cart_item'][$count]["quantity"];
+  $body .= $arr[$key]["quantity"];
   $body .= "<br>";
-  $body .= $_SESSION['cart_item'][$count]["qtd_min"];
-  $body .= "<br>"; 
-
-  $count += 1;
+  $body .= $arr[$key]["qtd_min"];
+  $body .= "<br>";
 }
 
 //echo apenas como forma de demonstrar o conteúdo do email armazenado na varíável.
