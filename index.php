@@ -17,7 +17,7 @@ require_once("admin/class/Sql.php");
         dsfçlksadfçl
       </div>
       <div class="col-md-3">
-        dsfçlksadfçl
+      <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
     <div class="col-lg-2">      
