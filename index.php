@@ -29,20 +29,22 @@ require_once("admin/class/Sql.php");
       <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
+
+    <!-- Categories sidebar -->
     <div class="col-lg-2">      
-    <?php	
-    	//Retrieving category list
-	    $db_handle = new Sql();
-		  $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
-		  if (!empty($category_array)) { 
-		  	foreach($category_array as $key=>$value){	
-  ?>    
-      <br>
-        <?php echo $category_array[$key]["category"];
-				}
-    }
-    ?>
-  </div>
+      <?php	
+      	//Retrieving category list
+	      $db_handle = new Sql();
+		    $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id  ASC");
+		    if (!empty($category_array)) { 
+		    	foreach($category_array as $key=>$value){	
+      ?>    
+        <br>
+          <?php echo $category_array[$key]["category"];
+		  		}
+      }
+      ?>
+    </div>
 
     <div class="row col-lg-10">
       <?php
