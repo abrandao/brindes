@@ -75,6 +75,23 @@ require_once("../admin/class/Product.php");
 		
 			<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			<div class="col-sm-4"><img class="product-img" src="<?php echo "../admin/products/" . $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
+
+			
+			
+			
+		<?php
+		$files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
+		
+		for ($i=1; $i<count($files); $i++)
+		{
+			$num = $files[$i];
+			echo '<img src="'.$num.'" alt="random image">'."&nbsp;&nbsp;";
+			}
+		?>
+					
+
+
+
 			<br>
 			<div><?php echo $product_array[$key]["title"]; ?></div>
 			<div class="product-price"><?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?></div>
@@ -95,6 +112,18 @@ require_once("../admin/class/Product.php");
 	<?php
 			}
 	}
+
+		//Display Images From A Folder with PHP
+		
+		$files = glob("images/*.*");
+		for ($i=1; $i<count($files); $i++)
+		{
+			$num = $files[$i];
+			echo '<img src="'.$num.'" alt="random image">'."&nbsp;&nbsp;";
+			}
+		
+
+
 	?>
 </div>
 </body>
