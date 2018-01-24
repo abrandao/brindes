@@ -24,9 +24,7 @@ $product = new Product( $title, $code, $tag, $category, $description, $upfile, $
 $qtd3, $size, $printing, $print_type, $comments);
 $product->insert();
 
-var_dump($product);
 //Folder creation and renaming files
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
   if (!is_dir($dirUploads)) {
@@ -40,3 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $i++;
     }
   }
+?>
+
+<p>Título:<? echo " " . $title; ?></p>
+<p>Código:<? echo " " . $code; ?></p> 
+<p>Tag:<? echo " " . $tag; ?></p> 
+<p>Categoria:<? echo " " . $category; ?></p> 
+<p>Descrição:<? echo " " . $description; ?></p> 
+<p>Nome da Pasta:<? echo " " . $dirUploads; ?></p> 
+<p>Quantidade Mínima:<? echo " " . $qtd_min; ?></p> 
+<p>Tamanho:<? echo " " . $size; ?></p> 
+<p>Impressão:<? echo " " . $printing; ?></p> 
+<p>Tipo de Impressão:<? echo " " . $print_type; ?></p> 
+<p>Comentários:<? echo " " . $comments; ?></p>
