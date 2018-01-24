@@ -77,31 +77,33 @@ require_once("../admin/class/Product.php");
     <!-- Retriving all images -->
 		<div class="row">
 			<div class="col-sm-6">
-      <img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
-      <div class="row">				
-        <?php
-				 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
-				 for ($i=1; $i<count($files); $i++)
-				 {	
-				 	$num = $files[$i];					
-				 	echo '<div class="col-lg-4"><img class="col-xs product-img" src="' . $num . '"></div>';					
-				 }
-				?>
-
-		  </div>    
-      </div>
-      	<div class="row col-sm-5">
-      	  <?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
-					<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
-				  <?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?><br />				
-				  <?php echo "Código: " . $product_array[$key]["code"]; ?><br />			  				  
-				  <?php echo "Tamanho: " . $product_array[$key]["size"]; ?><br />
-				  <?php echo "Gravação: " . $product_array[$key]["printing"]; ?><br />
-				  <?php echo "Tipo de impressão: " . $product_array[$key]["print_type"]; ?><br />
-				  <?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
-				  <?php echo "Comentário: " . $product_array[$key]["comments"]; ?><br />
-      	<div>
-      	<input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
+			
+				<img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+				<div class="row">				
+				  <?php
+					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
+					 for ($i=1; $i<count($files); $i++)
+					 {	
+					 	$num = $files[$i];					
+					 	echo '<div class="col-lg-4"><img class="col-xs product-img" src="' . $num . '"></div>';					
+					 }
+					?>
+		  	</div>    
+				</div>
+					<div class="row col-sm-5">
+					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>"
+					  <?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
+						<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
+					  <?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?><br />				
+					  <?php echo "Código: " . $product_array[$key]["code"]; ?><br />			  				  
+					  <?php echo "Tamanho: " . $product_array[$key]["size"]; ?><br />
+					  <?php echo "Gravação: " . $product_array[$key]["printing"]; ?><br />
+					  <?php echo "Tipo de impressão: " . $product_array[$key]["print_type"]; ?><br />
+					  <?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
+					  <?php echo "Comentário: " . $product_array[$key]["comments"]; ?><br />
+					<div>
+					<input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
+			</form>
       </div>
 			
     </div>   
