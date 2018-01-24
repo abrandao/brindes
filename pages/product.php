@@ -63,11 +63,9 @@ require_once("../admin/class/Product.php");
       	}
       ?>  	
 		</div>
-		<div class="col-md-10">	
-		
+		<div class="col-md-10">		
 		
 		<!-- Retriving Highlight Image -->
-
     <?php
 			$db_handle = new Sql();
 			$cdd = $_GET['code'];
@@ -78,7 +76,7 @@ require_once("../admin/class/Product.php");
 		
     <!-- Retriving all images -->
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-6">
       <img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
       <div class="row">				
         <?php
@@ -86,7 +84,7 @@ require_once("../admin/class/Product.php");
 				 for ($i=1; $i<count($files); $i++)
 				 {	
 				 	$num = $files[$i];					
-				 	echo '<div class="col"><img class="col-xs product-img" src="' . $num . '"></div>';					
+				 	echo '<div class="col-lg-4"><img class="col-xs product-img" src="' . $num . '"></div>';					
 				 }
 				?>
 
