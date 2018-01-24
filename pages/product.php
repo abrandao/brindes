@@ -34,7 +34,7 @@ require_once("../admin/class/Product.php");
 <body>
 
 <div class="container">
-	<nav class="navbar navbar-expand navbar-light bg-light fixed-top" id="navbarCollapse">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbarCollapse">
 	  <ul class="navbar-nav">
 	    <li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
 	    <li class="nav-item"><a class="nav-link" href="../pages/know.php">Conheça-nos</a></li>
@@ -48,74 +48,74 @@ require_once("../admin/class/Product.php");
 <br>
 <br>
 <!-- Categories sidebar -->
-<div class="row col-md-12">
-	<div class="col-lg-2">      
-    <?php	
-    	//Retrieving category list
-	    $db_handle = new Sql();
-		  $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id  ASC");
-		  if (!empty($category_array)) { 
-		  	foreach($category_array as $key=>$value){	
-    ?>    
-      <br>
-        <?php echo $category_array[$key]["category"];
-				}
-    	}
-    ?>
-  	
+  <div class="row col-md-12">
+	  <div class="col-lg-2">      
+      <?php	
+      	//Retrieving category list
+	      $db_handle = new Sql();
+		    $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id  ASC");
+		    if (!empty($category_array)) { 
+		    	foreach($category_array as $key=>$value){	
+      ?>    
+        <br>
+          <?php echo $category_array[$key]["category"];
+		  		}
+      	}
+      ?>  	
 		</div>
-		<div class="row col-md-10">
-		<p>Produtos</p>	
+		<div class="col-md-10">	
 		
-		<?php
+		
+		<!-- Retriving Highlight Image -->
+
+    <?php
 			$db_handle = new Sql();
 			$cdd = $_GET['code'];
 			$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd'");
 			if (!empty($product_array)) { 
 				foreach($product_array as $key=>$value){
-		?>
+		?>		
 		
-		<!-- Retriving Highlight Image -->
-		
-		<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-		
-			<div class="col-sm-4"><img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></div>
-			<div class="row col-sm-4">		
-					
-				<!-- Retriving All Images -->
-					
-				<?php
-					$files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
-					for ($i=1; $i<count($files); $i++)
-					{	
-						$num = $files[$i];					
-						echo '<div class="col-sm-6"><img class="product-img" src="' . $num . '"></div>';					
-					}
+    <!-- Retriving all images -->
+		<div class="row">
+			<div class="col-sm-4">
+      <img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+      <div class="row">				
+        <?php
+				 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
+				 for ($i=1; $i<count($files); $i++)
+				 {	
+				 	$num = $files[$i];					
+				 	echo '<div class="col"><img class="col-xs product-img" src="' . $num . '"></div>';					
+				 }
 				?>
-		
-		</div>
-		
-			<br>
-			<div><?php echo $product_array[$key]["title"]; ?></div>
-			<div class="product-price"><?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?></div>
-			<div><p>Código: <?php echo $product_array[$key]["code"]; ?></p></div>
-			<div><p>Tag: <?php echo $product_array[$key]["tag"]; ?></p></div>
-			<div><p>Categoria: <?php echo $product_array[$key]["category"]; ?></p></div>			
-			<div><p>Quantidade 1: <?php echo $product_array[$key]["qtd1"]; ?></p></div>
-			<div><p>Quantidade 2: <?php echo $product_array[$key]["qtd2"]; ?></p></div>
-			<div><p>Quantidade 3: <?php echo $product_array[$key]["qtd3"]; ?></p></div>
-			<div><p>Tamanho: <?php echo $product_array[$key]["size"]; ?></p></div>
-			<div><p>Gravação:  <?php echo $product_array[$key]["printing"]; ?></p></div>
-			<div><p>Tipo de impressão: <?php echo $product_array[$key]["print_type"]; ?></p></div>
-			<div>Descrição: <?php echo $product_array[$key]["description"]; ?></p></div>
-			<div><p>Comentário: <?php echo $product_array[$key]["comments"]; ?></p></div>
-			<div><input type="text" name="quantity" placeholder="Quantidade" size="10" /><input type="submit" value="Adicionar ao Carrinho" class="btnAddAction" /></div>			
-			</form>
-		</div>
-	<?php
+
+		  </div>    
+      </div>
+      <div class="row col-sm-5">
+        <?php echo $product_array[$key]["title"]; ?><br />
+			  <?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?><br />
+			  Código: <?php echo $product_array[$key]["code"]; ?><br />
+			  Tag: <?php echo $product_array[$key]["tag"]; ?><br />
+			  Categoria: <?php echo $product_array[$key]["category"]; ?><br />	
+			  Quantidade 1: <?php echo $product_array[$key]["qtd1"]; ?><br />
+			  Quantidade 2: <?php echo $product_array[$key]["qtd2"]; ?><br />
+			  Quantidade 3: <?php echo $product_array[$key]["qtd3"]; ?><br />
+			  Tamanho: <?php echo $product_array[$key]["size"]; ?><br />
+			  Gravação:  <?php echo $product_array[$key]["printing"]; ?><br />
+			  Tipo de impressão: <?php echo $product_array[$key]["print_type"]; ?><br />
+			  Descrição: <?php echo $product_array[$key]["description"]; ?><br />
+			  Comentário: <?php echo $product_array[$key]["comments"]; ?><br />
+        <div>
+        <input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
+      </div>
+			
+    </div>   
+		<?php
 			}
 	}
-	?>
+	?>	
+	
 </div>
 </body>
 </html>

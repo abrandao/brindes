@@ -56,8 +56,9 @@ require_once("admin/class/Sql.php");
         $pagina_atual = ! empty( $_GET['pagina'] ) ? (int) $_GET['pagina'] : 0;
         $pagina_atual = $pagina_atual * $artigos_por_pagina;
         
+        //Products listening
         $db_handle = new Sql();
-	      $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC       LIMIT $pagina_atual,$artigos_por_pagina");
+	      $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
       ?>		
