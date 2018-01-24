@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 ?>
 
+<h1>Produto cadastrado com sucesso!</h1>
+
 <p>Título:<? echo " " . $title; ?></p>
 <p>Código:<? echo " " . $code; ?></p> 
 <p>Tag:<? echo " " . $tag; ?></p> 

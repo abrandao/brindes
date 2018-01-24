@@ -68,7 +68,7 @@ require_once("admin/class/Sql.php");
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
-			    <?php echo $product_array[$key]["code"]; ?>
+			    <?php echo $product_array[$key]["code"]; ?><br>
           <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btnAddAction" />Solicitar Orçamento</a>
         </form>    
 		  </div>		
