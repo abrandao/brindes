@@ -80,7 +80,8 @@ require_once("../admin/class/Product.php");
 			
 				<img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
 				<div class="row">				
-				  <?php
+				  
+					<?php
 					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
 					 for ($i=1; $i<count($files); $i++)
 					 {	
@@ -88,6 +89,7 @@ require_once("../admin/class/Product.php");
 					 	echo '<div class="col-lg-4"><img class="col-xs product-img" src="' . $num . '"></div>';					
 					 }
 					?>
+
 		  	</div>    
 				</div>
 					<div class="row col-sm-5">
@@ -104,12 +106,12 @@ require_once("../admin/class/Product.php");
 					<div>
 					<input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
 			</form>
-      </div>
-			
-    </div>   
+      </div>			
+    </div>
+
 		<?php
 			}
-	}
+		}
 	?>	
 	
 </div>
