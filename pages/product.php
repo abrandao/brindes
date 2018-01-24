@@ -90,22 +90,18 @@ require_once("../admin/class/Product.php");
 
 		  </div>    
       </div>
-      <div class="row col-sm-5">
-        <?php echo $product_array[$key]["title"]; ?><br />
-			  <?php echo "Quantidade " . $product_array[$key]["qtd_min"]; ?><br />
-			  Código: <?php echo $product_array[$key]["code"]; ?><br />
-			  Tag: <?php echo $product_array[$key]["tag"]; ?><br />
-			  Categoria: <?php echo $product_array[$key]["category"]; ?><br />	
-			  Quantidade 1: <?php echo $product_array[$key]["qtd1"]; ?><br />
-			  Quantidade 2: <?php echo $product_array[$key]["qtd2"]; ?><br />
-			  Quantidade 3: <?php echo $product_array[$key]["qtd3"]; ?><br />
-			  Tamanho: <?php echo $product_array[$key]["size"]; ?><br />
-			  Gravação:  <?php echo $product_array[$key]["printing"]; ?><br />
-			  Tipo de impressão: <?php echo $product_array[$key]["print_type"]; ?><br />
-			  Descrição: <?php echo $product_array[$key]["description"]; ?><br />
-			  Comentário: <?php echo $product_array[$key]["comments"]; ?><br />
-        <div>
-        <input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
+      	<div class="row col-sm-5">
+      	  <?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
+					<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
+				  <?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?><br />				
+				  <?php echo "Código: " . $product_array[$key]["code"]; ?><br />			  				  
+				  <?php echo "Tamanho: " . $product_array[$key]["size"]; ?><br />
+				  <?php echo "Gravação: " . $product_array[$key]["printing"]; ?><br />
+				  <?php echo "Tipo de impressão: " . $product_array[$key]["print_type"]; ?><br />
+				  <?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
+				  <?php echo "Comentário: " . $product_array[$key]["comments"]; ?><br />
+      	<div>
+      	<input type="text" name="quantity" placeholder="Quantidade" size="8" /><input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
       </div>
 			
     </div>   
