@@ -9,7 +9,7 @@ require_once("admin/class/Sql.php");
   
 <div class="container">
   <br>
-  <div class="row col-md-12">
+  <div class="row">
 		<?php require_once("includes/navbar.php"); ?>
   </div>
   <div class="row">
@@ -22,7 +22,7 @@ require_once("admin/class/Sql.php");
           <p>TEL: (12) XXXX - XXXX</p>
         </div>
         <div class="col-xs-3 text-center">
-          dsfçlksadfçl
+          
         </div>
       </div>
       <div class="col-md-3">
@@ -63,11 +63,11 @@ require_once("admin/class/Sql.php");
 		    foreach($product_array as $key=>$value){          
       ?>		
 		
-      <div class="col-md-2">
+      <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
-			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a>
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?>
           <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btnAddAction" />Solicitar Orçamento</a>
         </form>    
