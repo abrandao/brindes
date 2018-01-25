@@ -28,3 +28,5 @@ body{ margin-left: 18%; margin-right: 20%;}
 .blue { background-color: blue; }
 
 .purple { background-color: rgb(162, 0, 255); }
+
+.border { margin: 2px; border-color: #005dbb; }
