@@ -2,9 +2,10 @@
 require_once("config.php");
 
 $product = new Product();
-$product->loadById(2);
+$product->loadById(1);
+$product->update(dc);
 //$product->deleteImages(13);
-$product->delete();
+//$product->delete();
 //echo $product;
 
 //Listando

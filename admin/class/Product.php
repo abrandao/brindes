@@ -188,6 +188,14 @@ class Product {
     }
   }
 
+  public function update($tag){
+		$this->setTag($tag);
+		$sql = new Sql();
+		$sql->query("UPDATE products SET TAG = :TAG WHERE id = :ID", array(
+			':TAG'=>$this->getTag()
+		));
+	}
+
   public static function getList(){
 		$sql = new Sql();
 		return $sql->select("SELECT * FROM products ORDER BY id;");

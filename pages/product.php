@@ -68,8 +68,8 @@ require_once("../admin/class/Product.php");
 		<!-- Retriving Highlight Image -->
     <?php
 			$db_handle = new Sql();
-			$cdd = $_GET['code'];
-			$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd'");
+			$prod_code = $_GET['code'];
+			$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$prod_code'");
 			if (!empty($product_array)) { 
 				foreach($product_array as $key=>$value){
 		?>		
@@ -113,7 +113,7 @@ require_once("../admin/class/Product.php");
 			}
 		}
 	?>	
-	
+	<label for="folder">Pasta</label>  
 </div>
 </body>
 </html>

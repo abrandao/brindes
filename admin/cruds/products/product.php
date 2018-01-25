@@ -1,9 +1,9 @@
 <?php
-require_once("admin/session.php");
-require_once("includes/head.php");
-require_once("includes/navbar.php");
-require_once("admin/class/Sql.php");
-require_once("admin/class/Product.php");
+require_once("../session.php");
+require_once("../../includes/head.php");
+require_once("../../includes/navbar.php");
+require_once("../class/Sql.php");
+require_once("../class/Product.php");
 ?>
 <br>
 <br>
@@ -11,8 +11,8 @@ require_once("admin/class/Product.php");
 	<div class="txt-heading">Produtos</div>
 	<?php
 	$db_handle = new Sql();
-	$cdd = $_GET['code'];
-$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd'");
+	$prod_code = $_GET['code'];
+$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$prod_code'");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
@@ -44,3 +44,5 @@ $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$cdd
 	?>
 </body>
 </html>
+
+<input type="text" name="folder" value="<?php echo $product_array[$key]["size"]; ?>"/></br>

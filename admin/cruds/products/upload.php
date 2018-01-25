@@ -1,6 +1,6 @@
 <?php
-  require_once("../class/Category.php");
-  require_once("../class/Sql.php");
+  require_once("../../class/Category.php");
+  require_once("../../class/Sql.php");
 
   // Initialize the session
   session_start();
