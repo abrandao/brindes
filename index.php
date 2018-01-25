@@ -77,21 +77,27 @@ require_once("admin/class/Sql.php");
 	    }
 	    ?>
 	  </div>
-	
-    <div class="col-lg-12 text-center">
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-12 text-center border-top-10">
     <?php
 
       //Pegamos o valor total de artigos em uma consulta sem limite
-        $conn = new Sql();
-        $total_artigos = $conn->query("SELECT COUNT(*) AS total FROM products");
-        $total_artigos->execute();
-        $total_artigos = $total_artigos->fetch();
-        $total_artigos = $total_artigos['total'];
+      $conn = new Sql();
+      $total_artigos = $conn->query("SELECT COUNT(*) AS total FROM products");
+      $total_artigos->execute();
+      $total_artigos = $total_artigos->fetch();
+      $total_artigos = $total_artigos['total'];
 
-        // Exibimos a paginação		
+      // Exibimos a paginação
+      if ($total_artigos > $artigos_por_pagina ) {
+        echo "<br>";
         echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
+      }
+      
+      require_once("includes/footer.php");
 
-        require_once("includes/footer.php");
       ?>
     </div>        
   </div>

@@ -1,9 +1,9 @@
 <?php
-require_once("../session.php");
-require_once("../../includes/head.php");
-require_once("../../includes/navbar.php");
-require_once("../class/Sql.php");
-require_once("../class/Product.php");
+require_once("../../session.php");
+require_once("../../../includes/head.php");
+require_once("../../../includes/navbar.php");
+require_once("../../class/Sql.php");
+require_once("../../class/Product.php");
 ?>
 <br>
 <br>
