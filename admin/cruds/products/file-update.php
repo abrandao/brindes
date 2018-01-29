@@ -12,9 +12,6 @@ $description = $_POST['description'];
 $dirUploads = "../../products/" . $_POST['folder'];
 $upfile = $_POST['folder'];
 $qtd_min = $_POST['qtd_min'];
-$qtd1 = $_POST['qtd1'];
-$qtd2 = $_POST['qtd2'];
-$qtd3 = $_POST['qtd3'];
 $size = $_POST['size'];
 $printing = $_POST['printing'];
 $print_type = $_POST['print_type'];
@@ -24,8 +21,7 @@ $comments = $_POST['comments'];
 $product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
 $product->loadById($id);
-$product->update($title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
-$qtd3, $size, $printing, $print_type, $comments);
+$product->update($title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 
 /*
 Folder creation and renaming files

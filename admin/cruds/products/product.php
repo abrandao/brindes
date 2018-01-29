@@ -25,9 +25,6 @@ $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$pro
 			<div><p>Código: <?php echo $product_array[$key]["code"]; ?></p></div>
 			<div><p>Tag: <?php echo $product_array[$key]["tag"]; ?></p></div>
 			<div><p>Categoria: <?php echo $product_array[$key]["category"]; ?></p></div>			
-			<div><p>Quantidade 1: <?php echo $product_array[$key]["qtd1"]; ?></p></div>
-			<div><p>Quantidade 2: <?php echo $product_array[$key]["qtd2"]; ?></p></div>
-			<div><p>Quantidade 3: <?php echo $product_array[$key]["qtd3"]; ?></p></div>
 			<div><p>Tamanho: <?php echo $product_array[$key]["size"]; ?></p></div>
 			<div><p>Gravação:  <?php echo $product_array[$key]["printing"]; ?></p></div>
 			<div><p>Tipo de impressão: <?php echo $product_array[$key]["print_type"]; ?></p></div>

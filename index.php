@@ -35,12 +35,12 @@ require_once("admin/class/Sql.php");
       <?php	
       	//Retrieving category list
 	      $db_handle = new Sql();
-		    $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id  ASC");
+        $category_array = $db_handle->runQuery("SELECT * FROM categories");
+        
 		    if (!empty($category_array)) { 
 		    	foreach($category_array as $key=>$value){	
       ?>    
-        <br>
-          
+        <br>          
           <a href="pages/category.php?category=<?php echo $category_array[$key]["category"]; ?>"><?php echo $category_array[$key]["category"]; ?></a>
       <?php
 		  		}
