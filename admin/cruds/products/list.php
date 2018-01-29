@@ -50,7 +50,6 @@
 ?>
 		
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
   
     <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
     <div class="row">
@@ -59,31 +58,34 @@
         <img class="col-sm" src="<?php echo "../../products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>">
       </div>
       <?php $product_array[$key]["id"]; ?>     
-      <div class="col-sm">
+      <div class="col-sm yellow">
         <?php echo "Título:<br>" . $product_array[$key]["title"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm green">
         <?php echo "Código:<br>" . $product_array[$key]["code"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm yellow">
+        <?php echo "Destaque:<br>" . $product_array[$key]["flag"]; ?>
+      </div>
+      <div class="col-sm green">
         <?php echo "Tag:<br>" . $product_array[$key]["tag"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm yellow">
 		    <?php echo "Categoria:<br>" . $product_array[$key]["category"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm green">
 		    <?php echo "Tamanho:<br>" . $product_array[$key]["size"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm yellow">
 		    <?php echo "Impressão:<br>" . $product_array[$key]["printing"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm green">
 		    <?php echo "Tipo de impressão:<br>" . $product_array[$key]["print_type"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm yellow">
 		    <?php echo "Descrição:<br>" . $product_array[$key]["description"]; ?>
       </div>
-      <div class="col-sm">
+      <div class="col-sm green">
 		    <?php echo "Comentários:<br>" . $product_array[$key]["comments"]; ?>
       </div>
       <div class="col-sm">        

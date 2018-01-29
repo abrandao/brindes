@@ -21,8 +21,6 @@ $comments = $_POST['comments'];
 $product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 $product->insert();
 
-var_dump($product);
-
 //Folder creation and renaming files
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
