@@ -51,16 +51,7 @@
   <input type="file" name="upfile[]" multiple /></br>
 
   <label for="qtd_min">Quantidade Mínima</label>
-  <input type="number" name="qtd_min" /></br>
-
-  <label for="qtd1">Quantidade 01</label>
-  <input type="number" name="qtd1" /></br>
-
-  <label for="qtd2">Quantidade 02</label>
-  <input type="number" name="qtd2" /></br>
-
-  <label for="qtd3">Quantidade 03</label>
-  <input type="number" name="qtd3" /></br>
+  <input type="number" name="qtd_min" /></br> 
   
   <label for="size">Tamanho</label>
   <input type="text" name="size" /></br>

@@ -113,7 +113,7 @@ require_once("../admin/class/Product.php");
 			}
 		}
 	?>	
-	<label for="folder">Pasta</label>  
+	
 </div>
 </body>
 </html>

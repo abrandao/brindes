@@ -57,7 +57,8 @@
      
       <div class="col-sm">
         <img class="col-sm" src="<?php echo "../../products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>">
-      </div>     
+      </div>
+      <?php $product_array[$key]["id"]; ?>     
       <div class="col-sm">
         <?php echo "Título:<br>" . $product_array[$key]["title"]; ?>
       </div>
@@ -86,8 +87,8 @@
 		    <?php echo "Comentários:<br>" . $product_array[$key]["comments"]; ?>
       </div>
       <div class="col-sm">        
-        <input type="button" name="entendeu" value="Atualizar">
-        <input type="button" name="entendeu" value="Deletar">
+        <a href="update.php?code=<?php echo $product_array[$key]["code"]; ?>"><input type="button" value="Atualizar"></a>
+        <input type="button" value="Deletar">
       </div>
     </div>  
     </form>
