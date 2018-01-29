@@ -3,14 +3,14 @@ require_once("config.php");
 
 $product = new Product();
 $product->loadById(1);
-$product->update(dc);
+//$product->update(dc);
 //$product->deleteImages(13);
 //$product->delete();
 //echo $product;
 
 //Listando
-//$product = Product::getList();
-//echo json_encode($product);
+$product = Product::getList();
+echo json_encode($product);
 
 //$category = new Category();
 //$category->getList();

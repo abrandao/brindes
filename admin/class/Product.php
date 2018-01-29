@@ -166,34 +166,29 @@ class Product {
     }
   }
 
-  public function update( $title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
-  $qtd3, $size, $printing, $print_type, $comments){
+  public function update( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments){
 		$this->setTitle($title);
-    $this->setCode($code);    
+    $this->setCode($code);
+    $this->setFlag($flag);    
     $this->setTag($tag);
     $this->setCategory($category);
     $this->setDescription($description);
     $this->setUpfile($upfile);
-    $this->setQtd_min($qtd_min);
-    $this->setQtd1($qtd1);
-    $this->setQtd2($qtd2);
-    $this->setQtd3($qtd3);    
+    $this->setQtd_min($qtd_min);      
     $this->setSize($size);
     $this->setPrinting($printing);
     $this->setPrint_type($print_type);
     $this->setComments($comments);
 		$sql = new Sql();
-		$sql->query("UPDATE products SET title = :TITLE, code = :CODE, tag = :TAG, category = :CATEGORY, description = :DESCRIPTION, upfile = :UPFILE, qtd_min = :QTD_MIN, qtd1 = :QTD1, qtd2 = :QTD2, qtd3 = :QTD3, size = :SIZE, printing = :PRINTING, print_type = :PRINT_TYPE, comments = :COMMENTS WHERE id = :ID", array(
+		$sql->query("UPDATE products SET title = :TITLE, code = :CODE, flag = :FLAG, tag = :TAG, category = :CATEGORY, description = :DESCRIPTION, upfile = :UPFILE, qtd_min = :QTD_MIN, size = :SIZE, printing = :PRINTING, print_type = :PRINT_TYPE, comments = :COMMENTS WHERE id = :ID", array(
       ':TITLE'=>$this->getTitle(),
-      ':CODE'=>$this->getCode(),      
+      ':CODE'=>$this->getCode(),
+      ':FLAG'=>$this->getFlag(),      
       ':TAG'=>$this->getTag(),
       ':CATEGORY'=>$this->getCategory(),
       ':DESCRIPTION'=>$this->getDescription(),
       ':UPFILE'=>$this->getUpfile(),
-      ':QTD_MIN'=>$this->getQtd_min(),
-      ':QTD1'=>$this->getQtd1(),
-      ':QTD2'=>$this->getQtd2(),
-      ':QTD3'=>$this->getQtd3(),      
+      ':QTD_MIN'=>$this->getQtd_min(),            
       ':SIZE'=>$this->getSize(),
       ':PRINTING'=>$this->getPrinting(),
       ':PRINT_TYPE'=>$this->getPrint_type(),

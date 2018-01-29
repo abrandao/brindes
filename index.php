@@ -58,7 +58,7 @@ require_once("admin/class/Sql.php");
         
         //Products listening
         $db_handle = new Sql();
-	      $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC LIMIT $pagina_atual,$artigos_por_pagina");
+	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag = 1 ORDER BY id ASC LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
       ?>		

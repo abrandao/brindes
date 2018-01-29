@@ -33,6 +33,9 @@
   <label for="code">Código</label>
   <input type="number" name="code"  value="<?php echo $product_array[$key]["code"] ?>"/></br>
 
+  <label for="flag">Destaque?</label>
+  <input type="number" name="flag"  value="<?php echo $product_array[$key]["flag"] ?>"/></br>
+
   <label for="tag">Tag</label>
   <input type="text" name="tag"  value="<?php echo $product_array[$key]["tag"] ?>"/></br>
 

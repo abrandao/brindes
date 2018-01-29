@@ -5,6 +5,7 @@ require_once("../../class/Sql.php");
 $id = $_POST['id'];
 $title = $_POST['title'];
 $code = $_POST['code'];
+$flag = $_POST['flag'];
 $tag = $_POST['tag'];
 $category = $_POST['category'];
 $description = $_POST['description'];
@@ -20,10 +21,10 @@ $print_type = $_POST['print_type'];
 $comments = $_POST['comments'];
 
 //Inserting product
-$product = new Product( $title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
+$product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
 $product->loadById($id);
-$product->update($title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
+$product->update($title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
 
 /*
@@ -47,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p>ID:<? echo " " .  $id; ?></p>
 <p>Título:<? echo " " . $title; ?></p>
 <p>Código:<? echo " " . $code; ?></p> 
+<p>Destaque:<? echo " " . $flag; ?></p>
 <p>Tag:<? echo " " . $tag; ?></p> 
 <p>Categoria:<? echo " " . $category; ?></p> 
 <p>Descrição:<? echo " " . $description; ?></p> 
