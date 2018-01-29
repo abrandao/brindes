@@ -19,11 +19,15 @@
   <label for="code">Código</label>
   <input type="number" name="code" /></br>
 
+  <label for="flag">Destaque?</label>
+  <input type="number" name="flag" /></br>
+
   <label for="tag">Tag</label>
   <input type="text" name="tag" /></br>
 
   <label for="category">Categoria</label>
   <select type="text" name="category">
+
 <?php
   $db_handle = new Sql();
 	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");

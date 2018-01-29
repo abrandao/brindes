@@ -2,15 +2,13 @@
 class Product {
   private $id;
   private $title;
-  private $code;  
+  private $code;
+  private $flag;  
   private $tag;
   private $category;
   private $description;
   private $upfile;
-  private $qtd_min;
-  private $qtd1;
-  private $qtd2;
-  private $qtd3;  
+  private $qtd_min;  
   private $size;
   private $printing;
   private $print_type;
@@ -38,6 +36,14 @@ class Product {
 
   public function setCode($value) {
     $this->code = $value;
+  }
+
+  public function getFlag() {
+    return $this->flag;
+  }
+
+  public function setFlag($value) {
+    $this->flag = $value;
   }
 
   public function getTag() {
@@ -80,30 +86,6 @@ class Product {
     $this->qtd_min = $value;
   }
 
-  public function getQtd1() {
-    return $this->qtd1;
-  }
-
-  public function setQtd1($value) {
-    $this->qtd1 = $value;
-  }
-
-  public function getQtd2() {
-    return $this->qtd2;
-  }
-
-  public function setQtd2($value) {
-    $this->qtd2 = $value;
-  }
-
-  public function getQtd3() {
-    return $this->qtd3;
-  }
-
-  public function setQtd3($value) {
-    $this->qtd3 = $value;
-  }
-  
   public function getSize() {
     return $this->size;
   }
@@ -139,15 +121,13 @@ class Product {
   public function setData($data) {
     $this->setId($data['id']);
     $this->setTitle($data['title']);
-    $this->setCode($data['code']);    
+    $this->setCode($data['code']);
+    $this->setFlag($data['flag']);    
     $this->setTag($data['tag']);
     $this->setCategory($data['category']);
     $this->setDescription($data['description']);
     $this->setUpfile($data['upfile']);
-    $this->setQtd_min($data['qtd_min']);    
-    $this->setQtd1($data['qtd1']);
-    $this->setQtd2($data['qtd2']);
-    $this->setQtd3($data['qtd3']);    
+    $this->setQtd_min($data['qtd_min']);        
     $this->setSize($data['size']);
     $this->setPrinting($data['printing']);
     $this->setPrint_type($data['print_type']);
@@ -166,18 +146,16 @@ class Product {
 
   public function insert() {
     $sql = new Sql();
-    $results = $sql->select("CALL sp_products_insert(:TITLE, :CODE, :TAG, :CATEGORY, :DESCRIPTION,
-     :UPFILE, :QTD_MIN, :QTD1, :QTD2, :QTD3, :SIZE, :PRINTING, :PRINT_TYPE, :COMMENTS)", array(
+    $results = $sql->select("CALL sp_products_insert(:TITLE, :CODE, :FLAG, :TAG, :CATEGORY, :DESCRIPTION,
+     :UPFILE, :QTD_MIN, :SIZE, :PRINTING, :PRINT_TYPE, :COMMENTS)", array(
       ':TITLE'=>$this->getTitle(),
       ':CODE'=>$this->getCode(),
+      ':FLAG'=>$this->getFlag(),
       ':TAG'=>$this->getTag(),     
       ':CATEGORY'=>$this->getCategory(),
       ':DESCRIPTION'=>$this->getDescription(),
       ':UPFILE'=>$this->getUpfile(),
-      ':QTD_MIN'=>$this->getQtd_min(),
-      ':QTD1'=>$this->getQtd1(),
-      ':QTD2'=>$this->getQtd2(),
-      ':QTD3'=>$this->getQtd3(),      
+      ':QTD_MIN'=>$this->getQtd_min(),      
       ':SIZE'=>$this->getSize(),
       ':PRINTING'=>$this->getPrinting(),
       ':PRINT_TYPE'=>$this->getPrint_type(),
@@ -257,19 +235,16 @@ class Product {
     rmdir("products/" . $folder . "/");
   }  
 
-  public function __construct($title = "", $code = "", $tag = "", $category = "", $description = "",
-  $upfile = "", $qtd_min = "", $qtd1 = "", $qtd2 = "", $qtd3 = "", $size = "", $printing = "", 
-  $print_type = "", $comments = ""){
+  public function __construct($title = "", $code = "", $flag = "", $tag = "", $category = "", $description = "",
+  $upfile = "", $qtd_min = "", $size = "", $printing = "", $print_type = "", $comments = ""){
     $this->setTitle($title);
-    $this->setCode($code);    
+    $this->setCode($code);
+    $this->setFlag($flag);    
     $this->setTag($tag);
     $this->setCategory($category);
     $this->setDescription($description);
     $this->setUpfile($upfile);
-    $this->setQtd_min($qtd_min);
-    $this->setQtd1($qtd1);
-    $this->setQtd2($qtd2);
-    $this->setQtd3($qtd3);    
+    $this->setQtd_min($qtd_min);        
     $this->setSize($size);
     $this->setPrinting($printing);
     $this->setPrint_type($print_type);
@@ -279,15 +254,13 @@ class Product {
 	public function __toString(){
 		return json_encode(array(
       "title"=>$this->getTitle(),
-      "code"=>$this->getCode(),      
+      "code"=>$this->getCode(),
+      "flag"=>$this->getFlag(),      
       "tag"=>$this->getTag(),
       "category"=>$this->getCategory(),
       "description"=>$this->getDescription(),
       "upfile"=>$this->getUpfile(),
-      "qtd_min"=>$this->getQtd_min(),
-      "qtd1"=>$this->getQtd1(),
-      "qtd2"=>$this->getQtd2(),
-      "qtd3"=>$this->getQtd3(),      
+      "qtd_min"=>$this->getQtd_min(),           
       "size"=>$this->getSize(),
       "printing"=>$this->getPrinting(),
       "print_type"=>$this->getPrint_type(),
