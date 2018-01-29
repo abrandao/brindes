@@ -25,7 +25,7 @@ $qtd3, $size, $printing, $print_type, $comments);
 $product->loadById($id);
 $product->update($title, $code, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
 $qtd3, $size, $printing, $print_type, $comments);
-var_dump($product);
+
 /*
 Folder creation and renaming files
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

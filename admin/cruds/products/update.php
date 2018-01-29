@@ -22,7 +22,7 @@
 <form method="POST" action="file-update.php" enctype="multipart/form-data">
   
   <label for="id">Id</label>
-  <input type="text" name="id" value="<?php echo $product_array[$key]["id"] ?>"/></br>
+  <input name="id" readonly="true" value="<?php echo $product_array[$key]["id"] ?>"/></br>
 
   <label for="title">Título</label>
   <input type="text" name="title" value="<?php echo $product_array[$key]["title"] ?>"/></br>
