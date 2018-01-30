@@ -2,6 +2,7 @@
 
 require_once("../../class/Product.php");
 require_once("../../class/Sql.php");
+
 $id = $_POST['id'];
 $title = $_POST['title'];
 $code = $_POST['code'];
@@ -17,9 +18,8 @@ $printing = $_POST['printing'];
 $print_type = $_POST['print_type'];
 $comments = $_POST['comments'];
 
-//Inserting product
-$product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $qtd1, $qtd2,
-$qtd3, $size, $printing, $print_type, $comments);
+//Updating product
+$product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 $product->loadById($id);
 $product->update($title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 

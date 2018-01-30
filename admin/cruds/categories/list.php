@@ -25,8 +25,10 @@ require_once("../../class/Sql.php");
 				<strong>
 					<?php echo $category_array[$key]["category"] . " "; ?>
 				</strong>
+				<a href="update.php?id=<?php echo $category_array[$key]["id"]; ?>">
+				<input type="button" value="Atualizar"></a>
 				<a href="delete.php?id=<?php echo $category_array[$key]["id"]; ?>">
-				<input type="button" value="Deletar"></a>
+				<input type="button" value="Deletar"></a>				
 			</div>
 			<br>
 			<hr>			

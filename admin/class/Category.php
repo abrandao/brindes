@@ -36,6 +36,15 @@ class Category {
     ));
   }
 
+  public function update($category){		
+    $this->setCategory($category); 
+		$sql = new Sql();
+		$sql->query("UPDATE categories SET category = :CATEGORY WHERE id = :ID", array(      
+      ':CATEGORY'=>$this->getCategory(),
+      ':ID'=>$this->getId()
+		));
+  }  
+
   public function loadById($id) {
     $sql = new Sql();
     $results = $sql->select("SELECT * FROM categories  WHERE id = :ID", array(
