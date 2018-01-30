@@ -20,9 +20,18 @@ require_once("../../class/Sql.php");
 	
 	if (!empty($category_array)) { 
 		foreach($category_array as $key=>$value){			
-	?>
-      <div><strong><?php echo $category_array[$key]["id"]; ?></strong>
-			<strong><?php echo $category_array[$key]["category"]; ?></strong></div>
+	?>		
+      <div><strong><?php echo $category_array[$key]["id"]; ?></strong>			
+				<strong>
+					<?php echo $category_array[$key]["category"] . " "; ?>
+				</strong>
+				<a href="delete.php?id=<?php echo $category_array[$key]["id"]; ?>">
+				<input type="button" value="Deletar"></a>
+			</div>
+			<br>
+			<hr>			
 <?php	
 			}
 	}
+?>
+	<a href="register.php">REGISTRAR NOVA CATEGORIA</a>	

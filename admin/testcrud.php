@@ -1,10 +1,10 @@
 <?php
 require_once("config.php");
 
-$product = new Product();
-$product->loadById(12);
+//$product = new Product();
+//$product->loadById(12);
 //$product->update(dc);
-$product->deleteImages(12);
+//$product->deleteImages(12);
 //$product->delete();
 //echo $product;
 
@@ -18,8 +18,8 @@ $product->deleteImages(12);
 //$category = Category::getList();
 //echo json_encode($category);
 
-/*
+
 $category = new Category();
-$category->loadById(2);
+$category->loadById(19);
+$category->delete();
 echo $category;
-*/

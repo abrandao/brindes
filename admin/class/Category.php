@@ -29,6 +29,13 @@ class Category {
     return $sql->select("SELECT * FROM categories ORDER BY id;");
   }
 
+  public function delete() {
+    $sql = new Sql();
+    $sql->query("DELETE FROM categories WHERE id = :ID", array(
+      ":ID"=>$this->getId()
+    ));
+  }
+
   public function loadById($id) {
     $sql = new Sql();
     $results = $sql->select("SELECT * FROM categories  WHERE id = :ID", array(
