@@ -222,12 +222,12 @@ class Product {
 
     $folder = $results[0]['upfile'];    
        
-    foreach (scandir("products/" . $folder . "/") as $item) {
+    foreach (scandir("../../products/" . $folder . "/") as $item) {
       if(!in_array($item, array(".", ".."))) {
-        unlink("products/" . $folder . "/" . $item);
+        unlink("../../products/" . $folder . "/" . $item);
       } 
     }
-    rmdir("products/" . $folder . "/");
+    rmdir("../../products/" . $folder . "/");
   }  
 
   public function __construct($title = "", $code = "", $flag = "", $tag = "", $category = "", $description = "",
