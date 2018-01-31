@@ -58,7 +58,8 @@ require_once("../admin/class/Product.php");
 		    	foreach($category_array as $key=>$value){	
       ?>    
         <br>
-          <?php echo $category_array[$key]["category"];
+				<a href="pages/category.php?category=<?php echo $category_array[$key]["category"]; ?>"><?php echo $category_array[$key]["category"]; ?></a>
+      <?php
 		  		}
       	}
       ?>  	
@@ -95,7 +96,7 @@ require_once("../admin/class/Product.php");
 				</div>				
 					<div class="row col-sm-5">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
-					<?php echo "Produto: " . $product_array[$key]["code"]; ?><br />
+						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />
 						<?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
 						<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
 					  <?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?><br />				

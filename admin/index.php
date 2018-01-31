@@ -19,8 +19,3 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   <li class="nav-item"><a class="nav-link" href="cruds/categories/register.php">Registrar Categorias</a></li>
   <li class="nav-item"><a class="nav-link" href="cruds/categories/list.php">Listar Categorias</a></li>
 </ul>
-
-<br>
-<br>
-<br>
-<p>Agora você pode editar, listar e deletar as categorias</p>
