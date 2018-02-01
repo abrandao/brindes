@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $i = 0;
   while ($i<count($_FILES['upfile']['name'])) {      
     move_uploaded_file($_FILES['highlight']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "/" . $upfile . "_" . (string)$i . ".jpg");
+    //move_uploaded_file($_FILES['highlight']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "/destaque.jpg");
     move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$i]);
     $i++;
     }

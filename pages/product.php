@@ -66,7 +66,7 @@ require_once("../admin/class/Product.php");
 		</div>
 		<div class="col-md-10">		
 		
-		<!-- Retriving Highlight Image -->
+		<!-- Retriving all images -->
     <?php
 			$db_handle = new Sql();
 			$prod_code = $_GET['code'];
@@ -74,8 +74,7 @@ require_once("../admin/class/Product.php");
 			if (!empty($product_array)) { 
 				foreach($product_array as $key=>$value){
 		?>		
-		
-    <!-- Retriving all images -->
+   
 		<div class="row">
 					<br>
 			<div class="col-sm-6">

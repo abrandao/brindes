@@ -61,7 +61,7 @@ require_once("admin/class/Sql.php");
         $pagina_atual = ! empty( $_GET['pagina'] ) ? (int) $_GET['pagina'] : 0;
         $pagina_atual = $pagina_atual * $artigos_por_pagina;
         
-        //Products listening
+        //Products list
         $db_handle = new Sql();
 	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag = 1 ORDER BY id ASC LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
@@ -70,7 +70,7 @@ require_once("admin/class/Sql.php");
 		
       <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>

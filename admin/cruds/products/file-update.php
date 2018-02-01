@@ -18,26 +18,34 @@ $printing = $_POST['printing'];
 $print_type = $_POST['print_type'];
 $comments = $_POST['comments'];
 
+$renamed_folder = $_POST['renamefolder'];
+
 //Updating product
 $product = new Product( $title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 $product->loadById($id);
 $product->update($title, $code, $flag, $tag, $category, $description, $upfile, $qtd_min, $size, $printing, $print_type, $comments);
 
-/*
-Folder creation and renaming files
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
- 
-  if (!is_dir($dirUploads)) {
-    mkdir($dirUploads);
-  }
+if ($renamed_folder != $upfile) {  
+  rename("../../products/" . $renamed_folder,"../../products/" . $upfile);
+  echo $upfile;
+  echo "<br>";
+  $files = glob("../../products/" . $upfile . "/*.*");
+      for ($i=1; $i<count($files); $i++)
+      {	
+        $num = $files[$i];       
+          
+        if (substr($num, -6,6) == "_0.jpg") {
+          
+          rename($num,"../../products/" . $upfile . "/" . $upfile . "_0.jpg" );
+                  
+        } 
+              
+      } 
+        
+  echo "<br>";
+  
+} 
 
-  $i = 0;
-  while ($i<count($_FILES['upfile']['name'])) {      
-    move_uploaded_file($_FILES['highlight']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "/" . $upfile . "_" . (string)$i . ".jpg");
-    move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$i]);
-    $i++;
-    }
-  } */
 ?>
 
 <h1>Produto editado com sucesso!</h1>

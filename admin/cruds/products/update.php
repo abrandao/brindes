@@ -15,12 +15,17 @@
   $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$prod_code'");
       
 	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){            
+		foreach($product_array as $key=>$value){
+      
+     $renamed_folder = $product_array[$key]["upfile"];
+     
 ?>
 
 <h1>EDITANDO PRODUTO</h1>
 <form method="POST" action="file-update.php" enctype="multipart/form-data">
   
+  <input name="renamefolder" type="hidden" value="<?php echo $renamed_folder ?>"/></br>
+
   <label for="id">Id</label>
   <input name="id" readonly="true" value="<?php echo $product_array[$key]["id"] ?>"/></br>
 
