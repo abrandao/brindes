@@ -31,14 +31,19 @@ require_once("../admin/class/Sql.php");
       <div class="col-md-3">
         <img src="../includes/img/logo.png" class="img-fluid" alt="Responsive image">
       </div>
+
       <div class="col-lg-6">
         <div class="col-xs-3 text-center">
-          <p>TEL: (12) XXXX - XXXX</p>
+          <p>TEL: (12) 3942-8089</p>
         </div>
         <div class="col-xs-3 text-center">
-          
+          <p>TEL: (12) 97402-8774</p>
+        </div>
+        <div class="col-xs-3 text-center">
+          vendas@epontual.com.br
         </div>
       </div>
+
       <div class="col-md-3">
       <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>

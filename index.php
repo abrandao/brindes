@@ -12,6 +12,7 @@ require_once("admin/class/Sql.php");
   <div class="row">
 		<?php require_once("includes/navbar.php"); ?>
   </div>
+
   <div class="row">
     <div class="row col-lg-12">
       <div class="col-md-3">
@@ -28,6 +29,7 @@ require_once("admin/class/Sql.php");
           vendas@epontual.com.br
         </div>
       </div>
+      
       <div class="col-md-3">
       <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
