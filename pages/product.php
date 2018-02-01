@@ -49,7 +49,7 @@ require_once("../admin/class/Product.php");
 <br>
 <!-- Categories sidebar -->
   <div class="row col-md-12">
-	  <div class="col-lg-2">      
+	  <div class="col-lg-3">      
       <?php	
       	//Retrieving category list
 	      $db_handle = new Sql();
@@ -64,7 +64,7 @@ require_once("../admin/class/Product.php");
       	}
       ?>  	
 		</div>
-		<div class="col-md-10">		
+		<div class="col-md-9">		
 		
 		<!-- Retriving all images -->
     <?php
@@ -77,7 +77,7 @@ require_once("../admin/class/Product.php");
    
 		<div class="row">
 					<br>
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 			
 				<img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
 				<div class="row">				
@@ -93,7 +93,7 @@ require_once("../admin/class/Product.php");
 
 		  	</div>    
 				</div>				
-					<div class="form-group row col-sm-5">					
+					<div class="form-group row col-sm-6">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
 						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />
 						<?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
