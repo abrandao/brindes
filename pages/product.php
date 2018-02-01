@@ -93,12 +93,12 @@ require_once("../admin/class/Product.php");
 
 		  	</div>    
 				</div>				
-					<div class="row col-sm-5">					
+					<div class="form-group row col-sm-5">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
 						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />
 						<?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
 						<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br />
-					  <?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?><br />				
+					  				
 					  <?php echo "Código: " . $product_array[$key]["code"]; ?><br />			  				  
 					  <?php echo "Tamanho: " . $product_array[$key]["size"]; ?><br />
 					  <?php echo "Gravação: " . $product_array[$key]["printing"]; ?><br />
@@ -106,11 +106,27 @@ require_once("../admin/class/Product.php");
 					  <?php echo "Comentário: " . $product_array[$key]["comments"]; ?><br />
 					<div>
 					<hr>
-					<labe>Quantidade 1: </label><input type="text" name="quantity" placeholder="Quantidade" size="8" /><br /><br />
-					<labe>Quantidade 2: </label><input type="text" name="quantity" placeholder="Quantidade" size="8" /><br /><br />
-					<labe>Quantidade 3: </label><input type="text" name="quantity" placeholder="Quantidade" size="8" /><br /><br />
-					<label for="comments">Comentários</label>  
-  				<textarea for= "comments" rows="4" cols="50" name="comments"></textarea></br>
+					<?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?>
+					<br />
+					<br />
+					<div class="col-6">
+						<labe>Quantidade 1: </label>
+						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity1" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
+					</div>
+					<br />
+					<div class="col-6">
+						<labe>Quantidade 2: </label>
+						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" max="6000" type="number" name="quantity2" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
+					</div>
+					<br />
+					<div class="col-6">
+						<labe>Quantidade 3: </label>
+						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" max="6000" type="number" name="quantity3" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
+					</div>
+					<br>
+					<br>
+					<label for="comments">Comentários:</label>  
+  				<textarea for="comments" rows="4" cols="50" name="comments"></textarea></br>
 					<br />
 					<input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
 			</form>
