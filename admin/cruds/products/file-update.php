@@ -41,7 +41,6 @@ if ($renamed_folder != $upfile) {
         } 
               
       } 
-        
   echo "<br>";
   
 } 
@@ -62,3 +61,4 @@ if ($renamed_folder != $upfile) {
 <p>Impressão:<? echo " " . $printing; ?></p> 
 <p>Tipo de Impressão:<? echo " " . $print_type; ?></p> 
 <p>Comentários:<? echo " " . $comments; ?></p>
+<a href="list.php">Retornar à lista de produtos</a>
