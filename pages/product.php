@@ -58,7 +58,7 @@ require_once("../admin/class/Product.php");
 		    	foreach($category_array as $key=>$value){	
       ?>    
         <br>
-				<a href="pages/category.php?category=<?php echo $category_array[$key]["category"]; ?>"><?php echo $category_array[$key]["category"]; ?></a>
+				<a href="category.php?category=<?php echo $category_array[$key]["category"]; ?>"><?php echo $category_array[$key]["category"]; ?></a>
       <?php
 		  		}
       	}
