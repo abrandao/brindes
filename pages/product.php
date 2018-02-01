@@ -104,7 +104,7 @@ require_once("../admin/class/Product.php");
 					  <?php echo "Gravação: " . $product_array[$key]["printing"]; ?><br />
 					  <?php echo "Tipo de impressão: " . $product_array[$key]["print_type"]; ?><br />					  
 					  <?php echo "Comentário: " . $product_array[$key]["comments"]; ?><br />
-					<div>
+					
 					<hr>
 					<?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?>
 					<br />
@@ -116,19 +116,20 @@ require_once("../admin/class/Product.php");
 					<br />
 					<div class="col-6">
 						<labe>Quantidade 2: </label>
-						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" max="6000" type="number" name="quantity2" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
+						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity2" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
 					</div>
 					<br />
 					<div class="col-6">
 						<labe>Quantidade 3: </label>
-						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" max="6000" type="number" name="quantity3" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
+						<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity3" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
 					</div>
 					<br>
 					<br>
-					<label for="comments">Comentários:</label>  
-  				<textarea for="comments" rows="4" cols="50" name="comments"></textarea></br>
+					
+					<label for="comment">Comentário:</label>					  					  
+  				<textarea class="form-control" for="comments" rows="4" cols="50" name="comments"></textarea></br>
 					<br />
-					<input type="submit" value="Adicionar   ao Carrinho" class="btnAddAction" /></div>
+					<input type="submit" value="Adicionar ao Carrinho" class="btnAddAction" />
 			</form>
       </div>			
     </div>
