@@ -1,5 +1,5 @@
 <?php
-require_once("admin/session.php");
+require_once("session.php");
 
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
 $assunto  = "teste";

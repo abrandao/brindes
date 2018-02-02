@@ -1,6 +1,56 @@
 <?php
 
-require_once("../admin/session.php");
+session_start();
+require_once("../admin/class/Sql.php");
+require_once("../admin/class/Product.php");
+
+$quantity1 = $_POST['quantity1'];
+$quantity2 = $_POST['quantity2'];
+$quantity3 = $_POST['quantity3'];
+$message = $_POST['message'];
+
+$db_handle = new Sql();
+if(!empty($_GET["action"])) {
+switch($_GET["action"]) {
+	case "add":
+		if(!empty($_POST["quantity1"])) {
+			$productByCode = $db_handle->runQuery("SELECT * FROM products WHERE code='" . $_GET["code"] . "'");
+			$itemArray = array($productByCode[0]["code"]=>array('code'=>$productByCode[0]["code"], 'title'=>$productByCode[0]["title"], 'description'=>$productByCode[0]["description"], 'size'=>$productByCode[0]["size"], 'printing'=>$productByCode[0]["printing"], 'print_type'=>$productByCode[0]["print_type"], 'comments'=>$productByCode[0]["comments"], 'message'=>$message,'quantity1'=>$quantity1, 'quantity2'=>$quantity2, 'quantity3'=>$quantity3, 'qtd_min'=>$productByCode[0]["qtd_min"]));
+			
+				if(!empty($_SESSION["cart_item"])) {
+				if(in_array($productByCode[0]["code"],array_keys($_SESSION["cart_item"]))) {
+					foreach($_SESSION["cart_item"] as $k => $v) {
+							if($productByCode[0]["code"] == $k) {
+								if(empty($_SESSION["cart_item"][$k]["quantity1"])) {
+									$_SESSION["cart_item"][$k]["quantity1"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity1"] += $_POST["quantity1"];
+							}
+					}
+				} else {
+					$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+				}
+			} else {
+				$_SESSION["cart_item"] = $itemArray;
+			}
+		}
+	break;
+	case "remove":
+		if(!empty($_SESSION["cart_item"])) {
+			foreach($_SESSION["cart_item"] as $k => $v) {
+					if($_GET["code"] == $k)
+						unset($_SESSION["cart_item"][$k]);				
+					if(empty($_SESSION["cart_item"]))
+						unset($_SESSION["cart_item"]);
+			}
+		}
+	break;
+	case "empty":
+		unset($_SESSION["cart_item"]);
+		header("Location:shopcart.php");
+	break;	
+}
+}
 
 echo "<br>";
 echo "<br>";
@@ -50,7 +100,7 @@ echo "<br>";
 </nav>  
 </div>
 
-
+<form method="post" action="../admin/email.php">
 <div id="shopping-cart">
 <div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="shopcart.php?action=empty">Esvaziar o carrinho</a></div>
 <?php
@@ -60,20 +110,35 @@ if(isset($_SESSION["cart_item"])){
 <table cellpadding="10" cellspacing="1">
 <tbody>
 <tr>
-<th style="text-align:left;"><strong>Nome</strong></th>
-<th style="text-align:left;"><strong>Código</strong></th>
-<th style="text-align:right;"><strong>Quantidade</strong></th>
-<th style="text-align:right;"><strong>Preço</strong></th>
-<th style="text-align:center;"><strong>Ação</strong></th>
+	<th style="text-align:left;"><strong>Código</strong></th>
+	<th style="text-align:left;"><strong>Nome</strong></th>
+	<th style="text-align:right;"><strong>Descrição</strong></th>
+	<th style="text-align:right;"><strong>Tamanho</strong></th>
+	<th style="text-align:center;"><strong>Impressão</strong></th>
+	<th style="text-align:left;"><strong>Tipo de impressão</strong></th>
+	<th style="text-align:left;"><strong>Comentários</strong></th>
+	<th style="text-align:right;"><strong>Quantidade Mínima</strong></th>
+	<th style="text-align:right;"><strong>Quantidade 1</strong></th>
+	<th style="text-align:right;"><strong>Quantidade 2</strong></th>
+	<th style="text-align:center;"><strong>Quantidade 3</strong></th>
+	<th style="text-align:right;"><strong>Mensagem</strong></th>	
 </tr>	
-<?php		
-    foreach ($_SESSION["cart_item"] as $item){
+<?php
+		
+		foreach ($_SESSION["cart_item"] as $item){
 		?>
-				<tr>
-					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["title"]; ?></strong></td>
 					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
-					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
+					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["title"]; ?></td>					
+					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["description"]; ?></td>
+					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["size"]; ?></td>
+					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["printing"]; ?></td>
+					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["print_type"]; ?></td>
+					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["comments"]; ?></td>
 					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["qtd_min"]; ?></td>
+					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity1"]; ?></td>
+					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity2"]; ?></td>
+					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity3"]; ?></td>
+					<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["message"]; ?></td>
 				</tr>
 		<?php        
 		}
@@ -85,7 +150,12 @@ if(isset($_SESSION["cart_item"])){
   <?php
 }
 ?>
+
 <div>
-	<a href="../index.php"><button type="submit" class="btnAddAction" />Adicionar mais Produtos</button></a>
-	<button type="submit" class="btnAddAction" />Enviar solicitação</button>
+	<a href="../admin/email.php" class="btn btn-primary" />Enviar solicitação</button>
+	</a>
+
+</form>
+
+	<a href="../index.php" class="btn btn-primary" role="button">Adicionar mais Produtos</a>	
 </div>
