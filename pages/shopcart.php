@@ -117,10 +117,10 @@ if(isset($_SESSION["cart_item"])){
 	<th style="text-align:center;"><strong>Impressão</strong></th>
 	<th style="text-align:left;"><strong>Tipo de impressão</strong></th>
 	<th style="text-align:left;"><strong>Comentários</strong></th>
-	<th style="text-align:right;"><strong>Quantidade Mínima</strong></th>
-	<th style="text-align:right;"><strong>Quantidade 1</strong></th>
-	<th style="text-align:right;"><strong>Quantidade 2</strong></th>
-	<th style="text-align:center;"><strong>Quantidade 3</strong></th>
+	<th style="text-align:right;"><strong>Qtd Mínima</strong></th>
+	<th style="text-align:right;"><strong>Qtd 1</strong></th>
+	<th style="text-align:right;"><strong>Qtd 2</strong></th>
+	<th style="text-align:center;"><strong>Qtd 3</strong></th>
 	<th style="text-align:right;"><strong>Mensagem</strong></th>	
 </tr>	
 <?php
@@ -152,10 +152,8 @@ if(isset($_SESSION["cart_item"])){
 ?>
 
 <div>
-	<a href="../admin/email.php" class="btn btn-primary" />Enviar solicitação</button>
+	<a href="request.php" class="btn btn-primary" />Enviar solicitação</button>
 	</a>
-
 </form>
-
 	<a href="../index.php" class="btn btn-primary" role="button">Adicionar mais Produtos</a>	
 </div>
