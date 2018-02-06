@@ -40,10 +40,14 @@ require_once("admin/class/Sql.php");
       <?php	
       	//Retrieving category list
 	      $db_handle = new Sql();
-        $category_array = $db_handle->runQuery("SELECT * FROM categories");
+        $category_array = $db_handle->runQuery("SELECT category FROM categories");
         
-		    if (!empty($category_array)) { 
+        sort($category_array);        
+        
+		    if (!empty($category_array)) {         
+          
 		    	foreach($category_array as $key=>$value){	
+            
       ?>    
         <br>          
           <a href="pages/category.php?category=<?php echo $category_array[$key]["category"]; ?>"><?php echo $category_array[$key]["category"]; ?></a>
@@ -109,4 +113,3 @@ require_once("admin/class/Sql.php");
     </div>        
   </div>
 </div>
-
