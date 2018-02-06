@@ -23,11 +23,12 @@ $category->insert();
 
 //Retrieving content
   $db_handle = new Sql();
-	$category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id ASC");
+	$category_array = $db_handle->runQuery("SELECT category FROM categories");
+	asort($category_array);
 	if (!empty($category_array)) { 
 		foreach($category_array as $key=>$value){			
-	?>
-      <div><strong><?php echo $category_array[$key]["id"]; ?></strong>
+	?>  
+			<br>    
 			<strong><?php echo $category_array[$key]["category"]; ?></strong></div>
 <?php	
 			}

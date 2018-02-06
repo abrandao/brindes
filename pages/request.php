@@ -159,7 +159,7 @@ echo "<br>";
       </div>
       <div class="form-group col-md-6">
         <label for="">Empresa</label>
-        <input type="text" name="business" class="form-control">      
+        <input type="text" name="business" class="form-control">     
       </div>
       <div class="form-group col-md-6">
         <label for="">Seu Email</label>
@@ -213,8 +213,7 @@ echo "<br>";
     </div> 
 
   <div>
-  	<input type="submit" class="btn btn-primary" value="Enviar solicitação"/>
-  	</a>
+  	<input type="submit" class="btn btn-primary" value="Enviar solicitação"/>  	
     </form> 	  
   </div>
 </div>
