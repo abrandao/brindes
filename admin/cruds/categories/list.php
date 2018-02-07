@@ -14,7 +14,7 @@ require_once("../../class/Sql.php");
 
 //Retrieving content
   $db_handle = new Sql();
-	$category_array = $db_handle->runQuery("SELECT category FROM categories");
+	$category_array = $db_handle->runQuery("SELECT * FROM categories");
 	
 	asort($category_array);
 	
