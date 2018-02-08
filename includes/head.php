@@ -33,14 +33,14 @@
   <?php
   
   $db_handle = new Sql();
-  $search = $db_handle->runQuery("SELECT title, tag, category, upfile FROM products");
-   
+  $search = $db_handle->runQuery("SELECT title, tag, category, upfile FROM products");  
+
    foreach($search as $key=>$value){	
     $sch[] = $search[$key]["title"];
     $sch[] = $search[$key]["tag"];
     $sch[] = $search[$key]["category"];
     $sch[] = $search[$key]["upfile"];    
-   } 
+   }   
   
   ?>
 
@@ -48,9 +48,14 @@
     $( function() {
       
       var availableTags = <?php echo json_encode($sch) ?>;
+
+      //Filtering duplicated results
+      var tagsFilter = availableTags.filter(function(arr, i) {
+          return availableTags.indexOf(arr) == i;
+      })      
       
       $( "#tags" ).autocomplete({
-        source: availableTags
+        source: tagsFilter
       });
     } );
   </script>   

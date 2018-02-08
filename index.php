@@ -23,11 +23,14 @@ require_once("includes/head.php");
         </div>       
 
     <!-- Search button --> 
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" id="tags" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
-      </div>
+    
+      <form method="post" action="pages/search.php">
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+        </div>
+      </form>
     </div>
     </div>  
 
