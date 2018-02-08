@@ -1,9 +1,17 @@
 <?php
-/* Database credentials.*/
+/*** Database credentials for local database.
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'brandao');
 define('DB_PASSWORD', 'sistema');
 define('DB_NAME', 'brindes');
+
+***/
+
+/*** Database credentials for test database */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'epontual_diogo');
+define('DB_PASSWORD', 'epontual2018');
+define('DB_NAME', 'epontual_teste');
 
 /* Attempt to connect to MySQL database */
 try{

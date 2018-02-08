@@ -4,7 +4,11 @@
     private $conn;
     
     public function __construct(){
-         $this->conn = new PDO("mysql:host=localhost;dbname=brindes","brandao","sistema");
+        //Credentials for local database 
+        //$this->conn = new PDO("mysql:host=localhost;dbname=brindes","brandao","sistema");
+
+        //Credentials for test database
+        $this->conn = new PDO("mysql:host=localhost;dbname=epontual_teste","epontual_diogo","epontual2018");
     }
 
     private function setParams($statement, $parameters = array()) {
@@ -30,9 +34,15 @@
     } 
 
     public function runQuery($query) {
+      /**  Credentials for local database 
       $myConnection = mysqli_connect("localhost","brandao","sistema") or die ("could not connect to mysql"); 
       mysqli_select_db($myConnection, "brindes") or die ("no database");
-      
+      */
+
+      /** Credentials for test database **/
+      $myConnection = mysqli_connect("localhost","epontual_diogo","epontual2018") or die ("could not connect to mysql"); 
+      mysqli_select_db($myConnection, "epontual_teste") or die ("no database");
+
       $result = mysqli_query($myConnection,$query);
       while($row=mysqli_fetch_assoc($result)) {
         $resultset[] = $row;
