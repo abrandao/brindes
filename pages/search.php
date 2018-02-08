@@ -26,28 +26,31 @@ require_once("../admin/class/Sql.php");
     </nav>  
   </div>
   </div>
+  
   <div class="row">
-    <div class="row col-lg-12">
-      <div class="col-md-3">
-        <img src="../includes/img/logo.png" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-lg-6">
-        <div class="col-xs-3 text-center">
-          <p>TEL: (12) 3942-8089</p>
-        </div>
-        <div class="col-xs-3 text-center">
-          <p>TEL: (12) 97402-8774</p>
-        </div>
-        <div class="col-xs-3 text-center">
-          vendas@epontual.com.br
-        </div>
-      </div>
-
-      <div class="col-md-3">
-      <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
-      </div>
+  <div class="row col-lg-12">
+    <div class="col-md-3">
+      <img src="../includes/img/logo.png" class="img-fluid" alt="Responsive image">
     </div>
+    <div class="col-lg-6">
+      <div class="col-xs-3 text-center">
+        <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
+      </div>
+      <!-- Search button -->     
+      <form method="post" action="search.php">
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    <div class="col-md-3">
+      <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+
     <?php echo $category_array[$key]["category"]; ?>
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
@@ -76,16 +79,10 @@ require_once("../admin/class/Sql.php");
         // Página atual onde vamos começar a mostrar os valores
         $pagina_atual = ! empty( $_GET['pagina'] ) ? (int) $_GET['pagina'] : 0;
         $pagina_atual = $pagina_atual * $artigos_por_pagina;
-    
-
-        $search = $_POST['search'];
-
-        echo $search;
-
-
 
         //Products listening by category
-        $prod_code = $_GET['code'];
+        
+        $search = $_POST['search'];
         $db_handle = new Sql();
 	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE title = '$search' or tag = '$search' or category = '$search' or upfile = '$search'");
 	      if (!empty($product_array)) { 

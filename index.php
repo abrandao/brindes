@@ -20,20 +20,17 @@ require_once("includes/head.php");
       <div class="col-lg-6">
         <div class="col-xs-3 text-center">
           <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
-        </div>       
-
-    <!-- Search button --> 
-    
-      <form method="post" action="pages/search.php">
-        <div class="input-group mb-3">
-        <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
         </div>
-      </form>
-    </div>
-    </div>  
-
+        <!-- Search button -->     
+        <form method="post" action="pages/search.php">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+          </div>
+        </form>
+      </div>
+      </div>
       <div class="col-md-3">
         <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
