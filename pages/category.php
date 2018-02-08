@@ -26,28 +26,31 @@ require_once("../admin/class/Sql.php");
     </nav>  
   </div>
   </div>
-  <div class="row">
+
+    <div class="row">
     <div class="row col-lg-12">
       <div class="col-md-3">
         <img src="../includes/img/logo.png" class="img-fluid" alt="Responsive image">
       </div>
-
       <div class="col-lg-6">
         <div class="col-xs-3 text-center">
-          <p>TEL: (12) 3942-8089</p>
+          <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
         </div>
-        <div class="col-xs-3 text-center">
-          <p>TEL: (12) 97402-8774</p>
-        </div>
-        <div class="col-xs-3 text-center">
-          vendas@epontual.com.br
-        </div>
+        <!-- Search button -->     
+        <form method="post" action="search.php">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+          </div>
+        </form>
       </div>
-
+      </div>
       <div class="col-md-3">
-      <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
+        <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
+  
     <?php echo $category_array[$key]["category"]; ?>
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
