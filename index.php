@@ -1,8 +1,8 @@
 <?php
 require_once("admin/session.php");
-require_once("includes/head.php");
 require_once("includes/pagination.php");
 require_once("admin/class/Sql.php");
+require_once("includes/head.php");
 ?>
 <br>
 <body>
@@ -10,7 +10,7 @@ require_once("admin/class/Sql.php");
 <div class="container">
   <br>
   <div class="row">
-		<?php require_once("includes/navbar.php"); ?>
+		<?php //require_once("includes/navbar.php"); ?>
   </div>
 
   <div class="row">
@@ -20,24 +20,27 @@ require_once("admin/class/Sql.php");
       </div>
       <div class="col-lg-6">
         <div class="col-xs-3 text-center">
-          <p>TEL: (12) 3942-8089</p>
-        </div>
-        <div class="col-xs-3 text-center">
-          <p>TEL: (12) 97402-8774</p>
-        </div>
-        <div class="col-xs-3 text-center">
-          vendas@epontual.com.br
-        </div>
+          <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
+        </div>       
+
+    <!-- Search button --> 
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" id="tags" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
       </div>
-      
+    </div>
+    </div>  
+
       <div class="col-md-3">
-      <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
+        <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
     </div>
 
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
       <?php	
+
       	//Retrieving category list
 	      $db_handle = new Sql();
         $category_array = $db_handle->runQuery("SELECT category FROM categories");

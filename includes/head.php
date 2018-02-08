@@ -25,4 +25,34 @@
     <!-- Javascript JS -->
     <script src="bootstrap.js" type="javascript"></script>
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <?php
+  require_once("admin/class/Sql.php");
+  $db_handle = new Sql();
+  $search = $db_handle->runQuery("SELECT title, tag, category, upfile FROM products");
+   
+   foreach($search as $key=>$value){	
+    $sch[] = $search[$key]["title"];
+    $sch[] = $search[$key]["tag"];
+    $sch[] = $search[$key]["category"];
+    $sch[] = $search[$key]["upfile"];    
+   } 
+  
+  ?>
+
+  <script>
+  $( function() {
+    
+    var availableTags = <?php echo json_encode($sch) ?>;
+    
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>   
+
   </head>  

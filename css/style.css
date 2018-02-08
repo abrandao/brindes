@@ -13,20 +13,3 @@ body{ margin-left: 18%; margin-right: 20%;}
 .product-image { width:100%; background-color:#FFF;}
 .product-img { width:100%; height: auto; margin-left: 0; }
 .clear-float{clear:both;}
-
-
-/* testing classes */
-
-.black { background-color: black; }
-
-.yellow { background-color: yellow; }
-
-.green { background-color: green; }
-
-.red { background-color: rgb(204, 3, 3); }
-
-.blue { background-color: blue; }
-
-.purple { background-color: rgb(162, 0, 255); }
-
-.border { margin: 2px; border-color: #005dbb; }

@@ -73,7 +73,7 @@ $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
 $envio = mail($emaildestinatario, $assunto, $body, $headers); 
 
 if($envio)
-echo "<script>location.href='index.php'</script>"; // Página que será redirecionada
+echo "<script>location.href='../index.php'</script>"; // Página que será redirecionada
 
 ?>
 
