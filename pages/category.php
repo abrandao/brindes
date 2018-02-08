@@ -54,7 +54,8 @@ require_once("../admin/class/Sql.php");
       <?php	
       	//Retrieving category list
         $db_handle = new Sql();        
-		    $category_array = $db_handle->runQuery("SELECT * FROM categories ORDER BY id  ASC");
+        $category_array = $db_handle->runQuery("SELECT category FROM categories");
+        sort($category_array); 
 		    if (!empty($category_array)) { 
 		    	foreach($category_array as $key=>$value){	
       ?>    

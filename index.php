@@ -1,7 +1,6 @@
 <?php
 require_once("admin/session.php");
 require_once("includes/pagination.php");
-require_once("admin/class/Sql.php");
 require_once("includes/head.php");
 ?>
 <br>
@@ -10,7 +9,7 @@ require_once("includes/head.php");
 <div class="container">
   <br>
   <div class="row">
-		<?php //require_once("includes/navbar.php"); ?>
+		<?php require_once("includes/navbar.php"); ?>
   </div>
 
   <div class="row">

@@ -31,7 +31,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <?php
-  require_once("admin/class/Sql.php");
+  
   $db_handle = new Sql();
   $search = $db_handle->runQuery("SELECT title, tag, category, upfile FROM products");
    
@@ -45,14 +45,14 @@
   ?>
 
   <script>
-  $( function() {
-    
-    var availableTags = <?php echo json_encode($sch) ?>;
-    
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  } );
+    $( function() {
+      
+      var availableTags = <?php echo json_encode($sch) ?>;
+      
+      $( "#tags" ).autocomplete({
+        source: availableTags
+      });
+    } );
   </script>   
 
   </head>  
