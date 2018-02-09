@@ -1,7 +1,7 @@
 <?php
-require_once("admin/session.php");
-require_once("includes/pagination.php");
-require_once("includes/head.php");
+  require_once("admin/session.php");
+  require_once("includes/pagination.php");
+  require_once("includes/head.php");
 ?>
 <br>
 <body>
@@ -98,13 +98,13 @@ require_once("includes/head.php");
 
       //Pegamos o valor total de artigos em uma consulta sem limite
       $conn = new Sql();
-      $total_artigos = $conn->query("SELECT COUNT(*) AS total FROM products");
+      $total_artigos = $conn->query("SELECT COUNT(*) AS total FROM products WHERE flag = 1");
       $total_artigos->execute();
       $total_artigos = $total_artigos->fetch();
       $total_artigos = $total_artigos['total'];
 
       // Exibimos a paginação
-      if ($total_artigos > $artigos_por_pagina ) {
+      if ($total_artigos >= $artigos_por_pagina ) {
         echo "<br>";
         echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
       }
