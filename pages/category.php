@@ -49,9 +49,8 @@ require_once("../admin/class/Sql.php");
       <div class="col-md-3">
         <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
       </div>
-    </div>
-  
-    <?php echo $category_array[$key]["category"]; ?>
+    </div>  
+    
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
       <?php	
