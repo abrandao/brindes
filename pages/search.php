@@ -84,7 +84,7 @@ require_once("../admin/class/Sql.php");
         
         $search = $_POST['search'];
         $db_handle = new Sql();
-	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE title = '$search' or tag = '$search' or category = '$search' or upfile = '$search'");
+	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$search' or title = '$search' or tag = '$search' or category = '$search' or upfile = '$search'");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
       ?>		

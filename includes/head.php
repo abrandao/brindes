@@ -33,9 +33,10 @@
   <?php
   
   $db_handle = new Sql();
-  $search = $db_handle->runQuery("SELECT title, tag, category, upfile FROM products");  
+  $search = $db_handle->runQuery("SELECT code, title, tag, category, upfile FROM products");  
 
    foreach($search as $key=>$value){	
+    $sch[] = $search[$key]["code"]; 
     $sch[] = $search[$key]["title"];
     $sch[] = $search[$key]["tag"];
     $sch[] = $search[$key]["category"];
