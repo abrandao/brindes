@@ -15,7 +15,7 @@
   <div class="row">
     <div class="row col-lg-12">
       <div class="col-md-3">
-        <img src="includes/img/logo.png" class="img-fluid" alt="Responsive image">
+        <img src="includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-lg-6">
         <div class="col-xs-3 text-center">
