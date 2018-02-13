@@ -26,7 +26,7 @@ require_once("../admin/class/Product.php");
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">   
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Javascript JS -->
     <script src="bootstrap.js" type="javascript"></script>
 
@@ -139,5 +139,29 @@ require_once("../admin/class/Product.php");
 	?>	
 	
 </div>
+
+<footer>
+    <div class="container fixed-bottom bg-secondary pr-5 pl-5 pb-2 pt-2">
+      <div class="row">        
+        <div class="col-sm">
+          <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm">
+          <span class="text-white align-text-bottom">vendas@epontual.com.br</span>
+        </div>
+        
+        <div class="col-sm-3">
+          
+        </div>
+        <div class="row col-sm-6 text-right">          
+          <div class="col-sm">
+            <img src="../includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
+          </div>
+        </div>        
+      </div>
+    </div>
+  </footer>  
+
 </body>
 </html>
