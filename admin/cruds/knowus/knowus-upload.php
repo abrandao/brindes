@@ -25,4 +25,4 @@ $knowus->insert();
 <h1>Artigo cadastrado com sucesso!</h1>
 
 <p>Título:<? echo " " . $title; ?></p>
-<p>Código:<? echo " " . $article; ?></p>
+<p>artigo:<? echo " " . $article; ?></p>
