@@ -32,10 +32,11 @@
       </div>
       </div>
       <div class="col-md-3">
-        <img src="includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
+        <img src="includes/img/orcamento.png" class="img-fluid" alt="Logo Epontual">
       </div>
     </div>
 
+    <div class="row">
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
       <?php	
@@ -76,7 +77,7 @@
 		    foreach($product_array as $key=>$value){          
       ?>		
 		
-      <div class="col-md-3">
+      <div class="col-md-2">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
@@ -90,6 +91,7 @@
 	    }
 	    ?>
 	  </div>
+    
     <br>
     <br>
     <br>
@@ -107,11 +109,42 @@
       if ($total_artigos >= $artigos_por_pagina ) {
         echo "<br>";
         echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
-      }
-      
-      require_once("includes/footer.php");
+      }     
 
       ?>
+      </div>
     </div>        
   </div>
 </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-12">
+
+</div>
+
+  <footer>
+    <div class="container fixed-bottom bg-secondary pr-5 pl-5 pb-2 pt-2">
+      <div class="row">        
+        <div class="col-sm">
+          <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm">
+          <span class="text-white align-text-bottom">vendas@epontual.com.br</span>
+        </div>
+        
+        <div class="col-sm-3">
+          
+        </div>
+        <div class="row col-sm-6 text-right">          
+          <div class="col-sm">
+            <img src="includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
+          </div>
+        </div>        
+      </div>
+    </div>
+  </footer>  
+  </body>
+</html>
