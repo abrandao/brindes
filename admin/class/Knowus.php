@@ -22,48 +22,39 @@ class Knowus {
   }
 
   public function getArticle() {
-    return $this->id;
+    return $this->article;
   }
 
   public function setArticle($value) {
     $this->article = $value;
   }
-}
 
 public function setData($data) {
   $this->setId($data['id']);
   $this->setTitle($data['title']);
-  $this->setCode($data['code']);
-  $this->setFlag($data['flag']);    
-  $this->setTag($data['tag']);
-  $this->setCategory($data['category']);
-  $this->setDescription($data['description']);
-  $this->setUpfile($data['upfile']);
-  $this->setQtd_min($data['qtd_min']);        
-  $this->setSize($data['size']);
-  $this->setPrinting($data['printing']);
-  $this->setPrint_type($data['print_type']);
-  $this->setComments($data['comments']);
+  $this->setArticle($data['article']); 
 }
 
 public function insert() {
   $sql = new Sql();
-  $results = $sql->select("CALL sp_products_insert(:TITLE, :CODE, :FLAG, :TAG, :CATEGORY, :DESCRIPTION,
-   :UPFILE, :QTD_MIN, :SIZE, :PRINTING, :PRINT_TYPE, :COMMENTS)", array(
-    ':TITLE'=>$this->getTitle(),
-    ':CODE'=>$this->getCode(),
-    ':FLAG'=>$this->getFlag(),
-    ':TAG'=>$this->getTag(),     
-    ':CATEGORY'=>$this->getCategory(),
-    ':DESCRIPTION'=>$this->getDescription(),
-    ':UPFILE'=>$this->getUpfile(),
-    ':QTD_MIN'=>$this->getQtd_min(),      
-    ':SIZE'=>$this->getSize(),
-    ':PRINTING'=>$this->getPrinting(),
-    ':PRINT_TYPE'=>$this->getPrint_type(),
-    ':COMMENTS'=>$this->getComments(),
+  $results = $sql->select("CALL sp_articles_insert(:TITLE, :ARTICLE)", array(
+    ':TITLE'=>$this->getTitle(),    
+    ':ARTICLE'=>$this->getArticle()    
   ));    
   if (count($results) > 0) {
     $this->setData($results[0]);
+  }
+}
+
+  public function __construct($title = "", $article = ""){
+    $this->setTitle($title);    
+    $this->setArticle($article);      
+  }
+  
+	public function __toString(){
+		return json_encode(array(
+      "title"=>$this->getTitle(),      
+      "article"=>$this->getArticle()      
+		));
   }
 }
