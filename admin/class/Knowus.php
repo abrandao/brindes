@@ -46,6 +46,28 @@ public function insert() {
   }
 }
 
+public function loadById($id) {
+  $sql = new Sql();
+  $results = $sql->select("SELECT * FROM knowus WHERE id = :ID", array(
+    ":ID"=>$id
+  ));    
+  if (count($results) > 0) {
+    $this->setData($results[0]);
+  }        
+}
+
+public function update( $title, $article){
+  $this->setTitle($title);
+  $this->setArticle($article);
+  
+  $sql = new Sql();
+  $sql->query("UPDATE knowus SET title = :TITLE, article = :ARTICLE WHERE id = :ID", array(
+    ':TITLE'=>$this->getTitle(),
+    ':ARTICLE'=>$this->getArticle(),    
+    ':ID'=>$this->getId()
+  ));
+}
+
   public function __construct($title = "", $article = ""){
     $this->setTitle($title);    
     $this->setArticle($article);      

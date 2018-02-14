@@ -9,9 +9,13 @@
   }
 
   require_once("../../class/Sql.php");
+  require_once("../../class/Knowus.php");
 
-  $db_handle = new Sql();	
-  $article_array = $db_handle->runQuery("SELECT * FROM knowus");
+  //$db_handle = new Sql();	
+  //$article_array = $db_handle->runQuery("SELECT * FROM knowus");
+  $id = 9;
+  $title = $_POST['title']; 
+  $article = $_POST['article'];
 
 ?>
 
@@ -19,24 +23,24 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>CKEditor</title>
+		<title>Editar texto</title>
 		<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
 	</head>
 	<body>	
 
-      <form method="POST" action="knowus-upload.php" enctype="multipart/form-data">
+      <form method="POST" action="knowus-update.php" enctype="multipart/form-data">
         <div>
           <label for="title">Título:</label>
         </div>
         <div>
-          <input type="text" name="title" value="<?php echo $article_array[0]['title'] ?>"/>
+          <input type="text" name="title" value="<?php echo $title ?>"/>
         </div>
         </br> 
         <div>  
           <label for="article">Artigos:</label>  
         </div>
         <div>  
-          <textarea name="article" id="editor"><?php echo $article_array[0]['article']; ?></textarea>
+          <textarea name="article" id="editor"><?php echo $article; ?></textarea>
           <script>
 			      ClassicEditor
 				    .create( document.querySelector( '#editor' ) )
@@ -56,3 +60,10 @@
 
   </body>
 </html>
+
+<?php  
+
+  $art = new Knowus($title, $article);
+  $art->loadById($id);   
+  $art->update($title, $article);
+  
