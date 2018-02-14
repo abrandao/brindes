@@ -10,7 +10,4 @@ body{ margin-left: 18%; margin-right: 20%;}
   font-weight: 600;
 }
 
-.product-image { width:100%; background-color:#FFF;}
-.product-img { width:100%; height: auto; margin-left: 0; }
 .clear-float{clear:both;}
-

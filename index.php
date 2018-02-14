@@ -1,9 +1,10 @@
 <?php
   require_once("admin/session.php");
   require_once("includes/pagination.php");
-  require_once("includes/head.php");
+  require_once("includes/head.php");  
 ?>
 <br>
+<link rel="stylesheet" href="css/slider.css"> 
 <body>
   
 <div class="container">
@@ -36,6 +37,14 @@
       </div>
     </div>
 
+
+    <ul id="sliders">
+      <li class="slider-active"><img src="includes/img/img1.jpg" /></li>
+      <li><img src="includes/img/img2.jpg" /></li>
+      <li><img src="includes/img/img3.jpg" /></li>
+    </ul>
+
+    
     <div class="row">
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
@@ -125,7 +134,7 @@
 </div>
 
   <footer>
-    <div class="container fixed-bottom bg-secondary pr-5 pl-5 pb-2 pt-2">
+    <div class="container bg-secondary pr-5 pl-5 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
           <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
@@ -145,6 +154,7 @@
         </div>        
       </div>
     </div>
-  </footer>  
+  </footer>
+  <script src="js/slider.js"></script>   
   </body>
 </html>
