@@ -78,9 +78,9 @@ require_once("../admin/class/Product.php");
    
 		<div class="row">
 					<br>
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 			
-				<img class="product-img" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+				<img class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
 				<div class="row">				
 				  
 					<?php
@@ -88,13 +88,13 @@ require_once("../admin/class/Product.php");
 					 for ($i=1; $i<count($files); $i++)
 					 {	
 					 	$num = $files[$i];					
-					 	echo '<div class="col-lg-4"><img class="col-xs product-img" src="' . $num . '"></div>';					
+					 	echo '<div class="col-lg-4"><img class="col-xs img-fluid" src="' . $num . '"></div>';					
 					 }
 					?>
 
 		  	</div>    
 				</div>				
-					<div class="form-group row col-sm-6">					
+					<div class="form-group row col-sm-6 mb-4">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
 						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />
 						<?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
@@ -108,17 +108,17 @@ require_once("../admin/class/Product.php");
 						<?php echo "Quantidade Mínima: " . $product_array[$key]["qtd_min"]; ?>
 						<br />
 						<br />
-						<div class="col-6">
+						<div class="col-9">
 							<labe>Quantidade 1: </label>
 							<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity1" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
 						</div>
 						<br />
-						<div class="col-6">
+						<div class="col-9">
 							<labe>Quantidade 2: </label>
 							<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity2" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
 						</div>
 						<br />
-						<div class="col-6">
+						<div class="col-9">
 							<labe>Quantidade 3: </label>
 							<input class="form-control" min="<? echo $product_array[$key]["qtd_min"]; ?>" type="number" name="quantity3" placeholder="Mínimo: <? echo $product_array[$key]["qtd_min"]; ?>"/>
 						</div>
@@ -139,9 +139,9 @@ require_once("../admin/class/Product.php");
 	?>	
 	
 </div>
-
+	</div>
 <footer>
-    <div class="container fixed-bottom bg-secondary pr-5 pl-5 pb-2 pt-2">
+	<div class="container mb-0 bg-secondary pr-2 pl-2 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
           <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
@@ -160,7 +160,6 @@ require_once("../admin/class/Product.php");
           </div>
         </div>        
       </div>
-    </div>
   </footer>  
 
 </body>
