@@ -20,3 +20,11 @@
   $art = new Knowus($title, $article);
   $art->loadById($id);   
   $art->update($title, $article);
+
+?>
+
+  <h1>Artigo editado com sucesso!</h1>
+  
+  <a href="../../../pages/knowus.php">Visitar a página "Conheça a Epontual".</a>
+  <br>
+  <a href="../../index.php">Retornar ao menu de administração.</a>

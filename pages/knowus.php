@@ -53,7 +53,7 @@ require_once("../admin/class/Knowus.php");
     </div>  
     
     <!-- Categories sidebar -->
-    <div class="col-lg-2">      
+    <div class="col-lg-3">      
       <?php	
       	//Retrieving category list
         $db_handle = new Sql();        
@@ -70,7 +70,7 @@ require_once("../admin/class/Knowus.php");
       ?>
     </div>
       
-    <div class="row col-lg-10 text-justify mt-4">
+    <div class="row col-lg-9 text-justify mt-4">
     <?php	
       	//Retrieving category list
         $db_article = new Sql();        
@@ -86,9 +86,11 @@ require_once("../admin/class/Knowus.php");
       
       ?>
     </div>
+    </div>
     </body>
     <footer>
-    <div class="container fixed-bottom bg-secondary pr-5 pl-5 pb-2 pt-2">
+
+    <div class="container mb-0 bg-secondary pr-2 pl-2 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
           <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>

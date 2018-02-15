@@ -89,7 +89,7 @@
 		
       <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>
@@ -135,7 +135,7 @@
 </div>
 
   <footer>
-    <div class="container mb-0 bg-secondary pr-5 pl-5 pb-2 pt-2">
+    <div class="container mb-0 bg-secondary pr-3 pl-3 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
           <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
