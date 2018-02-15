@@ -47,7 +47,7 @@
     
     <div class="row">
     <!-- Categories sidebar -->
-    <div class="col-lg-2">      
+    <div class="col-lg">      
       <?php	
 
       	//Retrieving category list
@@ -68,8 +68,9 @@
       }
       ?>
     </div>
+    </div>
 
-    <div class="row col-lg-10">
+    <div class="row col-lg-9">
       <?php
         //Sistema de paginação
         // Número de artigos por página
@@ -86,7 +87,7 @@
 		    foreach($product_array as $key=>$value){          
       ?>		
 		
-      <div class="col-md-2">
+      <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
@@ -134,7 +135,7 @@
 </div>
 
   <footer>
-    <div class="container bg-secondary pr-5 pl-5 pb-2 pt-2">
+    <div class="container mb-0 bg-secondary pr-5 pl-5 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
           <span class=""><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>

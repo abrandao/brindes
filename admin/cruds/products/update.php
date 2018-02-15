@@ -1,4 +1,4 @@
-<?php
+@<?php
   require_once("../../class/Category.php");
   require_once("../../class/Sql.php");
 
