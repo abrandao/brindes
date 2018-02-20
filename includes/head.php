@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/style.css">     
 
     <!-- Javascript JS -->
-    <script src="bootstrap.js" type="javascript"></script>
+    <script src="../js/bootstrap.js" type="javascript"></script>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">

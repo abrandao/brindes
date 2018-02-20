@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="css/slider.css"> 
 <body>  
   <div class="container">
-    <div class="fixed-top d-flex justify-content-center">
+  <div class="row mt-4"> 
+    <div class="fixed-top">
       <?php require_once("includes/navbar.php"); ?>
-    </div>
-    
-    <div class="row mt-4">     
+    </div>    
+       
     <div class="col-md-3">
       <img src="includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
     </div>
@@ -151,6 +151,13 @@
   </footer>
   <script src="js/slider.js"></script>
   </div>
-  </div>   
+  </div>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </body>
 </html>
