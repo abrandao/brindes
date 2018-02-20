@@ -26,10 +26,10 @@ require_once("../admin/class/Knowus.php");
 
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="pages/knowus.php">Conheça a    ontual</a></li>    
-        <li class="nav-item"><a class="nav-link"    ef="pages/releases.php">Lançamentos</a></li>
-        <li class="nav-item"><a class="nav-link"    ef="pages/promotions.php">Promoções</a></li>    
-        <li class="nav-item"><a class="nav-link" href="pages/contact.php">Fale    nosco</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a    ontual</a></li>    
+        <li class="nav-item"><a class="nav-link"    ef="releases.php">Lançamentos</a></li>
+        <li class="nav-item"><a class="nav-link"    ef="promotions.php">Promoções</a></li>    
+        <li class="nav-item"><a class="nav-link" href="contact.php">Fale    nosco</a></li>
       </ul>
 
       <form method="post" action="pages/search.php" class="form-inline">
@@ -106,7 +106,7 @@ require_once("../admin/class/Knowus.php");
     </div>
     </div>
     </div>  
-      <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
