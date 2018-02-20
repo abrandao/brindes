@@ -5,49 +5,42 @@
 ?>
 <br>
 <link rel="stylesheet" href="css/slider.css"> 
-<body>
-  
-<div class="container">
-  <br>
-  <div class="row">
-		<?php require_once("includes/navbar.php"); ?>
-  </div>
-
-  <div class="row">
-    <div class="row col-lg-12">
-      <div class="col-md-3">
-        <img src="includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
-      </div>
-      <div class="col-lg-6">
-        <div class="col-xs-3 text-center">
-          <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
-        </div>
-        <!-- Search button -->     
-        <form method="post" action="pages/search.php">
-          <div class="input-group mb-3">
-          <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
-          </div>
-        </form>
-      </div>
-      </div>
-      <div class="col-md-3">
-        <img src="includes/img/orcamento.png" class="img-fluid" alt="Logo Epontual">
+<body>  
+  <div class="container">
+    <div class="fixed-top d-flex justify-content-center">
+      <?php require_once("includes/navbar.php"); ?>
+    </div>
+    
+    <div class="row mt-4">     
+    <div class="col-md-3">
+      <img src="includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-lg-6">
+      <div class="col-xs-3 text-center">
+        <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
       </div>
     </div>
-
+      <!-- Search button      
+      <form method="post" action="pages/search.php">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="search"   id="tags"  aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary"   type="submit">Pesquisar</button>
+        </div>
+      </form> 
+    </div> -->
+    
+    <div class="col-md-3">
+      <img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
+    </div>    
 
     <ul id="sliders">
-      <li class="slider-active"><img src="includes/img/img1.jpg" /></li>
-      <li><img src="includes/img/img2.jpg" /></li>
-      <li><img src="includes/img/img3.jpg" /></li>
-    </ul>
-
+      <li class="slider-active"><img class="img-fluid" src="includes/img/img1.jpeg" /></li>
+      <li><img class="img-fluid img-responsive" src="includes/img/img2.jpeg" /></li>      
+    </ul>    
     
-    <div class="row">
     <!-- Categories sidebar -->
-    <div class="col-lg">      
+    <div class="col-lg-3">      
       <?php	
 
       	//Retrieving category list
@@ -68,7 +61,7 @@
       }
       ?>
     </div>
-    </div>
+   
 
     <div class="row col-lg-9">
       <?php
@@ -124,7 +117,7 @@
       ?>
       </div>
     </div>        
-  </div>
+  
 </div>
 
     <br>
@@ -156,6 +149,8 @@
       </div>
     </div>
   </footer>
-  <script src="js/slider.js"></script>   
+  <script src="js/slider.js"></script>
+  </div>
+  </div>   
   </body>
 </html>
