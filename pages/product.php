@@ -43,10 +43,10 @@ require_once("../admin/class/Product.php");
 
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
-		<li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a    Epontual</a></li>    
-		<li class="nav-item"><a class="nav-link"    ef="releases.php">Lançamentos</a></li>
-		<li class="nav-item"><a class="nav-link"    ef="promotions.php">Promoções</a></li>    
-		<li class="nav-item"><a class="nav-link" href="contact.php">Fale    nosco</a></li>
+		<li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a Epontual</a></li>    
+		<li class="nav-item"><a class="nav-link" href="releases.php">Lançamentos</a></li>
+		<li class="nav-item"><a class="nav-link" href="promotions.php">Promoções</a></li>    
+		<li class="nav-item"><a class="nav-link" href="contact.php">Fale Conosco</a></li>
 	</ul>
 
 	<form method="post" action="pages/search.php" class="form-inline">

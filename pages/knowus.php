@@ -50,7 +50,11 @@ require_once("../admin/class/Knowus.php");
       <div class="col-xs-3 text-center">
         <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
       </div>
+      <div class="col-xs-3 text-center">
+        <p>vendas@epontual.com.br</p>
+      </div>
     </div>
+
       <!-- Search button      
       <form method="post" action="pages/search.php">
         <div class="input-group mb-3">
@@ -60,8 +64,7 @@ require_once("../admin/class/Knowus.php");
         </div>
       </form> 
     </div> -->
-
-      
+          
     <div class="col-md-3">
       <img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
     </div> 

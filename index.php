@@ -19,7 +19,11 @@
       <div class="col-xs-3 text-center">
         <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
       </div>
+      <div class="col-xs-3 text-center">
+        <p>vendas@epontual.com.br</p>
+      </div>
     </div>
+
       <!-- Search button      
       <form method="post" action="pages/search.php">
         <div class="input-group mb-3">
