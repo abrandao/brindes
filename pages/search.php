@@ -11,24 +11,36 @@ require_once("../admin/class/Sql.php");
 <link rel="stylesheet" href="../css/style.css">
 <div class="container">
   <br>
-  <div class="row">
-  <div class="navbar">
-    <nav class="navbar navbar-expand navbar-light bg-light fixed-top" id="navbarCollapse">
+  
+  <div class="row mt-4"> 
+    <div class="fixed-top">
+      
+    <nav class="navbar navbar-collapse navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"    aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse  justify-content-center"     id="navbarSupportedContent">
+
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/knowus.php">Conheça a Epontual</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/clients.php">Clientes</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/releases.php">Lançamentos</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/promotions.php">Promoções</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/printing.php">Tipos de Gravação</a></li>
-        <li class="nav-item"><a class="nav-link" href="../pages/contact.php">Fale Conosco</a></li>
+        <li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a    Epontual</a></li>    
+        <li class="nav-item"><a class="nav-link"    ef="releases.php">Lançamentos</a></li>
+        <li class="nav-item"><a class="nav-link"    ef="promotions.php">Promoções</a></li>    
+        <li class="nav-item"><a class="nav-link" href="contact.php">Fale    nosco</a></li>
       </ul>
+
+      <form method="post" action="search.php" class="form-inline">
+        <input class="form-control" type="search" placeholder="Pesquisar"     ia-label="Search" name="search"   id="tags">
+        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+      </form>
+
+    </div> 
     </nav>  
-  </div>
-  </div>
-  
-  <div class="row">
-  <div class="row col-lg-12">
+
+    </div>    
+       
     <div class="col-md-3">
       <img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
     </div>
@@ -36,20 +48,20 @@ require_once("../admin/class/Sql.php");
       <div class="col-xs-3 text-center">
         <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
       </div>
-      <!-- Search button -->     
-      <form method="post" action="search.php">
+    </div>
+      <!-- Search button      
+      <form method="post" action="pages/search.php">
         <div class="input-group mb-3">
-        <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
+          <input type="text" class="form-control" name="search"   id="tags"  aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+          <button class="btn btn-outline-secondary"   type="submit">Pesquisar</button>
         </div>
-      </form>
-    </div>
-    </div>
+      </form> 
+    </div> -->
+    
     <div class="col-md-3">
-      <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
+      <img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
+    </div>    
 
     <?php echo $category_array[$key]["category"]; ?>
     <!-- Categories sidebar -->
@@ -91,7 +103,7 @@ require_once("../admin/class/Sql.php");
       
       <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="product-img" src="<?php echo "../admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "../admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>
@@ -127,4 +139,4 @@ require_once("../admin/class/Sql.php");
       ?>
     </div>        
   </div>
-</div>
+</div>    <scriptsrc="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.minjs" integrity="sha384-ApNbgh9+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>    <scriptsrc="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar+76PVCmYl" crossorigin="anonymous"></script>

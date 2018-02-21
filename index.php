@@ -60,8 +60,7 @@
 		  		}
       }
       ?>
-    </div>
-   
+    </div>   
 
     <div class="row col-lg-9">
       <?php
