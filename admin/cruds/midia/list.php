@@ -41,17 +41,16 @@
 
     $images = scandir("../../../includes/img/midia/");
 
-    //echo json_encode($images);
-    
+       
     foreach($images as $key=>$img){	
       if(!in_array($img, array(".", ".."))) {
 ?>    
     <div class="col-lg-4">
-      <img class="img-thumbnail rounded" style="width: 200px; height: 200px;" src="<?php echo "../../../includes/img/midia/" . $images[$key];?>"></img>
+      <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo "../../../includes/img/midia/" . $images[$key];?>"></img>
       <br>
       <?php echo $images[$key] ?>
       <br>      
-      <textarea cols="50"><?php echo "../../../includes/img/midia/" . $images[$key]; ?></textarea>
+      <textarea class="form-control" cols="50"><?php echo "../../../includes/img/midia/" . $images[$key]; ?></textarea>
       <hr>
     </div>
     <br>
