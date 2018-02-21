@@ -9,10 +9,7 @@
 ?>
 
 <form method="POST" action="file-upload.php" enctype="multipart/form-data">
-  
-  <label for="title">Título</label>
-  <input type="text" name="title" /></br>
-  <br>
+    
   <label for="upfile">Imagem Destacada</label>
   <br>
   <input type="file" name="upfile[]" multiple /></br>
