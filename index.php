@@ -39,8 +39,8 @@
     </div>    
 
     <ul id="sliders">
-      <li class="slider-active"><img class="img-fluid" src="includes/img/img1.jpeg" /></li>
-      <li><img class="img-fluid img-responsive" src="includes/img/img2.jpeg" /></li>      
+      <li class="slider-active"><img class="img-fluid" src="includes/img/slider/img1.jpeg" /></li>
+      <li><img class="img-fluid img-responsive" src="includes/img/slider/img2.jpeg" /></li>      
     </ul>    
     
     <!-- Categories sidebar -->
