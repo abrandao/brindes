@@ -1,5 +1,9 @@
-*.vscode
-*.swp
+includes/img/midia/*
+includes/img/slider/*
 products/*
 */base
+*.vscode
+*.swp
+*.png
 *.jpg
+*.jpeg

@@ -55,7 +55,7 @@
         
 		    if (!empty($category_array)) {         
           
-		    	foreach($category_array as $key=>$value){	
+		    foreach($category_array as $key=>$value){	
             
       ?>    
         <br>          

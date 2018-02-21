@@ -1,5 +1,13 @@
 <?php
 
+  // Initialize the session
+  session_start();
+  // If session variable is not set it will redirect to login page
+  if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+    header("location: ../login/login.php");
+    exit;
+  }
+
 $title = $_POST['title'];
 
 $dirUploads = "../../../includes/img/midia";
@@ -24,5 +32,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p>Título:<? echo " " . $title; ?></p>
 
 <p>Nome da Pasta:<? echo " " . $dirUploads; ?></p> 
-
-?>
