@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Brindes" />
-    <meta name="author" content="Anderson Brandão <brandao@weblogos.com.br" />
+    <meta name="author" content="Anderson Brandão" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />

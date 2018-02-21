@@ -48,3 +48,4 @@ echo "<script>location.href='../index.php'</script>"; // Página que será redir
 
 <h3 align="center">OBRIGADO!</h3>
 <p align="center">Sua mensagem foi enviada, em breve, entraremos em contato.</p>
+

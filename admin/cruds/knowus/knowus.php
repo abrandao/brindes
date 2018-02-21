@@ -26,8 +26,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Editar texto</title>
-		<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
-	</head>
+		<script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+  </head>
 	<body>	
 
       <form method="POST" action="knowus-update.php" enctype="multipart/form-data">
@@ -42,17 +42,10 @@
           <label for="article">Artigos:</label>  
         </div>
         <div>  
-          <textarea name="article" id="editor"><?php echo $article; ?></textarea>
+          <textarea name="article" id="editor1"><?php echo $article; ?></textarea>
           <script>
-			      ClassicEditor
-				    .create( document.querySelector( '#editor' ) )
-				    .then( editor => {
-				    	console.log( editor );
-				    } )
-				    .catch( error => {
-				    	console.error( error );
-				    } );
-		      </script>
+			CKEDITOR.replace( 'editor1' );
+		</script>
         </div>
         </br>  
         <div>
