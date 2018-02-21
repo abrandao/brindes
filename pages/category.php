@@ -16,30 +16,28 @@ require_once("../admin/class/Sql.php");
 <div class="fixed-top">
 <nav class="navbar navbar-collapse navbar-expand-lg navbar-light bg-light">
 
-<button class="navbar-toggler" type="button" data-toggle="collapse"     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"    aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse  justify-content-center"     id="navbarSupportedContent">
+<div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent">
 
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
-		<li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a    ontual</a></li>    
-		<li class="nav-item"><a class="nav-link"    ef="releases.php">Lançamentos</a></li>
-		<li class="nav-item"><a class="nav-link"    ef="promotions.php">Promoções</a></li>    
-		<li class="nav-item"><a class="nav-link" href="contact.php">Fale    nosco</a></li>
+		<li class="nav-item"><a class="nav-link" href="knowus.php">Conheça a Epontual</a></li>    
+		<li class="nav-item"><a class="nav-link" href="releases.php">Lançamentos</a></li>
+		<li class="nav-item"><a class="nav-link" href="promotions.php">Promoções</a></li>    
+		<li class="nav-item"><a class="nav-link" href="contact.php">Fale Conosco</a></li>
 	</ul>
 
-	<form method="post" action="pages/search.php" class="form-inline">
-		<input class="form-control" type="search" placeholder="Pesquisar"     ia-label="Search" name="search"   id="tags">
+	<form method="post" action="search.php" class="form-inline">
+		<input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" name="search" id="tags">
 		<button class="btn btn-outline-success" type="submit">Pesquisar</button>
 	</form>
 
 </div> 
 </nav>  
-</div>    
-
-
+</div>
 
   </div>
 
@@ -54,16 +52,7 @@ require_once("../admin/class/Sql.php");
         </div>
         <div class="col-xs-3 text-center">
           <p>vendas@epontual.com.br</p>
-        </div>
-        <!-- Search button -->     
-        <form method="post" action="search.php">
-          <div class="input-group mb-3">
-          <input type="text" class="form-control" name="search" id="tags"   aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
-          </div>
-        </form>
-      </div>
+        </div>        
       </div>
       <div class="col-md-3">
         <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
@@ -165,10 +154,9 @@ require_once("../admin/class/Sql.php");
         </div>        
       </div>
     </div>
-  </footer> 
-
+  </footer>
+  
   <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 

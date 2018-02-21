@@ -135,11 +135,34 @@ require_once("../admin/class/Sql.php");
       if ($total_artigos > $artigos_por_pagina ) {
         echo "<br>";
         echo paginacao( $total_artigos, $artigos_por_pagina, 5 );
-      }
-      
-      require_once("../includes/footer.php");
+      }      
 
       ?>
+
+      </body>
+        <footer>
+          <div class="container fixed-bottom bg-secondary p-3">
+            <div class="row">        
+              <div class="col-sm-3">
+                <span class=""><a class="fa fa-facebook-square" style="font-size:30px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
+              </div>
+              <div class="col-sm-3">
+
+              </div>
+              <div class="row col-sm-6">
+                <div class="col-sm">
+                  <span class="text-white">vendas@epontual.com.br</span>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-sm">
+                  <img src="../includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
+                </div>
+              </div>        
+            </div>
+          </div>
+        </footer>  
+      </html>
+
     </div>        
   </div>
 </div>    <scriptsrc="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.minjs" integrity="sha384-ApNbgh9+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>    <scriptsrc="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar+76PVCmYl" crossorigin="anonymous"></script>
