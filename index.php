@@ -22,17 +22,7 @@
       <div class="col-xs-3 text-center">
         <p>vendas@epontual.com.br</p>
       </div>
-    </div>
-
-      <!-- Search button      
-      <form method="post" action="pages/search.php">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" name="search"   id="tags"  aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary"   type="submit">Pesquisar</button>
-        </div>
-      </form> 
-    </div> -->
+    </div>     
     
     <div class="col-md-3">
       <!--<img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->

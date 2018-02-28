@@ -2,7 +2,7 @@
 require_once("../admin/session.php");
 require_once("../admin/class/Sql.php");
 require_once("../admin/class/Product.php");
-require_once("../includes/head.php");
+//require_once("../includes/head.php");
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -26,21 +26,57 @@ require_once("../includes/head.php");
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">   
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/hover.css">		
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Javascript JS -->
-    
+	
+		<!-- Javascript JS -->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../js/hover.js"></script>
+
+		<?php
+ 
+  		$db_handle = new Sql();
+  		$search = $db_handle->runQuery("SELECT code, title FROM products");  
+		
+  		 foreach($search as $key=>$value){	
+  		  $sch[] = $search[$key]["code"]; 
+  		  $sch[] = $search[$key]["title"];     
+  		 }   
+		 
+  		?>
+
+  <script>
+    $( function() {
+      
+      var availableTags = <?php echo json_encode($sch) ?>;
+
+      //Filtering duplicated results
+      var tagsFilter = availableTags.filter(function(arr, i) {
+          return availableTags.indexOf(arr) == i;
+      })      
+      
+      $( "#tags" ).autocomplete({
+        source: tagsFilter
+      });
+    } );
+  </script>   
 
   </head>  
 <body>
+	
 <div class="fixed-top">
 <nav class="navbar navbar-collapse navbar-expand-lg navbar-light bg-light">
 
-<button class="navbar-toggler" type="button" data-toggle="collapse"     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"    aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"    aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse  justify-content-center"     id="navbarSupportedContent">
+<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
@@ -92,10 +128,11 @@ require_once("../includes/head.php");
    
 		<div class="row">
 			<br>
-			<!-- Images area -->
-			<div class="col-sm-6">
 			
-				<img class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+			<!-- Images area -->
+			<div id="images" class="col-sm-6" onmouseover="javascript:mouseHover();">
+			
+				<img id="imagehover2"   class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
 				<div class="row">				
 				  
 					<?php
@@ -103,14 +140,15 @@ require_once("../includes/head.php");
 					 for ($i=1; $i<count($files); $i++)
 					 {	
 					 	$num = $files[$i];					
-					 	echo '<div class="col-lg-4"><img class="col-xs img-fluid" src="' . $num . '"></div>';					
+					 	echo '<div class="col-lg-4"><img id="imagehover" class="col-xs img-fluid" src="' . $num . '"></div>';					
 					 }
 					?>
-
 		  	</div>    
-			</div>				
+			</div id="myresult" class="img-zoom-result">
+			<!-- End Images area -->
+			
 					<div class="form-group row col-sm-6 mb-4">					
-					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
+					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">  
 						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />
 						<?php echo "Produto: " . $product_array[$key]["title"]; ?><br />
 						<?php echo "Descrição: " . $product_array[$key]["description"]; ?><br /> 				  
@@ -152,7 +190,7 @@ require_once("../includes/head.php");
 			}
 		}
 	?>	
-	
+	 
 </div>
 	</div>
 <footer class="fixed-bottom">
@@ -175,11 +213,7 @@ require_once("../includes/head.php");
           </div>
         </div>        
       </div>
-  </footer>  
-
-		<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    
+  </footer> 
+   
 </body>
 </html>

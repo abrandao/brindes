@@ -1,33 +1,33 @@
-alert("ola");
-
+/*
 function mouseOut() {
   
   var lens = document.getElementById('myresult').className = " ";
   
- }
+ } */
 
 function mouseHover() {
   
-  var item = document.getElementById('myresult').className = "img-zoom-result";
-
+  //var item = document.getElementById('myresult').className = "img-zoom-result";
+  
   var el = document.getElementById('images');  
- 
+  
   el.addEventListener('mouseover', function(e) {
     var el = document.getElementById("images").src;
-   // alert(e.target.id);
-    //Calling imageZoom function passing id
+   
     if (e.target.id == "imagehover2") {
-      imageZoom(e.target.id, "myresult");
+      imageZoom(e.target.id, "myresult");      
     }  
-      
+    
     if (e.target.src !== undefined){      
-     document.getElementById("imagehover2").src = e.target.src;        
+     document.getElementById("imagehover2").src = e.target.src;
+             
     }     
   });
     
 }
 
 function imageZoom(imgID, resultID) {
+    
   var img, lens, result, cx, cy;
   
   img = document.getElementById(imgID);
