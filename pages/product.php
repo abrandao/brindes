@@ -2,6 +2,7 @@
 require_once("../admin/session.php");
 require_once("../admin/class/Sql.php");
 require_once("../admin/class/Product.php");
+require_once("../includes/head.php");
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -28,7 +29,7 @@ require_once("../admin/class/Product.php");
     <link rel="stylesheet" href="../css/style.css">   
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Javascript JS -->
-    <script src="bootstrap.js" type="javascript"></script>
+    
 
   </head>  
 <body>
@@ -49,8 +50,8 @@ require_once("../admin/class/Product.php");
 		<li class="nav-item"><a class="nav-link" href="contact.php">Fale Conosco</a></li>
 	</ul>
 
-	<form method="post" action="pages/search.php" class="form-inline">
-		<input class="form-control" type="search" placeholder="Pesquisar"     ia-label="Search" name="search"   id="tags">
+	<form method="post" action="search.php" class="form-inline">
+		<input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" name="search" id="tags">
 		<button class="btn btn-outline-success" type="submit">Pesquisar</button>
 	</form>
 
@@ -178,10 +179,7 @@ require_once("../admin/class/Product.php");
 
 		<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+    
+    
 </body>
 </html>
