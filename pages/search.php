@@ -63,7 +63,7 @@ require_once("../admin/class/Sql.php");
     </div> -->
     
     <div class="col-md-3">
-      <img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
+      <!--<img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
     </div>    
 
     <?php echo $category_array[$key]["category"]; ?>

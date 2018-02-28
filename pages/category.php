@@ -55,7 +55,7 @@ require_once("../admin/class/Sql.php");
         </div>        
       </div>
       <div class="col-md-3">
-        <img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">
+        <!--<img src="../includes/img/orcamento.png" class="img-fluid" alt="Responsive image">-->
       </div>
     </div>  
     

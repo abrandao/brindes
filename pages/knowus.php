@@ -33,7 +33,7 @@ require_once("../admin/class/Knowus.php");
       </ul>
 
       <form method="post" action="search.php" class="form-inline">
-        <input class="form-control" type="search" placeholder="Pesquisar"     ia-label="Search" name="search"   id="tags">
+        <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" name="search"   id="tags">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
 
@@ -66,7 +66,7 @@ require_once("../admin/class/Knowus.php");
     </div> -->
           
     <div class="col-md-3">
-      <img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
+      <!--<img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
     </div> 
     
     <!-- Categories sidebar -->

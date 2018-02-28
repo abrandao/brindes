@@ -90,7 +90,8 @@ require_once("../admin/class/Product.php");
 		?>		
    
 		<div class="row">
-					<br>
+			<br>
+			<!-- Images area -->
 			<div class="col-sm-6">
 			
 				<img class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
@@ -106,7 +107,7 @@ require_once("../admin/class/Product.php");
 					?>
 
 		  	</div>    
-				</div>				
+			</div>				
 					<div class="form-group row col-sm-6 mb-4">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">					  
 						<?php echo "Código: " . $product_array[$key]["code"]; ?><br />

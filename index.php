@@ -35,7 +35,7 @@
     </div> -->
     
     <div class="col-md-3">
-      <img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">
+      <!--<img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
     </div>    
 
     <ul id="sliders">
