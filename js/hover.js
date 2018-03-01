@@ -1,29 +1,42 @@
 /*
-function mouseOut() {
-  
-  var lens = document.getElementById('myresult').className = " ";
-  
- } */
+function mouseLeave() {
+  //
+}
 
-function mouseHover() {
-  
-  //var item = document.getElementById('myresult').className = "img-zoom-result";
+function mouseLeave() {
+  //alert("claro");
+  //var lens = document.getElementById('myresult').className = " ";
+  //delete lens.imageZoom(); 
+ } 
+*/
+
+function mouseHover() {  
   
   var el = document.getElementById('images');  
   
   el.addEventListener('mouseover', function(e) {
-    var el = document.getElementById("images").src;
+    var el = document.getElementById("imagehover").src;
+
+    if (e.target.src !== undefined){      
+      document.getElementById("imagehover2").src = e.target.src;
+      //document.getElementById("myresult").src = e.target.src;     
+     }     
+   });
+
+   /*
+   var item = document.getElementById('myresult').className = "img-zoom-result";
    
     if (e.target.id == "imagehover2") {
       imageZoom(e.target.id, "myresult");      
     }  
-    
-    if (e.target.src !== undefined){      
-     document.getElementById("imagehover2").src = e.target.src;
-             
-    }     
-  });
-    
+
+  el.addEventListener('mouseleave', function(e) {
+    document.getElementById("imagehover2").src = "http://images.uncyc.org/pt/8/8e/Ken-sshinryuken.gif"
+    this.removeAttribute.img;
+    var lens = document.getElementById('myresult');
+    lens.classList.remove("img-zoom-result");
+    alert("kkk");
+  }); */    
 }
 
 function imageZoom(imgID, resultID) {

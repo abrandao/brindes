@@ -130,21 +130,23 @@ require_once("../admin/class/Product.php");
 			<br>
 			
 			<!-- Images area -->
-			<div id="images" class="col-sm-6" onmouseover="javascript:mouseHover();">
+			<div id="images" class="col-sm-6">
 			
-				<img id="imagehover2"   class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
-				<div class="row">				
+				<img id="imagehover2"  class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+				<div class="row">			
 				  
 					<?php
 					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
 					 for ($i=1; $i<count($files); $i++)
 					 {	
 					 	$num = $files[$i];					
-					 	echo '<div class="col-lg-4"><img id="imagehover" class="col-xs img-fluid" src="' . $num . '"></div>';					
+					 	echo '<div class="col-lg-4"><img id="imagehover" onmouseover="javascript:mouseHover();" class="col-xs img-fluid" src="' . $num . '"></div>';					
 					 }
 					?>
+					
+					<div id="myresult"></div>
 		  	</div>    
-			</div id="myresult" class="img-zoom-result">
+			</div>
 			<!-- End Images area -->
 			
 					<div class="form-group row col-sm-6 mb-4">					
