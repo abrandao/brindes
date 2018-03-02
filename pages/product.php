@@ -134,9 +134,10 @@ require_once("../admin/class/Product.php");
 			
 				<img id="imagehover2"  class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
 				<div class="row">			
-				  
+					 
 					<?php
-					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
+					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");					 
+					 echo '<div class="col-lg-4"><img id="imagehover" onmouseover="javascript:mouseHover();" class="col-xs img-fluid" src="' . $files[0] . '"></div>';
 					 for ($i=1; $i<count($files); $i++)
 					 {	
 					 	$num = $files[$i];					

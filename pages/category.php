@@ -88,8 +88,7 @@ require_once("../admin/class/Sql.php");
         $pagina_atual = $pagina_atual * $artigos_por_pagina;
     
         //Products listening by category
-        $cat = $_GET['category'];
-        $prod_code = $_GET['code'];
+        $cat = $_GET['category'];       
         $db_handle = new Sql();
 	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE category = '$cat'");
 	      if (!empty($product_array)) { 
@@ -154,9 +153,4 @@ require_once("../admin/class/Sql.php");
         </div>        
       </div>
     </div>
-  </footer>
-  
-  <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  </footer>  
