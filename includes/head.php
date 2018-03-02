@@ -13,7 +13,7 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <menu http-equiv="pragma" content="no-cache" />    
     
-    <title>Brindes</title>
+    <title>Epontual</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
