@@ -48,15 +48,17 @@
     <div class="col-lg-4">
       <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo "../../../includes/img/midia/" . $images[$key];?>"></img>
       <br>
-      <?php echo $images[$key] ?>
+      <?php echo $images[$key]; $img_array = $images[$key]; ?>
       <br>      
       <textarea class="form-control" cols="50"><?php echo "../../../includes/img/midia/" . $images[$key]; ?></textarea>
+      <input type="button" value="Deletar"></a>
       <hr>
     </div>
     <br>
 <?php    
       }
     }
+    
 ?>
     </div>
   </div>     
