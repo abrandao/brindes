@@ -196,7 +196,7 @@ require_once("../admin/class/Product.php");
 	 
 </div>
 	</div>
-<footer class="fixed-bottom">
+<footer>
 	<div class="container mb-0 bg-secondary pr-2 pl-2 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
