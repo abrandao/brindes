@@ -37,7 +37,7 @@
       mysqli_select_db($myConnection, "brindes") or die ("no database");
 
       $result = mysqli_query($myConnection,$query);
-      while($row=mysqli_fetch_assoc($result)) {
+      while($row = mysqli_fetch_assoc($result)) {
         $resultset[] = $row;
       }		
       if(!empty($resultset))

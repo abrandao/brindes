@@ -2,6 +2,7 @@
   require_once("admin/session.php");
   require_once("includes/pagination.php");
   require_once("includes/head.php");  
+  include_once("admin/class/Sql.php");
 ?>
 <br>
 <link rel="stylesheet" href="css/slider.css"> 

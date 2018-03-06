@@ -12,7 +12,7 @@
   require_once("../../class/Knowus.php");
 
 
-  $id = 9;
+  $id = 1;
   $title = $_POST['title']; 
   $article = $_POST['article'];
 
