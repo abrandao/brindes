@@ -36,15 +36,17 @@ if ($renamed_folder != $upfile) {
           
         if (substr($num, -6,6) == "_0.jpg") {
           
-          rename($num,"../../products/" . $upfile . "/" . $upfile . "_0.jpg" );
-                  
-        } 
-              
+          rename($num,"../../products/" . $upfile . "/" . $upfile . "_0.jpg" );                  
+        }              
       } 
-  echo "<br>";
-  
-} 
+  echo "<br>";  
+}
 
+  $z = 0;
+  while ($z<count($_FILES['upfile']['name'])) {
+    move_uploaded_file($_FILES['upfile']['tmp_name'][$z], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$z]);
+    $z++;
+  }
 ?>
 
 <h1>Produto editado com sucesso!</h1>
