@@ -75,12 +75,12 @@
       ?>		
 		
       <div class="col-md-3">
-			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+			  <form method="post" action="pages/product.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>
-          <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btnAddAction" />Solicitar Orçamento</a>
+          <button class="btn btn-outline-success" type="submit" value="Solicitar orçamento" class="btnAddAction" />Orçamento</button>
         </form>    
 		  </div>		
 	    <?php

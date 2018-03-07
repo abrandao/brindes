@@ -15,7 +15,7 @@
     </ul>
 
     <form method="post" action="pages/search.php" class="form-inline">
-      <input class="form-control" type="search" placeholder="Pesquisar" ia-label="Search" name="search"   id="tags">
+      <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" name="search" id="tags">
       <button class="btn btn-outline-success" type="submit">Pesquisar</button>
     </form>
 
