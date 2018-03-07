@@ -47,6 +47,17 @@ if ($renamed_folder != $upfile) {
     move_uploaded_file($_FILES['upfile']['tmp_name'][$z], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$z]);
     $z++;
   }
+
+ 
+  $images = $_POST['img'];
+  if(!empty($images)) {
+  foreach($images as $key=>$img) {
+
+    echo $images[$key];
+    unlink($dirUploads . "/" . $images[$key]);
+    echo "<br>";
+    }  
+  }
 ?>
 
 <h1>Produto editado com sucesso!</h1>

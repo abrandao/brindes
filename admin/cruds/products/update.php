@@ -1,7 +1,7 @@
 <?php
   require_once("../../class/Category.php");
   require_once("../../class/Sql.php");
-
+      
   // Initialize the session
   session_start();
   // If session variable is not set it will redirect to login page
@@ -20,7 +20,7 @@
      $renamed_folder = $product_array[$key]["upfile"];
      
 ?>
-
+<link rel="stylesheet" href="../../../css/bootstrap.css">
 <h1>EDITANDO PRODUTO</h1>
 <form method="POST" action="file-update.php" enctype="multipart/form-data">
   
@@ -84,14 +84,41 @@
 <?php	
 			}
   }
+}
+  }
   
   ?>
   </select>
   <br>
-  <button type="submit" value="send values">Atualizar</button>
-</form>
+  <?php
+    
+    $images = scandir("../../products/" .	$prod_code . "/");
+    echo "<br>";
+    //var_dump($images);    
 
-<?php
-	}
-}
+    foreach($images as $key=>$img){	
+      if(!in_array($img, array(".", ".."))) {
+        //echo $images[$key];                
+?>  
+   <div class="d-block">  
+    <div class="col-lg-4" style="float:left">     
+        <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
+        <br>
+        <hr>
+        <input type="checkbox" name="img[]" value="<?php echo $images[$key]; ?>">
+        <?php echo $images[$key]; ?>        
+        <br>      
+        <textarea class="form-control" cols="50"><?php echo "../../products/" .	$prod_code . "/" . $images[$key]; ?></textarea>      
+    </div>
+   </div>
+   </div>
+<?php    
+      }
+    }   
+ 
 ?>
+<div class="d-block"> 
+  <input class="btn btn-danger d-block" type="submit" value="Submit">
+</div>  
+</form>
+</div>
