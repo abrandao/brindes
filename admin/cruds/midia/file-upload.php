@@ -8,8 +8,6 @@
     exit;
   }
 
-$title = $_POST['title'];
-
 $dirUploads = "../../../includes/img/midia";
 
 //Folder creation and renaming files
@@ -27,8 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 ?>
 
-<h1>Produto cadastrado com sucesso!</h1>
+<h1>Arquivos cadastrados com sucesso!</h1>
 
 <p>Título:<? echo " " . $title; ?></p>
 
-<p>Nome da Pasta:<? echo " " . $dirUploads; ?></p> 
+<p>Nome da Pasta:<? echo " " . $dirUploads; ?></p>
+
+<a href="list.php">LISTAR MÍDIAS</a> 
