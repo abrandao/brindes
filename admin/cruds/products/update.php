@@ -83,11 +83,11 @@
 		<option><?php echo $category_array[$key]["category"]; ?></option>      
 <?php	
 			}
+    }
   }
 }
-  }
   
-  ?>
+?>
   </select>
   <br>
   <?php

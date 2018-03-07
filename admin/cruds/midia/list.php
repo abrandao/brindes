@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="../../../css/bootstrap.css">   
     <link rel="stylesheet" href="../../../css/style.css">     
   </head>
-
+  <a class="btn btn-primary" href="../../">Menu de administração</a>
+  <a class="btn btn-success" href="upload.php">Adicionar mais imagens</a>
   <div class="container">
      <div class="row">
 
@@ -64,3 +65,5 @@
       <input type="submit" value="Submit">
     </form>
   </div>
+  
+ 
