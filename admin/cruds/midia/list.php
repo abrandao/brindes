@@ -62,7 +62,7 @@
     
 ?>
       </div>
-      <input type="submit" value="Submit">
+      <input class="btn btn-info" type="submit" value="Submit">
     </form>
   </div>
   

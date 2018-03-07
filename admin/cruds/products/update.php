@@ -8,7 +8,7 @@
   if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     header("location: ../login/login.php");
     exit;
-  }
+  } 
 
 	$db_handle = new Sql();
 	$prod_code = $_GET['code'];
@@ -21,6 +21,9 @@
      
 ?>
 <link rel="stylesheet" href="../../../css/bootstrap.css">
+
+<div class="container">
+
 <h1>EDITANDO PRODUTO</h1>
 <form method="POST" action="file-update.php" enctype="multipart/form-data">
   
@@ -65,7 +68,7 @@
   <label for="print_type">Tipo de Gravação</label>
   <input type="text" name="print_type" value="<?php echo $product_array[$key]["print_type"] ?>"/></br>
 
-  <label for="comments">Comentários</label>  
+  <label for="comments">Comentários</label><br>  
   <textarea for= "comments" rows="4" cols="50" name="comments"><?php echo $product_array[$key]["comments"] ?></textarea></br>
 
   <label for="category">Categoria</label>
@@ -100,8 +103,8 @@
       if(!in_array($img, array(".", ".."))) {
         //echo $images[$key];                
 ?>  
-   <div class="d-block">  
-    <div class="col-lg-4" style="float:left">     
+   <div class="container-fluid">  
+    <div class="col-lg-4 bg-primary" style="float:left">     
         <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
         <br>
         <hr>
@@ -115,10 +118,12 @@
 <?php    
       }
     }   
- 
+    echo "<br>";
 ?>
-<div class="d-block"> 
-  <input class="btn btn-danger d-block" type="submit" value="Submit">
-</div>  
+</div><br>
+<div>
+  <input class="btn btn-danger" type="submit" value="Submit">
+</div>
 </form>
+</div>
 </div>
