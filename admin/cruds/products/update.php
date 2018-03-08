@@ -94,17 +94,21 @@
   </select>
   <br>
   <?php
+
+    $dirUpdate = "../../products/" .	$prod_code . "/";
     
-    $images = scandir("../../products/" .	$prod_code . "/");
-    echo "<br>";
-    //var_dump($images);    
+    if (!is_dir($dirUpdate)) {
+      mkdir($dirUpdate);
+    }
+
+    $images = scandir($dirUpdate);
+    echo "<br>";       
 
     foreach($images as $key=>$img){	
-      if(!in_array($img, array(".", ".."))) {
-        //echo $images[$key];                
+      if(!in_array($img, array(".", ".."))) {        
 ?>  
    <div class="container-fluid">  
-    <div class="col-lg-4 bg-primary" style="float:left">     
+    <div class="col-lg-4" style="float:left">     
         <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
         <br>
         <hr>

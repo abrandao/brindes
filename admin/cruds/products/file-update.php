@@ -44,6 +44,9 @@ if ($renamed_folder != $upfile) {
 
   $z = 0;
   while ($z<count($_FILES['upfile']['name'])) {
+    
+    move_uploaded_file($_FILES['highlight']['tmp_name'][$z], $dirUploads . DIRECTORY_SEPARATOR . $dirUploads . "/" . $upfile . "_" . (string)$z . ".jpg");
+
     move_uploaded_file($_FILES['upfile']['tmp_name'][$z], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name'][$z]);
     $z++;
   }
