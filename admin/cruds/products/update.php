@@ -94,7 +94,9 @@
 ?>
   </select>
   
-  <br>
+  <hr>
+  <h3>Selecione as imagens que deseja apagar:</h3>
+
   <?php
 
     $dirUpdate = "../../products/" .	$prod_code . "/";
@@ -109,9 +111,8 @@
     foreach($images as $key=>$img){	
       if(!in_array($img, array(".", ".."))) {        
 ?>  
-    </div>
-    <div class="row col-lg-4">
-    
+    </div>    
+    <div class="row col-lg-4">    
     <div>     
         <img class="img-thumbnail" style="height: 200px; width: auto;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
         <br>
@@ -129,8 +130,9 @@
 ?>
     </div>
     </div>
-      <input class="btn btn-danger" type="submit" value="Submit">
-    </form>
-  
- 
+      <input class="btn btn-outline-primary" type="submit" value="Atualizar">      
+      <a class="btn btn-outline-success" href="../../">Menu de administração</a>
+    </form> 
 </div>
+<br>
+<br>
