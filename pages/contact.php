@@ -130,7 +130,7 @@
       </textarea>
     </div> 
     <div class="form-group">
-      <input type="submit"  class="btn btn-primary" value="Enviar solicitação"/>
+      <input type="submit"  class="btn btn-outline-success" value="Enviar solicitação"/>
     </div>
   </form>   
   </div>  

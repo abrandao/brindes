@@ -184,7 +184,7 @@ require_once("../admin/class/Product.php");
 						<label for="message">Comentário:</label>					  					  
   					<textarea class="form-control" for="message" rows="4" cols="50" name="message"></textarea></br>
 						<br />
-						<input type="submit" value="Adicionar ao Carrinho" class="btnAddAction" />
+						<input class="btn btn-outline-success" type="submit" value="Adicionar ao Carrinho" class="btnAddAction" />
 					</form>
       </div>			
     </div>
