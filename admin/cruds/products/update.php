@@ -23,7 +23,8 @@
 <link rel="stylesheet" href="../../../css/bootstrap.css">
 
 <div class="container">
-
+  <div class="row">
+  <div class="col-lg-12">
 <h1>EDITANDO PRODUTO</h1>
 <form method="POST" action="file-update.php" enctype="multipart/form-data">
   
@@ -92,6 +93,7 @@
   
 ?>
   </select>
+  
   <br>
   <?php
 
@@ -107,27 +109,28 @@
     foreach($images as $key=>$img){	
       if(!in_array($img, array(".", ".."))) {        
 ?>  
-   <div class="container-fluid">  
-    <div class="col-lg-4" style="float:left">     
-        <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
+    </div>
+    <div class="row col-lg-4">
+    
+    <div>     
+        <img class="img-thumbnail" style="height: 200px; width: auto;" src="<?php echo  "../../products/" .	$prod_code . "/" . $images[$key]; ?>"></img>
         <br>
         <hr>
         <input type="checkbox" name="img[]" value="<?php echo $images[$key]; ?>">
         <?php echo $images[$key]; ?>        
         <br>      
         <textarea class="form-control" cols="50"><?php echo "../../products/" .	$prod_code . "/" . $images[$key]; ?></textarea>      
-    </div>
-   </div>
-   </div>
+    </div> 
+  
 <?php    
       }
     }   
     echo "<br>";
 ?>
-</div><br>
-<div>
-  <input class="btn btn-danger" type="submit" value="Submit">
-</div>
-</form>
-</div>
+    </div>
+    </div>
+      <input class="btn btn-danger" type="submit" value="Submit">
+    </form>
+  
+ 
 </div>
