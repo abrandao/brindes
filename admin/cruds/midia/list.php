@@ -47,7 +47,7 @@
 ?>    
     <div class="col-lg-4">
       ​<form action="delete.php" method="post">
-        <img class="img-thumbnail" style="width: 200px; height: 200px;" src="<?php echo   "../../../includes/img/midia/" . $images[$key]; ?>"></img>
+        <img class="img-thumbnail" style="height: 200px; width: auto;" src="<?php echo   "../../../includes/img/midia/" . $images[$key]; ?>"></img>
         <br>
         <input type="checkbox" name="img[]" value="<?php echo $images[$key]; ?>">
         <?php echo $images[$key]; ?>        
