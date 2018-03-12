@@ -80,7 +80,7 @@
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>
-          <button class="btn btn-outline-success" type="submit" value="Solicitar orçamento" class="btnAddAction" />Orçamento</button>
+          <button class="btn btn-outline-success" type="submit" value="Solicitar orçamento" />Orçamento</button>
         </form>    
 		  </div>		
 	    <?php
