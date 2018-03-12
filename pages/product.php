@@ -124,6 +124,7 @@ require_once("../admin/class/Product.php");
 			$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$prod_code'");
 			if (!empty($product_array)) { 
 				foreach($product_array as $key=>$value){
+					
 		?>		
    
 		<div class="row">
@@ -132,14 +133,14 @@ require_once("../admin/class/Product.php");
 			<!-- Images area -->
 			<div id="images" class="col-sm-6">
 			
-				<img id="imagehover2"  class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"> 
+				<img id="imagehover2"  class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"> 
 				<div class="row">			
 					 
 					<?php
 					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");					 
 					 echo '<div class="col-lg-4"><img id="imagehover" onmouseover="javascript:mouseHover();" class="col-xs img-fluid" src="' . $files[0] . '"></div>';
 					 for ($i=1; $i<count($files); $i++)
-					 {	
+					 {							
 					 	$num = $files[$i];					
 					 	echo '<div class="col-lg-4"><img id="imagehover" onmouseover="javascript:mouseHover();" class="col-xs img-fluid" src="' . $num . '"></div>';					
 					 }

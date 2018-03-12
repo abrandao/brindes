@@ -71,12 +71,12 @@
         $db_handle = new Sql();
 	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag = 1 ORDER BY id ASC LIMIT $pagina_atual,$artigos_por_pagina");
 	      if (!empty($product_array)) { 
-		    foreach($product_array as $key=>$value){          
+		    foreach($product_array as $key=>$value){                      
       ?>		
 		
       <div class="col-md-3">
 			  <form method="post" action="pages/product.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "admin/products/" .  $product_array[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>

@@ -52,16 +52,7 @@ require_once("../admin/class/Sql.php");
         <p>vendas@epontual.com.br</p>
       </div>
     </div>
-      <!-- Search button      
-      <form method="post" action="pages/search.php">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" name="search"   id="tags"  aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary"   type="submit">Pesquisar</button>
-        </div>
-      </form> 
-    </div> -->
-    
+          
     <div class="col-md-3">
       <!--<img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
     </div>    
@@ -106,11 +97,11 @@ require_once("../admin/class/Sql.php");
       
       <div class="col-md-3">
 			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "../admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>"></a>
+			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "../admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"></a>
 			    <br>
 			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
 			    <?php echo $product_array[$key]["code"]; ?><br>
-          <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btnAddAction" />Solicitar Orçamento</a>
+          <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar Orçamento" class="btn btn-outline-success" />Orçamento</button></a>
         </form>    
 		  </div>		
 	    <?php
