@@ -2,6 +2,7 @@
   require_once("admin/session.php");
   require_once("includes/pagination.php");
   require_once("includes/head.php");  
+  include_once("admin/class/Slider.php");
   include_once("admin/class/Sql.php");
 ?>
 <br>
@@ -29,10 +30,18 @@
       <!--<img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
     </div>    
 
+    <!-- Slide area -->
+    <?php
+      $db_slider = new Sql();
+      $slider_array = $db_slider->runQuery("SELECT * FROM slider");      
+    ?>
+
     <ul id="sliders">
-      <li class="slider-active"><a href="https://www.google.com"><img class="img-fluid" src="includes/img/slider/img1.jpeg" /><a></li>
-      <li><img class="img-fluid img-responsive" src="includes/img/slider/img2.jpeg" /></li>      
-    </ul>    
+      <li class="slider-active"><a href="<?php echo $slider_array[0]['link']; ?>" target="_blank"><img class="img-fluid" title="<?php echo $slider_array[0]['title']; ?>" alt="<?php echo $slider_array[0]['alt']; ?>"  src="includes/img/slider/img1.jpeg" /><a></li>
+
+      <li><a href="<?php echo $slider_array[1]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[1]['title']; ?>" alt="<?php echo $slider_array[1]['alt']; ?>" src="includes/img/slider/img2.jpeg" /></a></li>      
+    </ul>
+    <!-- End slide area -->    
     
     <!-- Categories sidebar -->
     <div class="col-lg-3">      
