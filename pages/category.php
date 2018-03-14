@@ -90,7 +90,7 @@ require_once("../admin/class/Sql.php");
         //Products listening by category
         $cat = $_GET['category'];       
         $db_handle = new Sql();
-	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE category = '$cat'");
+	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE category = '$cat' ORDER BY title");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
       ?>		
@@ -113,6 +113,7 @@ require_once("../admin/class/Sql.php");
     <br>
     <br>
     <div class="col-lg-12 text-center border-top-10">
+
     <?php
 
       //Pegamos o valor total de artigos em uma consulta sem limite
