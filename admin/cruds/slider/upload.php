@@ -33,8 +33,7 @@
     <?php echo $images[$key] ?>    
     <br>
     <label>ID da imagem:</label>
-    <?php echo $product_array[$slide_number]['id']; ?>    
-    <textarea cols="100" disabled><?php echo $key - 1; ?></textarea><br>
+    <?php echo $product_array[$slide_number]['id']; ?>       
     <br>
     <label>Título da imagem:</label>
     <textarea class="form-control" cols="50" name="<?php echo 'title' .  $key; ?>" value="<?php $product_array[$slide_number]['title']; ?>"><?php echo $product_array[$slide_number]['title']; ?></textarea>

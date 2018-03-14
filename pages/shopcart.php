@@ -83,6 +83,44 @@ echo "<br>";
     <!-- Javascript JS -->
     <script src="bootstrap.js" type="javascript"></script>
 
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+
+		<!-- Javascript JS -->
+		<script src="../js/bootstrap.js" type="javascript"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+		<?php
+
+		$db_handle = new Sql();
+		$search = $db_handle->runQuery("SELECT code, title FROM products");  
+
+		foreach($search as $key=>$value){	
+			$sch[] = $search[$key]["code"]; 
+			$sch[] = $search[$key]["title"];     
+		} 
+
+?>
+
+<script>
+	
+	$( function() {
+		
+		var availableTags = <?php echo json_encode($sch) ?>;
+	
+		//Filtering duplicated results
+		var tagsFilter = availableTags.filter(function(arr, i) {
+				return availableTags.indexOf(arr) == i;
+		})      
+		
+		$( "#tags" ).autocomplete({
+			source: tagsFilter
+		});
+	} );
+	
+</script>   
+
   </head>  
 <body>
 
@@ -116,23 +154,7 @@ echo "<br>";
 					</nav>  
 	
 			</div>
-
-<!--
-<div class="navbar">
-	<nav class="navbar navbar-expand navbar-light bg-light fixed-top" id="navbarCollapse">
-  	<ul class="navbar-nav">
-  	  <li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/knowus.php">Conheça a 	Epontual</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/clients.php">Clientes</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/releases.php">Lançamentos</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/promotions.php">Promoções</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/printing.php">Tipos de 	Gravação</a></li>
-  	  <li class="nav-item"><a class="nav-link" href="../pages/contact.php">Fale Conosco</a></li>
-  	</ul>
-	</nav>  
-</div>
--->
-
+			
 <form method="post" action="../admin/email.php">
 <div id="shopping-cart">
 <div class="txt-heading">Carrinho de Compras <a id="btnEmpty" class="btn btn-outline-warning" href="shopcart.php?action=empty">Esvaziar o carrinho</a></div>

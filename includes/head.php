@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Brindes" />
     <meta name="author" content="Anderson Brandão" />
+    <meta name="description" content="A Epontual Brindes está no mercado promocional há mais de 17 anos, sempre buscando o que há de mais atualizado no mercado promocional. Em brindes somos excelência no Vale do Paraíba, Litoral Norte e Sul de Minas Gerais. Aqui você encontra o brinde personalizado ideal para fortalecer a sua marca em eventos, confraternizações, feiras ou datas sazonais.">
+
+    <meta name="twitter:title" content="Epontual Brindes">
+
+    <meta property="og:image" content="/img/epontuallogo.jpeg">
+    <meta property="og:description" content="A Epontual Brindes está no mercado promocional há mais de 17 anos, sempre buscando o que há de mais atualizado no mercado promocional. Em brindes somos excelência no Vale do Paraíba, Litoral Norte e Sul de Minas Gerais.">
+    <meta property="og:title" content="Epontual Brindes Promocionais">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
