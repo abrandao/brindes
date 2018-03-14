@@ -30,7 +30,7 @@
     </div>    
 
     <ul id="sliders">
-      <li class="slider-active"><img class="img-fluid" src="includes/img/slider/img1.jpeg" /></li>
+      <li class="slider-active"><a href="https://www.google.com"><img class="img-fluid" src="includes/img/slider/img1.jpeg" /><a></li>
       <li><img class="img-fluid img-responsive" src="includes/img/slider/img2.jpeg" /></li>      
     </ul>    
     
