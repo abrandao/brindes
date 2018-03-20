@@ -96,12 +96,12 @@ require_once("../admin/class/Sql.php");
       ?>		
       
       <div class="col-md-3">
-			  <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+			  <form method="post" action="product.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
 			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><img class="img-fluid" src="<?php echo "../admin/products/" .  $product_array[$key] ["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"></a>
 			    <br>
-			    <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
-			    <?php echo $product_array[$key]["code"]; ?><br>
-          <a href="pages/product.php?code=<?php echo $product_array[$key]["code"]; ?>"><button type="submit" value="Solicitar orçamento" class="btn btn-outline-success" />Orçamento</button></a>
+			    <a href="product.php?code=<?php echo $product_array[$key]["code"]; ?>"><?php echo $product_array[$key]["title"]; ?></a><br>
+			    <?php echo $product_array[$key]["code"]; ?><br>          
+          <a href="product.php?code=<?php echo $product_array[$key]['code']; ?>"><button type="submit" value="Solicitar orçamento" class="btn btn-outline-success" >Orçamento</button></a>
         </form>    
 		  </div>		
 	    <?php

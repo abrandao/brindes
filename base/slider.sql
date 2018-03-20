@@ -9,4 +9,5 @@ CREATE TABLE `slider` (
 
 
 INSERT INTO `slider` (`id`, `title`, `alt`, `link`) VALUES
-(1, 'título do slide', 'Essa é uma descrição de exemplo', 'https://www.google.com.br')
+(1, 'título do slide', 'Essa é uma descrição de exemplo', 'https://www.google.com.br'),
+(2, 'título do slide', 'Essa é uma descrição de exemplo', 'https://www.google.com.br')

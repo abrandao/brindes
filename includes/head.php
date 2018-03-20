@@ -11,7 +11,7 @@
 
     <meta name="twitter:title" content="Epontual Brindes">
 
-    <meta property="og:image" content="/img/epontuallogo.jpeg">
+    <meta property="og:image" content="http://epontual.com.br/teste/includes/img/epontualface.jpeg">
     <meta property="og:description" content="A Epontual Brindes está no mercado promocional há mais de 17 anos, sempre buscando o que há de mais atualizado no mercado promocional. Em brindes somos excelência no Vale do Paraíba, Litoral Norte e Sul de Minas Gerais.">
     <meta property="og:title" content="Epontual Brindes Promocionais">
     
@@ -21,7 +21,7 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <menu http-equiv="pragma" content="no-cache" />    
     
-    <title>Epontual</title>
+    <title>Epontual Brindes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
