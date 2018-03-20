@@ -22,6 +22,7 @@
     <menu http-equiv="pragma" content="no-cache" />    
     
     <title>Epontual Brindes</title>
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,6 +38,19 @@
     <script src="../js/bootstrap.js" type="javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Favicon area -->
+    <link rel="apple-touch-icon" sizes="180x180" href="includes/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="includes/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="includes/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="includes/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="includes/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="includes/img/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Epontual Brindes">
+    <meta name="application-name" content="Epontual Brindes">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="includes/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
   
   <?php
   
