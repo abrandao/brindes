@@ -105,8 +105,8 @@
     <br>
     <div class="col-lg-12 text-center border-top-10">
     <?php
-
-      //Pegamos o valor total de artigos em uma consulta sem limite
+     
+     //Pegamos o valor total de artigos em uma consulta sem limite
       $conn = new Sql();
       $total_artigos = $conn->query("SELECT COUNT(*) AS total FROM products WHERE flag = 1");
       $total_artigos->execute();
@@ -156,7 +156,6 @@
   </footer>
   <script src="js/slider.js"></script>
   </div>
-  </div>
-
+  </div>     
   </body>
 </html>

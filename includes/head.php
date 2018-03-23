@@ -30,7 +30,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
   
-  <?php 
+  <?php  
 
   $db_handle = new Sql();
   $search = $db_handle->runQuery("SELECT code, title FROM products");  

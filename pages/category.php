@@ -25,8 +25,7 @@
 	<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="../index.php">Início</a></li>
 		<li class="nav-item"><a class="nav-link" href="knowus.php">Conheça-nos</a></li>    
-		<li class="nav-item"><a class="nav-link" href="releases.php">Lançamentos</a></li>
-		<li class="nav-item"><a class="nav-link" href="promotions.php">Promoções</a></li>    
+		<li class="nav-item"><a class="nav-link" href="releases.php">Lançamentos</a></li>	    
 		<li class="nav-item"><a class="nav-link" href="contact.php">Fale Conosco</a></li>
 	</ul>
 
