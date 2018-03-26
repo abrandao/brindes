@@ -5,6 +5,7 @@
   include_once("admin/class/Slider.php");
   include_once("admin/class/Sql.php");
 ?>
+
 <br>
 <link rel="stylesheet" href="css/slider.css"> 
 <body>  
