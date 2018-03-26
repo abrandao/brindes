@@ -21,7 +21,7 @@
 <?php
 
   $images = scandir("../../../includes/img/slider/");
-  $slide_number = 0;	
+  $slide_number = 0;
   foreach($images as $key=>$img){    
     
     if(!in_array($img, array(".", ".."))) {
