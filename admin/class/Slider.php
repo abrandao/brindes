@@ -37,6 +37,25 @@ class Slider {
     $this->link = $value;
   }
 
+  public function setData($data) {
+    $this->setId($data['id']);
+    $this->setTitle($data['title']);
+    $this->setAlt($data['alt']);
+    $this->setLink($data['link']);  
+  }
+
+  public function insert() {
+    $sql = new Sql();
+    $results = $sql->select("CALL sp_slider_insert(:TITLE, :ALT, :LINK)", array(
+      ':TITLE'=>$this->getTitle(),
+      ':ALT'=>$this->getAlt(),
+      ':LINK'=>$this->getLink()      
+    ));    
+    if (count($results) > 0) {
+      $this->setData($results[0]);
+    }
+  }
+
   public function update2( $id, $title, $alt, $link){
     $this->setId($id);
     $this->setTitle($title);
@@ -65,5 +84,11 @@ class Slider {
       ':LINK'=>$this->getLink(),      
       ':ID'=>$this->getId()
 		));
+  }
+
+  public function __construct($title = "", $alt = "", $link = ""){
+    $this->setTitle($title);
+    $this->setAlt($alt);
+    $this->setLink($link);       
   }
 }

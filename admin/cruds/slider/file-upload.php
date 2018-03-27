@@ -16,10 +16,6 @@ $dirUploads = "../../../includes/img/slider";
 $title = $_POST['title'];
 $alt = $_POST['alt'];
 $link =  $_POST['link'];
-$upfile = $_POST['upfile'];
-
-echo "ola";
-echo $upfile;
 
 //Folder creation and renaming files
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,16 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mkdir($dirUploads);
   }
 
-    move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name']);      
+    move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name']);
+
   }  
   
-  //Updating Slider1
-  $sld = new Slider($title2, $alt2, $link2);
-  //$sld->update2(1, $title2, $alt2, $link2);
-
-  //Updating Slider2
-  $sld = new Slider($title3, $alt3, $link3);
-  //$sld->update3(2, $title3, $alt3, $link3);
+  //Insert Slider
+  $sld = new Slider($title, $alt, $link);
+  $sld->insert();
   
 ?>
 <link rel="stylesheet" href="../../../css/bootstrap.css">
@@ -55,5 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <hr>
 
-<label>Nome da Pasta:</label><br>
+<label>Caminho da Pasta:</label><br>
 <textarea cols="100" disabled><? echo " " . $dirUploads; ?></textarea> 
