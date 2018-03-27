@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="../../../css/bootstrap.css">
   
-  <form method="POST" action="file-upload.php" enctype="multipart/form-data">
+  <form method="POST" action="file-update.php" enctype="multipart/form-data">
 
 <?php
 

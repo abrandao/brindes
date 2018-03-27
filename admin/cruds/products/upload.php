@@ -11,6 +11,8 @@
   }
 ?>
 
+ <link rel="stylesheet" href="../../../css/bootstrap.css">
+
 <form method="POST" action="file-upload.php" enctype="multipart/form-data">
   
   <label for="title">Título</label>
