@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mkdir($dirUploads);
   }
 
-    move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name']);
+    move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $title . ".jpeg");
+    //move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name']);
 
   }  
   
