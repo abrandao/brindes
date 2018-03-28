@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="../../../css/bootstrap.css">
   
-<form method="POST" action="file-update.php" enctype="multipart/form-data">
+
 
 <?php  
   
@@ -25,26 +25,34 @@
 
   if (!empty($slider_array)) {
     foreach($slider_array as $key=>$value) {
-?>    
-    <br>
-    <label>ID da imagem:</label>
-    <?php echo $slider_array[$key]['id']; ?>       
+?> 
+  <form method="POST" action="file-update.php" enctype="multipart/form-data">   
     <br>
     <div class="col-lg-4">
+
+    <label>ID da imagem:</label>
+    <textarea name="id" readonly><?php echo $slider_array[$key]['id']; ?></textarea> 
+    <br>
+    
     <img class="img-fluid img-responsive" title="<?php echo $slider_array['title']; ?>" src="<?php echo '../../../includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg';?>"></img>
     <br>
+
     <label>Título da imagem:</label>
-    <textarea class="form-control" cols="50" name="<?php echo 'title' .  $key; ?>" value="<?php $slider_array[$slide_number]['title']; ?>"><?php echo $slider_array[$key]['title']; ?></textarea>
+    <textarea class="form-control" cols="50" name="title"><?php echo $slider_array[$key]['title']; ?></textarea>
     <br>
+
     <label>Descrição da imagem:</label>
-    <textarea class="form-control" cols="50" name="<?php echo 'alt' .  $key; ?>"><?php echo $slider_array[$key]['alt']; ?></textarea>
+    <textarea class="form-control" cols="50" name="alt"><?php echo $slider_array[$key]['alt']; ?></textarea>
     <br>
+
     <label>Link da imagem:</label>
-    <textarea class="form-control" cols="50" name="<?php echo 'link' .  $key; ?>"><?php echo $slider_array[$key]['link']; ?></textarea>
+    <textarea class="form-control" cols="50" name="link"><?php echo $slider_array[$key]['link']; ?></textarea>
     <br>
+
     <label>Caminho da imagem:</label>      
     <textarea class="form-control" cols="50"><?php echo "../../../includes/img/slider/" . $slider_array[$key]['title'] . ".jpeg"; ?></textarea>      
     <hr>
+
   </div>
   <br>
 

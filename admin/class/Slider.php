@@ -56,7 +56,7 @@ class Slider {
     }
   }
 
-  public function update2( $id, $title, $alt, $link){
+  public function update( $id, $title, $alt, $link){
     $this->setId($id);
     $this->setTitle($title);
     $this->setAlt($alt);
