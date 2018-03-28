@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
     move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $title . ".jpeg");
-    //move_uploaded_file($_FILES['upfile']['tmp_name'], $dirUploads . DIRECTORY_SEPARATOR . $_FILES['upfile']['name']);
 
   }  
   
@@ -51,3 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <label>Caminho da Pasta:</label><br>
 <textarea cols="100" disabled><? echo " " . $dirUploads; ?></textarea> 
+
+<br>
+<br>
+
+<div class="col-sm-4">
+  <label>Imagem cadastrada:</label><br>
+  <img class="col-sm img-fluid" src="<?php echo "../../../includes/img/slider/" .  $title . ".jpeg"; ?>">
+</div>

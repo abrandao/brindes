@@ -58,13 +58,13 @@
         <img class="col-sm" src="<?php echo "../../../includes/img/slider/" .  $slider_array[$key]["title"] . ".jpeg"; ?>">
       </div>
       <?php $slider_array[$key]["id"]; ?>
-      <div class="col-sm yellow">
+      <div class="col-sm">
         <?php echo "Título:<br>" . $slider_array[$key]["title"]; ?>
       </div>
-      <div class="col-sm green">
+      <div class="col-sm">
         <?php echo "Código:<br>" . $slider_array[$key]["alt"]; ?>
       </div>
-      <div class="col-sm yellow">
+      <div class="col-sm">
         <?php echo "Destaque:<br>" . $slider_array[$key]["link"]; ?>
       </div>      
       <div class="col-sm">        
