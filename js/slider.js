@@ -22,4 +22,4 @@ window.setInterval(function() {
 
   /** Calcular a posição do próximo elemento que será exibido */
   current = current >= total ? 0 : current+1;
-}, 4000);
+}, 6000);

@@ -34,14 +34,28 @@
     <!-- Slide area -->
     <?php
       $db_slider = new Sql();
-      $slider_array = $db_slider->runQuery("SELECT * FROM slider");      
+      $slider_array = $db_slider->runQuery("SELECT * FROM slider");
+      
     ?>
 
     <ul id="sliders">
-      <li class="slider-active"><a href="<?php echo $slider_array[0]['link']; ?>" target="_blank"><img class="img-fluid" title="<?php echo $slider_array[0]['title']; ?>" alt="<?php echo $slider_array[0]['alt']; ?>"  src="includes/img/slider/img1.jpeg" /><a></li>
+      <li class="slider-active"><a href="<?php echo $slider_array[0]['link']; ?>" target="_blank"><img class="img-fluid" title="<?php echo $slider_array[0]['title']; ?>" alt="<?php echo $slider_array[0]['alt']; ?>"  src="<?php echo 'includes/img/slider/' . $slider_array[0]['title'] . '.jpeg'; ?>" /><a></li>
 
-      <li><a href="<?php echo $slider_array[1]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[1]['title']; ?>" alt="<?php echo $slider_array[1]['alt']; ?>" src="includes/img/slider/img2.jpeg" /></a></li>      
-    </ul>
+    <?php
+
+      if (!empty($slider_array)) { 
+        foreach($slider_array as $key=>$value){  
+        if ($key != 0) { 
+    ?>    
+
+      <li><a href="<?php echo $slider_array[$key]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[$key]['title']; ?>" alt="<?php echo $slider_array[$key]['alt']; ?>" src="<?php echo 'includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg'; ?>" /></a></li>      
+    
+    <?php
+        }    
+        }
+      }
+    ?>
+    </ul>  
     <!-- End slide area -->    
     
     <!-- Categories sidebar -->
