@@ -71,19 +71,42 @@ class Slider {
 		));
   }
 
-  public function update3( $id, $title, $alt, $link){
-    $this->setId($id);
-    $this->setTitle($title);
-    $this->setAlt($alt);
-    $this->setLink($link);    
+  public function loadById($id) {
+    $sql = new Sql();
+    $results = $sql->select("SELECT * FROM slider WHERE id = :ID", array(
+      ":ID"=>$id
+    ));    
+    if (count($results) > 0) {
+      $this->setData($results[0]);
+    }        
+  }
+
+  public function delete() {
+    $sql = new Sql();
+    $sql->query("DELETE FROM slider WHERE id = :ID", array(
+      ":ID"=>$this->getId()
+    ));
+  }
+
+  public function deleteImages($id) {
     
-		$sql = new Sql();
-		$sql->query("UPDATE slider SET title = :TITLE, alt = :ALT, link = :LINK WHERE id = :ID", array(
-      ':TITLE'=>$this->getTitle(),
-      ':ALT'=>$this->getAlt(),
-      ':LINK'=>$this->getLink(),      
-      ':ID'=>$this->getId()
-		));
+    $sql = new Sql();
+    $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
+      ":ID"=>$id      
+    ));
+
+    if (count($results) > 0) {
+      $this->setData($results[0]);
+    }      
+
+    $folder = $results[0]['upfile'];    
+       
+    foreach (scandir("../../products/" . $folder . "/") as $item) {
+      if(!in_array($item, array(".", ".."))) {
+        unlink("../../products/" . $folder . "/" . $item);
+      } 
+    }
+    rmdir("../../products/" . $folder . "/");
   }
 
   public function __construct($title = "", $alt = "", $link = ""){
