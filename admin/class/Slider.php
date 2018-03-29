@@ -88,10 +88,10 @@ class Slider {
     ));
   }
 
-  public function deleteImages($id) {
+  public function deleteImage($id) {
     
     $sql = new Sql();
-    $results = $sql->select("SELECT * FROM products WHERE id = :ID", array(
+    $results = $sql->select("SELECT * FROM slider WHERE id = :ID", array(
       ":ID"=>$id      
     ));
 
@@ -99,14 +99,9 @@ class Slider {
       $this->setData($results[0]);
     }      
 
-    $folder = $results[0]['upfile'];    
-       
-    foreach (scandir("../../products/" . $folder . "/") as $item) {
-      if(!in_array($item, array(".", ".."))) {
-        unlink("../../products/" . $folder . "/" . $item);
-      } 
-    }
-    rmdir("../../products/" . $folder . "/");
+    $img = $results[0]['title'];    
+    
+    unlink("../../../includes/img/slider/" . $img . ".jpeg");
   }
 
   public function __construct($title = "", $alt = "", $link = ""){

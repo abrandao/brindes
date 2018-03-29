@@ -5,10 +5,10 @@
 
   $id = $_GET["id"];
   
-  $product = new Slider();
-  $product->loadById($id);
-  //$product->deleteImages($id);
-  $product->delete();  
+  $slide = new Slider();
+  $slide->loadById($id);
+  $slide->deleteImage($id);
+  $slide->delete();  
   ?>
 
   <h1>SLIDE DELETADO</h1>
