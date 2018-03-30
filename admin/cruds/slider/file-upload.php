@@ -58,3 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <label>Imagem cadastrada:</label><br>
   <img class="col-sm img-fluid" src="<?php echo "../../../includes/img/slider/" .  $title . ".jpeg"; ?>">
 </div>
+
+
+<a class="nav-link" href="list.php"><strong>LISTAR SLIDES</strong></a>
+<a class="nav-link" href="upload.php"><strong>ADICIONAR SLIDES</strong></a>

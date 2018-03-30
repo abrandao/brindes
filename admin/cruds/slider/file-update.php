@@ -20,16 +20,6 @@ $dirUploads = "../../../includes/img/slider";
  $alt = $_POST['alt'];
  $link =  $_POST['link']; 
 
- echo $id;
- echo "<br>";
- echo $title;
- echo "<br>";
- echo $alt;
- echo "<br>";
- echo $link;
- echo "<br>";
- echo "teste";
-
 //Folder creation and renaming files
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
@@ -58,3 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <label>Link da primeira imagem:</label><br>
 <textarea cols="100" disabled><? echo " " . $link; ?></textarea><br><br> 
+
+<a class="nav-link" href="list.php"><strong>LISTAR SLIDES</strong></a>
+<a class="nav-link" href="upload.php"><strong>ADICIONAR SLIDES</strong></a>

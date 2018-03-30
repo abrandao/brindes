@@ -81,5 +81,6 @@
 }
 ?>
 </div>
+<a class="nav-link" href="upload.php"><strong>ADICIONAR SLIDES</strong></a>
 </body>
 </html>
