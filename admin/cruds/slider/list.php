@@ -65,7 +65,7 @@
         <?php echo "Código:<br>" . $slider_array[$key]["alt"]; ?>
       </div>
       <div class="col-sm">
-        <?php echo "Destaque:<br>" . $slider_array[$key]["link"]; ?>
+        <?php echo "Link:<br>" . $slider_array[$key]["link"]; ?>
       </div>      
       <div class="col-sm">        
         <a href="update.php?id=<?php echo $slider_array[$key]["id"]; ?>"><input type="button" value="Atualizar"></a>
