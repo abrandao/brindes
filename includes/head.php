@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <?php require_once('filepaths_test.php'); ?>
+    <?php require_once('filepaths.php'); ?>
 
    <meta name="theme-color" content="#ffffff">
  

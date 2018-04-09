@@ -1,4 +1,4 @@
-body{ margin-left: 18%; margin-right: 20%;}
+body{ margin-left: 18%; margin-right: 20%; }
 
 #shopping-cart {margin-bottom:30px;}
 .cart-item {border-bottom: #79b946 1px dotted;padding: 10px;}
@@ -10,3 +10,15 @@ body{ margin-left: 18%; margin-right: 20%;}
 }
 
 .clear-float{clear:both;}
+  
+.shopcarticon { 
+  max-width: 70px; 
+  max-height: auto;   
+  width:auto;
+  height: auto;
+  float: right;
+}
+
+.shop {
+  text-decoration: none;
+}

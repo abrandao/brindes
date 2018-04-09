@@ -62,7 +62,7 @@
         <?php echo "Título:<br>" . $slider_array[$key]["title"]; ?>
       </div>
       <div class="col-sm">
-        <?php echo "Código:<br>" . $slider_array[$key]["alt"]; ?>
+        <?php echo "Descrição:<br>" . $slider_array[$key]["alt"]; ?>
       </div>
       <div class="col-sm">
         <?php echo "Link:<br>" . $slider_array[$key]["link"]; ?>

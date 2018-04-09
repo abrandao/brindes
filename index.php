@@ -25,11 +25,15 @@
       <div class="col-xs-3 text-center">
         <p>vendas@epontual.com.br</p>
       </div>
-    </div>     
-    
-    <div class="col-md-3">
-      <!--<img src="includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
-    </div>    
+    </div>
+      
+    <div class="col-md-3  bg-light">
+      <a href="http://172.17.0.2/brindes/pages/shopcart.php">
+        <img class="shopcarticon" src="includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
+        <p><?php echo $_SESSION['contagem']; ?></p>
+      <a>
+    </div>
+        
 
     <!-- Slide area -->
     <?php

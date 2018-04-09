@@ -180,6 +180,7 @@ if(isset($_SESSION["cart_item"])){
 <?php
 		
 		foreach ($_SESSION["cart_item"] as $item){
+			$num++ == 0;
 		?>
 					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
 					<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["title"]; ?></td>					
@@ -214,3 +215,7 @@ if(isset($_SESSION["cart_item"])){
 </div>
 </div>
 </div>
+
+<?
+
+$_SESSION['contagem'] = $num;
