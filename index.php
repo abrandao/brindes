@@ -30,7 +30,14 @@
     <div class="col-md-3  bg-light">
       <a href="http://172.17.0.2/brindes/pages/shopcart.php">
         <img class="shopcarticon" src="includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
-        <p><?php echo $_SESSION['contagem']; ?></p>
+        <p><?php 
+          $cont = $_SESSION['contagem']; 
+          if ($cont == NULL) {
+          echo 0;
+        } else {
+          echo $cont; 
+        }
+        ?></p>
       <a>
     </div>
         
