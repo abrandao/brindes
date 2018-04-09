@@ -27,7 +27,7 @@
       </div>
     </div>
       
-    <div class="col-md-3  bg-light">
+    <div class="col-md-3 cont">
       <a href="http://172.17.0.2/brindes/pages/shopcart.php">
         <img class="shopcarticon" src="includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
         <p><?php 
@@ -36,8 +36,13 @@
           echo 0;
         } else {
           echo $cont; 
-        }
-        ?></p>
+        };
+          if ($cont == 1) {
+            echo " item";
+          } else {
+            echo " itens";
+          }
+        ?> </p>
       <a>
     </div>
         
