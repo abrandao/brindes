@@ -2,7 +2,6 @@
 require_once("session.php");
 
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
-
 $arr = $_SESSION['cart_item'];
 
 $name = $_POST['name'];
@@ -72,9 +71,10 @@ $headers .= "From: $email\r\n"; // remetente
 $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
 $envio = mail($emaildestinatario, $assunto, $body, $headers); 
 
-if($envio)
-echo "<script>location.href='../index.php'</script>"; // Página que será redirecionada
-
+if($envio) {
+  echo "<script>location.href='../index.php'</script>"; // Página que será redirecionada
+  unset($_SESSION["contagem"]);
+}
 ?>
 
 <h3 align="center">OBRIGADO!</h3>

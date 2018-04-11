@@ -12,5 +12,4 @@
   ?>
 
   <h1>PRODUTO DELETADO</h1>
-  <a href="list.php">RETORNAR PARA A LISTA DE PRODUTOS</a>
-  
+  <a href="list.php">RETORNAR PARA A LISTA DE PRODUTOS</a>  

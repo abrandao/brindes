@@ -93,15 +93,15 @@ echo "<br>";
     <li class="nav-item"><a class="nav-link" href="../pages/knowus.php">Conheça a Epontual</a></li>
     <li class="nav-item"><a class="nav-link"  href="../pages/clients.php">Clientes</a></li>
       <li class="nav-item"><a class="nav-link"  href="../pages/releases.php">Lançamentos</a></li>      
-      <li class="nav-item"><a class="nav-link" href="../pages/printing.php">Tipos de  Gravação</a></li>
-      <li class="nav-item"><a class="nav-link" href="../pages/contact.php">Fale   Conosco</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/printing.php">Tipos de Gravação</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/contact.php">Fale Conosco</a></li>
     </ul>
   </nav>  
   </div>
 
   <form method="post" action="../admin/email.php">
   <div id="shopping-cart">
-  <div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="shopcart.php? action=empty">Esvaziar o carrinho</a></div>
+  <div class="txt-heading">Carrinho de Compras <a id="btnEmpty" href="shopcart.php?action=empty">Esvaziar o carrinho</a></div>
   <?php
   if(isset($_SESSION["cart_item"])){
       $item_total = 0;
