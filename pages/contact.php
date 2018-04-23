@@ -53,7 +53,7 @@
         <li class="nav-item"><a class="nav-link" href="contact.php">Fale Conosco</a></li>
       </ul>      
       
-      <form method="post" action="pages/search.php" class="form-inline">
+      <form method="post" action="search.php" class="form-inline">
         <input class="form-control" type="search" placeholder="Pesquisar" ia-label="Search" name="search" id="tags">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
