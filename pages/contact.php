@@ -1,6 +1,8 @@
 <?php
   require_once("../admin/class/Sql.php");
-  require_once("../includes/head.php"); 
+  require_once("../admin/session.php"); 
+  require_once("../includes/head.php");
+  
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -58,11 +60,48 @@
       
     </div> 
     </nav>  
-
+    </div>
+    </div>
   </div>
+ 
 <br>
 <br>
-<!-- Categories sidebar -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">  
+        <img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="row">
+        <div class="col-sm text-center">      
+          <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm text-center">
+          <p>vendas@epontual.com.br</p>
+        </div>
+      </div>
+      <div class="col-sm cont">
+        <a href="http://172.17.0.2/brindes/pages/shopcart.php">
+        <img class="shopcarticon" src="../includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
+        <p><?php 
+          $cont = $_SESSION['contagem']; 
+          if ($cont == NULL) {
+          echo 0;
+        } else {
+          echo $cont; 
+        };
+          if ($cont == 1) {
+            echo " item";
+          } else {
+            echo " itens";
+          }
+        ?> </p>
+        <a>
+      </div>
+    </div>
+  </div>
+
 <div class="container">
        
  </div>
