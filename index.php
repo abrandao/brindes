@@ -9,46 +9,12 @@
 <br>
 <link rel="stylesheet" href="css/slider.css"> 
 <body>  
-  <div class="container">
-  <div class="row mt-4"> 
-    <div class="fixed-top">
-      <?php require_once("includes/navbar.php"); ?>
-    </div>    
-       
-    <div class="col-md-3">
-      <img src="includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-lg-6">
-      <div class="col-xs-3 text-center">
-        <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
-      </div>
-      <div class="col-xs-3 text-center">
-        <p>vendas@epontual.com.br</p>
-      </div>
-    </div>
-      
-    <div class="col-md-3 cont">
-      <a href="http://172.17.0.2/brindes/pages/shopcart.php">
-        <img class="shopcarticon" src="includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
-        <p><?php 
-          $cont = $_SESSION['contagem']; 
-          if ($cont == NULL) {
-          echo 0;
-        } else {
-          echo $cont; 
-        };
-          if ($cont == 1) {
-            echo " item";
-          } else {
-            echo " itens";
-          }
-        ?> </p>
-      <a>
-    </div>
-        
 
     <!-- Slide area -->
     <?php
+
+      require_once("includes/header.php");
+
       $db_slider = new Sql();
       $slider_array = $db_slider->runQuery("SELECT * FROM slider");
       
@@ -64,7 +30,7 @@
         if ($key != 0) { 
     ?>    
 
-      <li><a href="<?php echo $slider_array[$key]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[$key]['title']; ?>" alt="<?php echo $slider_array[$key]['alt']; ?>" src="<?php echo 'includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg'; ?>" /></a></li>      
+      <li><a href="<?php echo $slider_array[$key]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[$key]['title']; ?>" alt="<?php echo $slider_array[$key]['alt']; ?>" src="<?php echo 'includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg'; ?>" /></a></li>   
     
     <?php
         }    

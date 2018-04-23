@@ -153,24 +153,24 @@ echo "<br>";
   <div class="row col-md-12">
      
       <div class="form-group col-md-6">
-        <label for="">Seu Nome</label>
-        <input type="text" name="name" class="form-control">      
+        <label for="">Seu Nome*</label>
+        <input type="text" name="name" class="form-control" required>      
       </div>
       <div class="form-group col-md-6">
         <label for="">Empresa</label>
         <input type="text" name="business" class="form-control">     
       </div>
       <div class="form-group col-md-6">
-        <label for="">Seu Email</label>
-        <input type="email" name="email" class="form-control">      
+        <label for="">Seu Email*</label>
+        <input type="email" name="email" class="form-control" required>      
       </div>
       <div class="form-group col-md-6">
         <label for="">Telefone</label>
         <input type="tel" name="phone" class="form-control">    
       </div>
       <div class="form-group col-md-6">
-        <label for="">Cidade</label>
-        <input type="text" name="city" class="form-control">      
+        <label for="">Cidade*</label>
+        <input type="text" name="city" class="form-control" required>      
       </div>
       <div class="form-group col-md-6">
         <label for="">Estado</label>

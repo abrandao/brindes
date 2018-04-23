@@ -71,11 +71,14 @@ $headers .= "From: $email\r\n"; // remetente
 $headers .= "Return-Path: $emaildestinatario \r\n"; // return-path
 $envio = mail($emaildestinatario, $assunto, $body, $headers); 
 
-if($envio) {
-  echo "<script>location.href='../index.php'</script>"; // Página que será redirecionada
+if($envio) {  
+  unset($_SESSION['cart_item']);
   unset($_SESSION["contagem"]);
 }
 ?>
 
 <h3 align="center">OBRIGADO!</h3>
-<p align="center">Sua solicitação foi enviada, em breve, entraremos em contato.</p>
+<p align="center">Sua solicitação foi enviada, em breve entraremos em contato.</p>
+<p align="center">
+  <a href="../index.php" class="btn btn-outline-success" role="button">Voltar para a página inicial.</a>
+</p>  
