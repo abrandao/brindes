@@ -1,6 +1,7 @@
 <?php
 
   class Company {
+
     private $cnpj;
     private $address;
     private $tel1;
@@ -131,41 +132,41 @@
     }
 
     /**
-     * Get the value of email1
+     * Get the value of email2
      */ 
-    public function getEmail1()
+    public function getEmail2()
     {
-        return $this->email1;
+        return $this->email2;
     }
 
     /**
-     * Set the value of email1
+     * Set the value of email2
      *
      * @return  self
      */ 
-    public function setEmail1($email1)
+    public function setEmail2($email2)
     {
-        $this->email1 = $email1;
+        $this->email2 = $email2;
 
         return $this;
     }
 
     /**
-     * Get the value of email1
+     * Get the value of email3
      */ 
-    public function getEmail1()
+    public function getEmail3()
     {
-        return $this->email1;
+        return $this->email3;
     }
 
     /**
-     * Set the value of email1
+     * Set the value of email3
      *
      * @return  self
      */ 
-    public function setEmail1($email1)
+    public function setEmail3($email3)
     {
-        $this->email1 = $email1;
+        $this->email3 = $email3;
 
         return $this;
     }
