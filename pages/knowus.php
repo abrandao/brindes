@@ -44,7 +44,7 @@ require_once("../admin/class/Knowus.php");
   <div class="container">
     <div class="row">
       <div class="col-sm">  
-        <img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
+        <a href="http://epontual.com.br/"><img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image"></a>
       </div>
       <div class="row">
         <div class="col-sm text-center">      

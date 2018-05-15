@@ -145,7 +145,7 @@
         </div>
         <div class="row col-sm-6 text-right">          
           <div class="col-sm">
-            <img src="includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
+            <a href="http://epontual.com.br/"><img src="includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual"></a>
           </div>
         </div>        
       </div>

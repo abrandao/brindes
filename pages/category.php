@@ -39,7 +39,7 @@
 </div>  
 
    <div class="col-md-3">
-      <img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
+      <a href="http://epontual.com.br/"><img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image"></a>
     </div>
     <div class="col-lg-6">
       <div class="col-xs-3 text-center">
