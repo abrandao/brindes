@@ -18,7 +18,7 @@
 
 <link rel="stylesheet" href="../../../css/bootstrap.css">
 <h1>EDITANDO DADOS DA EMPRESA</h1>
-<form method="POST" action="file-update.php" enctype="multipart/form-data">
+<form method="POST" action="business-update.php" enctype="multipart/form-data">
   
   <label>CNPJ</label>
   <input type="text" name="cnpj" value="<?php echo $category_array[0]["cnpj"] ?>"/></br>

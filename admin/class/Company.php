@@ -2,6 +2,7 @@
 
   class Company {
 
+    private $id = 1;
     private $cnpj;
     private $address;
     private $tel1;
@@ -171,4 +172,50 @@
         return $this;
     }
 
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function update($cnpj, $address, $tel1, $tel2, $tel3, $email1, $email2, $email3){
+      
+      $this->setCNPJ($cnpj);
+      $this->setAddress($address);
+      $this->setTel1($tel1);
+      $this->setTel2($tel2);
+      $this->setTel3($tel3);
+      $this->setEmail1($email1);
+      $this->setEmail2($email2);
+      $this->setEmail3($email3);
+      
+      $sql = new Sql();
+      $sql->query("UPDATE business SET cnpj = :CNPJ, address = :ADDRESS, tel1 = :TEL1, tel2 = :TEL2, tel3 = :TEL3, email1 = :EMAIL1, email2 = :EMAIL2, email3 = :EMAIL3 WHERE id = :ID", array(
+
+        ':CNPJ'=>$this->getCnpj(),
+        ':ADDRESS'=>$this->getAddress(),
+        ':TEL1'=>$this->getTel1(),
+        ':TEL2'=>$this->getTel2(),
+        ':TEL3'=>$this->getTel3(),
+        ':EMAIL1'=>$this->getEmail1(),
+        ':EMAIL2'=>$this->getEmail2(),
+        ':EMAIL3'=>$this->getEmail3(),
+        ':ID'=>$this->getId()            
+       
+      ));
+    }
   }
