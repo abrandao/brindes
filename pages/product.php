@@ -197,6 +197,14 @@ require_once("../admin/class/Product.php");
 </div>
 	</div>
 <footer>
+
+<?php
+
+	$db_handle = new Sql();	
+	$category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+
+?>
+
 	<div class="container mb-0 bg-secondary pr-2 pl-2 pb-2 pt-2">
       <div class="row">        
         <div class="col-sm">
@@ -204,12 +212,24 @@ require_once("../admin/class/Product.php");
         </div>
         <div class="w-100"></div>
         <div class="col-sm">
-          <span class="text-white align-text-bottom">vendas@epontual.com.br</span>
+					<span class="text-white align-text-bottom"><?php echo $category_array[0]["email1"] ?></span><br>
+          <span class="text-white align-text-bottom"><?php echo $category_array[0]["tel1"] ?></span>
         </div>
         
         <div class="col-sm-3">
+					<div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["cnpj"] ?>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["address"] ?>
+            </span>
+          </div>
           
         </div>
+
         <div class="row col-sm-6 text-right">          
           <div class="col-sm">
             <img src="../includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">

@@ -143,6 +143,13 @@
   </div>
 </div>
 
+<?php
+
+  $db_handle = new Sql();	
+  $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+
+?>
+
 <footer class="fixed-bottom">
     <div class="container mb-0 bg-secondary pr-5 pl-5 pb-2 pt-2">
       <div class="row">        
@@ -155,7 +162,16 @@
         </div>
         
         <div class="col-sm-3">
-          
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["cnpj"] ?>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["address"] ?>
+            </span>
+          </div>          
         </div>
         <div class="row col-sm-6 text-right">          
           <div class="col-sm">

@@ -1,4 +1,12 @@
- 
+<?php
+  
+  require_once("../admin/class/Company.php");
+
+  $db_handle = new Sql();	
+  $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+  
+?>
+  
   
   </body>
   <footer>
@@ -12,7 +20,7 @@
         </div>
         <div class="row col-sm-6">
           <div class="col-sm">
-            <span class="text-white">vendas@epontual.com.br</span>
+            <span class="text-white"><?php echo $category_array[0]["email1"] ?></span>
           </div>
           <div class="w-100"></div>
           <div class="col-sm">

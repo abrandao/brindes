@@ -1,3 +1,12 @@
+<?php
+
+  require_once("admin/class/Sql.php");
+
+	$db_handle = new Sql();	
+  $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+  
+?>
+
 <div class="container">
   
   <div class="row mt-4"> 
@@ -10,10 +19,10 @@
     </div>
     <div class="col-lg-6">
       <div class="col-xs-3 text-center">
-        <p>TEL: (12) 3942-8089 / (12) 97402-8774</p>
+        <p>TEL: <?php echo $category_array[0]["tel1"] ?> / <?php echo $category_array[0]["tel1"] ?></p>
       </div>
       <div class="col-xs-3 text-center">
-        <p>vendas@epontual.com.br</p>
+        <p><?php echo $category_array[0]["email1"] ?></p>
       </div>
     </div>
       

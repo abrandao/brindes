@@ -3,6 +3,7 @@
 session_start();
 require_once("../admin/class/Sql.php");
 require_once("../admin/class/Product.php");
+require_once("../includes/head.php");
 
 $quantity1 = $_POST['quantity1'];
 $quantity2 = $_POST['quantity2'];
@@ -218,4 +219,40 @@ if(isset($_SESSION["cart_item"])){
 
 <?
 
-$_SESSION['contagem'] = $num;
+		$_SESSION['contagem'] = $num;
+
+      $db_handle = new Sql();	
+      $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+  ?>      
+	<footer class="fixed-bottom">        
+    <div class="container mb-0 bg-secondary pr-2 pl-2 pb-2 pt-2">
+      <div class="row">        
+        <div class="col-sm">
+          <span><a class="fa fa-facebook-square" style="font-size:50px; color:white; text-right" href="https://www.facebook.com/EpontualBrindes/"></a></span>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm">
+          <span class="text-white align-text-bottom"><?php echo $category_array[0]["email1"] ?></span><br>
+          <span class="text-white align-text-bottom"><?php echo $category_array[0]["tel1"] ?></span>
+        </div>
+        
+        <div class="col-sm-3">
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["cnpj"] ?>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["address"] ?>
+            </span>
+          </div>
+        </div>
+        <div class="row col-sm-6 text-right">          
+          <div class="col-sm">
+            <img src="../includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
+          </div>
+        </div>        
+      </div>
+    
+  </footer> 

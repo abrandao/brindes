@@ -4,6 +4,7 @@
   require_once("includes/head.php");  
   include_once("admin/class/Slider.php");
   include_once("admin/class/Sql.php");
+  require_once("admin/class/Company.php");
 ?>
 
 <br>
@@ -128,6 +129,12 @@
     <div class="col-lg-12">
 
 </div>
+<?php
+
+  $db_handle = new Sql();	
+  $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
+  
+?>
 
   <footer>
     <div class="container mb-0 bg-secondary pr-3 pl-3 pb-2 pt-2">
@@ -137,11 +144,21 @@
         </div>
         <div class="w-100"></div>
         <div class="col-sm">
-          <span class="text-white align-text-bottom">vendas@epontual.com.br</span>
+          <span class="text-white align-text-bottom"><?php echo $category_array[0]["email1"] ?></span><br>
+          <span class="text-white align-text-bottom"><?php echo $category_array[0]["tel1"] ?></span>
         </div>
         
         <div class="col-sm-3">
-          
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["cnpj"] ?>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="text-white align-text-bottom">
+              <?php echo $category_array[0]["address"] ?>
+            </span>
+          </div>                   
         </div>
         <div class="row col-sm-6 text-right">          
           <div class="col-sm">
