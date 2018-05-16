@@ -35,12 +35,12 @@ require_once("../admin/class/Sql.php");
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
 
-    </div> 
-    </nav>  
-
+      </div> 
+      </nav>
     </div>    
-       
-    <div class="col-md-3">
+
+
+   <div class="col-md-3">
       <img src="../includes/img/logo.jpeg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-lg-6">
@@ -51,12 +51,32 @@ require_once("../admin/class/Sql.php");
         <p>vendas@epontual.com.br</p>
       </div>
     </div>
-          
-    <div class="col-md-3">
-      <!--<img src="../includes/img/orcamento.png" class="img-fluid float-right" alt="Logo Epontual">-->
-    </div>    
-
-    <?php echo $category_array[$key]["category"]; ?>
+      
+    <div class="col-md-3 cont">
+      <!--<a href="http://172.17.0.2/brindes/pages/shopcart.php">-->
+        <a href="http://epontual.com.br/pages/shopcart.php">
+        <img class="shopcarticon" src="../includes/img/shopcart.png" class="img-fluid" alt="Shopcart icon">
+        <p><?php 
+          $cont = $_SESSION['contagem']; 
+          if ($cont == NULL) {
+          echo 0;
+        } else {
+          echo $cont; 
+        };
+          if ($cont == 1) {
+            echo " item";
+          } else {
+            echo " itens";
+          }
+        ?> </p>
+      <a>
+    </div>
+    
+    <?php 
+    
+    //require_once("../includes/header.php");
+    
+    echo $category_array[$key]["category"]; ?>
     <!-- Categories sidebar -->
     <div class="col-lg-2">      
       <?php	
@@ -89,7 +109,7 @@ require_once("../admin/class/Sql.php");
         
         $search = $_POST['search'];
         $db_handle = new Sql();
-	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$search' or title = '$search' or tag = '$search' or category = '$search' or upfile = '$search'");
+	      $product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$search' or title LIKE '%$search%' or tag LIKE '%$search%' or category LIKE '%$search%' or upfile LIKE '%$search%'");
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){          
       ?>		

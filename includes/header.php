@@ -6,7 +6,7 @@
   $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
   
 ?>
-
+<link rel="stylesheet" href="css/style.css">
 <div class="container">
   
   <div class="row mt-4"> 
@@ -19,7 +19,7 @@
     </div>
     <div class="col-lg-6">
       <div class="col-xs-3 text-center">
-        <p>TEL: <?php echo $category_array[0]["tel1"] ?> / <?php echo $category_array[0]["tel1"] ?></p>
+        <p>TEL: <?php echo $category_array[0]["tel1"] ?> / <?php echo $category_array[0]["tel2"] ?></p>
       </div>
       <div class="col-xs-3 text-center">
         <p><?php echo $category_array[0]["email1"] ?></p>
@@ -44,3 +44,4 @@
         ?> </p>
       <a>
     </div>
+  
