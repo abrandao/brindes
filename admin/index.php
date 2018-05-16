@@ -28,6 +28,10 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <li class="nav-item"><a class="nav-link" href="cruds/midia/list.php"><strong>LISTAR ARQUIVOS DE MÍDIA</strong></a></li>
     <li class="nav-item"><a class="nav-link" href="cruds/midia/upload.php"><strong>FAZER UPLOAD DE ARQUIVOS DE MÍDIA</strong></a></li>
     <hr>
+    <li class="nav-item"><a class="nav-link" href="cruds/midia/upload.php"><strong>FAZER UPLOAD DE ARQUIVOS DE MÍDIA</strong></a></li>
+    <hr>
+    <li class="nav-item"><a class="nav-link" href="cruds/business/update.php"><strong>CADASTRAR INFORMAÇÕES DA EMPRESA</strong></a></li>
+    <hr>
     <li class="nav-item"><a class="nav-link" href="cruds/products/upload.php"><strong>REGISTRAR PRODUTOS</strong></a></li>
     <li class="nav-item"><a class="nav-link" href="cruds/products/list.php"><strong>LISTAR TODOS OS PRODUTOS</strong></a></li>
     <li class="nav-tem"><a class="nav-link" href="cruds/products/list.php"><strong>LISTAR PRODUTOS POR CATEGORIA</strong></a></li>
@@ -51,3 +55,5 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
       }
     ?>
 </div> 
+
+http://172.17.0.2/brindes/admin/cruds/business/update.php
