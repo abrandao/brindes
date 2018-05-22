@@ -113,7 +113,7 @@ $category_array = $db_handle->runQuery("SELECT * FROM business WHERE id = 1");
         
         //Products list
         $db_handle = new Sql();
-        $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag = 2");       
+        $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag in (2, 3)");       
         
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){

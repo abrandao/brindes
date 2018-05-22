@@ -42,8 +42,31 @@
   <label for="code">Código</label>
   <input type="number" name="code"  value="<?php echo $product_array[$key]["code"] ?>"/></br>
 
-  <label for="flag">Destaque?</label>
-  <input type="number" name="flag"  value="<?php echo $product_array[$key]["flag"] ?>"/></br>
+  <label for="flag">Destaque?</label>    
+  <select type="number" name="flag">
+  <?php
+
+    $opt = $product_array[$key]["flag"];
+    switch($opt) {
+      case 0:
+        echo "<option value='0'>Não se destaca</option>";
+        break;
+      case 1:
+        echo "<option value='1'>Destaca-se apenas no início</option>";
+        break;
+      case 2:
+        echo "<option value='2'>Destaca-se no início e nos lançamentos</option>";
+        break;
+      case 3:
+        echo "<option value='3'>Destaca-se apenas nos lançamentos</option>";
+        break;        
+    }
+  ?>
+    <option value='0'>Não se destaca</option>
+    <option value='1'>Destaca-se apenas no início</option>
+    <option value='2'>Destaca-se no início e nos lançamentos</option>
+    <option value='3'>Destaca-se apenas nos lançamentos</option>  
+  </select></br>
 
   <label for="tag">Tag</label>
   <input type="text" name="tag"  value="<?php echo $product_array[$key]["tag"] ?>"/></br>

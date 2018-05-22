@@ -21,11 +21,16 @@
   <label for="code">Código</label>
   <input type="number" name="code" /></br>
 
-  <label for="flag">Destaque?</label>
-  <input type="number" name="flag" /></br>
+  <label for="flag">Destaque?</label>  
+  <select type="number" name="flag">
+    <option value="0">Não aparece em destaque</option>
+    <option value="1">Destaca-se apenas no início</option>
+    <option value="2">Destaca-se no início e nos lançamentos</option>
+    <option value="3">Destaca-se apenas nos lançamentos</option>
+  </select></br>
 
   <label for="tag">Tag</label>
-  <input type="text" name="tag" /></br>
+  <input type="text" name="tag" /></br>  
 
   <label for="category">Categoria</label>
   <select type="text" name="category">
