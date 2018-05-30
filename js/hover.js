@@ -21,22 +21,7 @@ function mouseHover() {
       document.getElementById("imagehover2").src = e.target.src;
       //document.getElementById("myresult").src = e.target.src;     
      }     
-   });
-
-   /*
-   var item = document.getElementById('myresult').className = "img-zoom-result";
-   
-    if (e.target.id == "imagehover2") {
-      imageZoom(e.target.id, "myresult");      
-    }  
-
-  el.addEventListener('mouseleave', function(e) {
-    document.getElementById("imagehover2").src = "http://images.uncyc.org/pt/8/8e/Ken-sshinryuken.gif"
-    this.removeAttribute.img;
-    var lens = document.getElementById('myresult');
-    lens.classList.remove("img-zoom-result");
-    alert("kkk");
-  }); */    
+   });   
 }
 
 function imageZoom(imgID, resultID) {

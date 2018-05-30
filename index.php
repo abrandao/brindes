@@ -8,7 +8,8 @@
 ?>
 
 <br>
-<link rel="stylesheet" href="css/slider.css"> 
+<link rel="stylesheet" href="css/slider.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> 
 <body>  
 
     <!-- Slide area -->
@@ -21,8 +22,33 @@
       
     ?>
 
-    <ul id="sliders">
-      <li class="slider-active"><a href="<?php echo $slider_array[0]['link']; ?>" target="_blank"><img class="img-fluid" title="<?php echo $slider_array[0]['title']; ?>" alt="<?php echo $slider_array[0]['alt']; ?>"  src="<?php echo 'includes/img/slider/' . $slider_array[0]['title'] . '.jpeg'; ?>" /><a></li>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <ul class="carousel-indicators">
+    <li data-target="#demo"  class="active"></li>
+    <?php
+
+      if (!empty($slider_array)) { 
+        foreach($slider_array as $key=>$value){  
+          if ($key != 0) { 
+    ?>       
+      
+        <li data-target="#demo" ></li>      
+        
+    <?php
+        }    
+        }
+      }
+    ?>  
+      </ul>
+
+      <div class="carousel-inner">
+      
+      <div class="carousel-item active">        
+        <a href="<?php echo $slider_array[0]['link']; ?>" target="_blank">
+        <img class="img-fluid" title="<?php echo $slider_array[0]['title']; ?>" alt="<?php echo $slider_array[0]['alt']; ?>"  src="<?php echo 'includes/img/slider/' . $slider_array[0]['title'] . '.jpeg'; ?>" width="1280" height="348" />
+        <a>        
+      </div>   
 
     <?php
 
@@ -30,15 +56,25 @@
         foreach($slider_array as $key=>$value){  
         if ($key != 0) { 
     ?>    
-
-      <li><a href="<?php echo $slider_array[$key]['link']; ?>" target="_blank"><img class="img-fluid img-responsive" title="<?php echo $slider_array[$key]['title']; ?>" alt="<?php echo $slider_array[$key]['alt']; ?>" src="<?php echo 'includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg'; ?>" /></a></li>   
-    
+      <div class="carousel-item">    
+        <a href="<?php echo $slider_array[$key]['link']; ?>" target="_blank">
+          <img class="img-fluid img-responsive" title="<?php echo $slider_array[$key]['title']; ?>" alt="<?php echo $slider_array[$key]['alt']; ?>" src="<?php echo 'includes/img/slider/' . $slider_array[$key]['title'] . '.jpeg'; ?>" />
+        </a>   
+      </div>    
     <?php
         }    
         }
       }
     ?>
-    </ul>  
+    </div>
+    
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>    
+    </div>
     <!-- End slide area -->    
     
     <!-- Categories sidebar -->
@@ -168,8 +204,13 @@
       </div>
     </div>
   </footer>
-  <script src="js/slider.js"></script>
+  
   </div>
-  </div>     
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>
