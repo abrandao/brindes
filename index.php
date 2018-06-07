@@ -25,7 +25,7 @@
     <div id="demo" class="carousel slide" data-ride="carousel">
 
     <ul class="carousel-indicators">
-    <li data-target="#demo"  class="active"></li>
+    <li data-target="<?php echo $slider_array[0]['link']; ?>" data-slide-to="0" class="active"></li>
     <?php
 
       if (!empty($slider_array)) { 
@@ -33,7 +33,7 @@
           if ($key != 0) { 
     ?>       
       
-        <li data-target="#demo" ></li>      
+        <li data-target="<?php echo $slider_array[0]['link']; ?>" ></li>      
         
     <?php
         }    

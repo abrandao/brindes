@@ -76,7 +76,7 @@
         
         //Products list
         $db_handle = new Sql();
-        $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag = 1 ORDER BY title ASC LIMIT $pagina_atual,$artigos_por_pagina");       
+        $product_array = $db_handle->runQuery("SELECT * FROM products WHERE flag in (1, 2) ORDER BY title ASC LIMIT $pagina_atual,$artigos_por_pagina");       
         
 	      if (!empty($product_array)) { 
 		    foreach($product_array as $key=>$value){
