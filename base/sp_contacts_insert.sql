@@ -14,4 +14,4 @@ CREATE PROCEDURE sp_contacts_insert (
 
     INSERT INTO products (name, business, email, tel, city, state, jotting) 
     VALUES (pname, pbusiness, pemail, ptel, pcity, pstate, pjotting);
-    SELECT * FROM products WHERE id = LAST_INSERT_ID();    
+    SELECT * FROM products WHERE id = LAST_INSERT_ID();
