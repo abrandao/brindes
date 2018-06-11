@@ -37,7 +37,7 @@ require_once("../admin/class/Product.php");
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="../js/hover.js"></script>
-
+		<script src="../js/lightbox.js"></script>
 		<?php
  
   		$db_handle = new Sql();
@@ -122,8 +122,7 @@ require_once("../admin/class/Product.php");
 			$prod_code = $_GET['code'];
 			$product_array = $db_handle->runQuery("SELECT * FROM products WHERE code = '$prod_code'");
 			if (!empty($product_array)) { 
-				foreach($product_array as $key=>$value){
-					
+				foreach($product_array as $key=>$value){					
 		?>		
    
 		<div class="row">
@@ -132,7 +131,7 @@ require_once("../admin/class/Product.php");
 			<!-- Images area -->
 			<div id="images" class="col-sm-6">
 			
-				<img id="imagehover2"  class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"> 
+				<img id="imagehover2" onclick="teste();" class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"> 
 				<div class="row">			
 					 
 					<?php
@@ -226,10 +225,9 @@ require_once("../admin/class/Product.php");
             <span class="text-white align-text-bottom">
               <?php echo $category_array[0]["address"] ?>
             </span>
-          </div>
-          
+          </div>          
         </div>
-
+				
         <div class="row col-sm-6 text-right">          
           <div class="col-sm">
             <img src="../includes/img/logo_transparent.png" class="img-fluid" alt="Logo Epontual">
