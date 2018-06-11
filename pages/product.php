@@ -1,8 +1,7 @@
 <?php
-require_once("../admin/session.php");
-require_once("../admin/class/Sql.php");
-require_once("../admin/class/Product.php");
-//require_once("../includes/head.php");
+	require_once("../admin/session.php");
+	require_once("../admin/class/Sql.php");
+	require_once("../admin/class/Product.php");
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -27,7 +26,8 @@ require_once("../admin/class/Product.php");
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
 		<link rel="stylesheet" href="../css/style.css">
-		<link rel="stylesheet" href="../css/hover.css">		
+		<link rel="stylesheet" href="../css/hover.css">
+		<link rel="stylesheet" href="../css/lightbox.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
