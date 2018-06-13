@@ -23,16 +23,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="../css/lightbox.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">		
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/hover.css">
-		<link rel="stylesheet" href="../css/lightbox.css">
+		
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
+
 		<!-- Javascript JS -->
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -131,7 +132,7 @@
 			<!-- Images area -->
 			<div id="images" class="col-sm-6">
 			
-				<img id="imagehover2" onclick="teste();" class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"> 
+				<img id="imagehover2" onclick="openModal();currentSlide(1);" class="img-fluid" src="<?php echo "../admin/products/" . $product_array	[$key]["upfile"] . "/" . $product_array[$key]["upfile"] . "_0.jpg"; ?>" title="<?php echo $product_array[$key]["title"]; ?>" alt="<?php echo $product_array[$key]["category"] . ', ' . $product_array[$key]["description"]; ?>"> 
 				<div class="row">			
 					 
 					<?php
@@ -148,6 +149,40 @@
 		  	</div>    
 			</div>
 			<!-- End Images area -->
+
+			<!-- Modal Area -->
+			<div id="myModal" class="modal">
+  			<span class="close cursor" onclick="closeModal()">&times;</span>
+  			<div class="modal-content">
+					
+				<?php
+					 $files = glob("../admin/products/" . $product_array[$key]["upfile"] . "/*.*");
+					 for ($i=1; $i<count($files); $i++)
+					 {							
+						 $num = $files[$i];						 
+
+					 	echo '<div class="mySlides">
+					 	<div class="numbertext">1 / 4</div>
+					 	<img src="' . $num .'" style="width:100%">
+				 		</div>';
+					 }				 
+				?>
+					
+    			
+					 
+    			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    			<div class="caption-container">
+    			  <p id="caption"></p>
+					</div>				
+			
+  			</div>
+			</div>
+			<?php
+					 
+			?>
+			<!-- End Modal Area -->
 			
 					<div class="form-group row col-sm-6 mb-4">					
 					<form method="post" action="shopcart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">  

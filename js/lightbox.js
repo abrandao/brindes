@@ -1,7 +1,3 @@
-function teste() {
-  alert('haha');
-}
-
 function openModal() {
   document.getElementById('myModal').style.display = "block";
 }
