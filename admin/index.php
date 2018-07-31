@@ -55,5 +55,3 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
       }
     ?>
 </div> 
-
-http://172.17.0.2/brindes/admin/cruds/business/update.php

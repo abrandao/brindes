@@ -161,8 +161,7 @@
 					 {							
 						 $num = $files[$i];						 
 
-					 	echo '<div class="mySlides">
-					 	<div class="numbertext">1 / 4</div>
+					 	echo '<div class="mySlides">					 	
 					 	<img src="' . $num .'" style="width:100%">
 				 		</div>';
 					 }				 
