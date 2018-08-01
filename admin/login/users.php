@@ -66,7 +66,7 @@
       </div>
       
       <div class="col-sm">        
-        <a href="delete.php?id=<?php echo $product_array[$key]["id"]; ?>"><input type="button" value="Deletar"></a>
+        <a href="delete.php?id=<?php echo $users_array[$key]["id"]; ?>"><input type="button" value="Deletar"></a>
       </div>
     </div>  
     </form>
@@ -76,7 +76,13 @@
 		}
 }
 ?>
-<a href="register.php" value="Registrar Novo Usuário">Registrar Novo Usuário</a
+
+<button>
+  <a href="register.php" value="Registrar Novo Usuário">Registrar Novo Usuário</a>
+</button>
+<button>
+  <a href="logout.php" value="Realizar Logout">Realizar Logout</a>
+</button>
 
 </div>
 </body>

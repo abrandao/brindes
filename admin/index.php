@@ -17,6 +17,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
     <li class="nav-item"><a class="nav-link" href="../index.php"><strong>Início</strong></a></li>  
     <hr>
+    <li class="nav-item"><a class="nav-link" href="login/users.php"><strong>LISTAR OS USUÁRIOS</strong></a></li>
+    <hr>
     <li class="nav-item"><a class="nav-link" href="cruds/categories/register.php"><strong>REGISTRAR CATEGORIA</strong></a></li>
     <li class="nav-item"><a class="nav-link" href="cruds/categories/list.php"><strong>LISTAR CATEGORIAS</strong></a></li>
     <hr>
